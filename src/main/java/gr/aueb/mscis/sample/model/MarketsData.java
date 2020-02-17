@@ -18,5 +18,10 @@ public class MarketsData {
 	@Column(name = "date", nullable = false)
 	private Date date;
 	
+	@Column(name="FTSE", nullable=false)
+	private float FTSE;
+	
+	@Column(name="Closing", nullable=false)
+	private float Closing;
 	
 }
