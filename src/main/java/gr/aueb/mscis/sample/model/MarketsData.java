@@ -12,16 +12,25 @@ import java.util.*;
  * */
 
 @Entity
-@Table(name="MarketsData")
+@Table(name = "MarketsData")
 public class MarketsData {
- 
+
 	@Column(name = "date", nullable = false)
 	private Date date;
-	
-	@Column(name="FTSE", nullable=false)
+
+	@Column(name = "FTSE", nullable = false)
 	private float FTSE;
-	
+
 	@Column(name="Closing", nullable=false)
 	private float Closing;
+
+	public MarketsData(Date date, float FTSE,float Closing) {
+		this.date=date;
+		this.FTSE=FTSE;
+		this.Closing=Closing;
+	}
+	public MarketsData() {
+	
+	}
 	
 }

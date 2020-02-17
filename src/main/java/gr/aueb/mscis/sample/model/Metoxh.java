@@ -86,11 +86,11 @@ public class Metoxh {
 
 	public Metoxh(int id, String name, Date date, Float high, Float low, Float closing) {
 		this.id = id;
-		Name = name;
+		this.Name = name;
 		this.date = date;
-		High = high;
-		Low = low;
-		Closing = closing;
+		this.High = high;
+		this.Low = low;
+		this.Closing = closing;
 	}
 
 	@Override
