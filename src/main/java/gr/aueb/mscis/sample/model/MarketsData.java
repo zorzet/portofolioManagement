@@ -31,7 +31,7 @@ public class MarketsData{
 	@Column(name="Min", nullable=false)
 	private float Min;
 	
-	public MarketsData(int MDID,String date,float Opening,float Closing, float Max, float Min) {
+	public MarketsData(int MDID, String date, float Opening, float Closing, float Max, float Min) {
 		this.MDID=MDID;
 		this.date=date;
 		this.Opening=Opening;

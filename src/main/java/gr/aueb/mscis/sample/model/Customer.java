@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "customer")
+@Table(name = "Customer")
 public class Customer { 
 
 	@Id
@@ -19,8 +19,7 @@ public class Customer {
 	
 	@Column(name = "ADT", length = 9, nullable = false)
 	private String ADT;
-	
-	
+
 	@Column(name="AFM", nullable = false)
 	private String AFM;
 	

@@ -26,7 +26,7 @@ public class Initializer  {
         
         tx.commit();
       // where to em.close ???
-    
+    }  
 
     public void prepareData() {
 
@@ -97,6 +97,7 @@ public class Initializer  {
         em.persist(temp28);
         em.persist(temp29);
         em.persist(temp30);
+        
         em.persist(temp31);
         tx.commit();
     
