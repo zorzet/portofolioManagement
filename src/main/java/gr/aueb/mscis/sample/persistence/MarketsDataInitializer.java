@@ -1,10 +1,10 @@
 package gr.aueb.mscis.sample.persistence;
 
+import gr.aueb.mscis.sample.model.MarketsData;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
-import gr.aueb.mscis.sample.model.MarketsData;
 
 
 public class Initializer  {
@@ -25,8 +25,7 @@ public class Initializer  {
         query.executeUpdate();
         
         tx.commit();
-        
-    }
+      // where to em.close ???
     
 
     public void prepareData() {

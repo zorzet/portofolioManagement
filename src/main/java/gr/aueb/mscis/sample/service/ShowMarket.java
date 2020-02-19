@@ -1,9 +1,9 @@
-package gr.aueb.mscis.sample.service;
+package gr.aueb.mscis.sample.model;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-import gr.aueb.mscis.sample.model.Movie;
+import gr.aueb.mscis.sample.model.MarketsData;
 import gr.aueb.mscis.sample.persistence.JPAUtil;
 
 /**
@@ -44,10 +44,22 @@ public class ShowMarket {
 		tx.commit();
 		return MarketImage;
 	}
-	
-	public String setMarketImage(Date date, float FTSE, float Closing){
-
-		
-		return newMovie;
+	/**/
+	public String ShowMarketHistory(int days){
+		String history;
+		EntityTransaction tx = em.getTransaction();
+	    tx.begin();
+	    Query query = null;
+	    query = em.createNativeQuery("select from MarketsData");
+	    query.executeUpdate();
+	    histroy=query.setMaxResults(days);
+	    List stuList=query.getResultList();
+	    Iterator stuIterator=stuList.iterator();
+	    while(stuIterator.hasNext()){
+	    	MarketsData md=(MarketsData)stuIterator.next();
+	    	
+	    }	
+	    tx.commit();
+		return history;
 	}
 }

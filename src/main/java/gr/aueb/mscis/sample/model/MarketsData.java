@@ -6,14 +6,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.util.*;
-/*
- * 8A TRAVAME TA DEDOMENA APO ISTOSELIDA
- * */
+//import java.util.*;
 
 @Entity
 @Table(name = "MarketsData")
-public class MarketsData {
+public class MarketsData{
  
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -45,5 +42,39 @@ public class MarketsData {
 	public MarketsData() {
 	
 	}
-	
+	public String getDate() {
+		return this.date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+	public float getOpening() {
+		return this.Opening;
+	}
+
+	public void setOpening(float Opening) {
+		this.Opening = Opening;
+	}
+	public float getClosing() {
+		return this.Closing;
+	}
+
+	public void setClosing(float Closing) {
+		this.Closing = Closing;
+	}
+	public float getMax() {
+		return this.Max;
+	}
+
+	public void setMax(float Max) {
+		this.Max = Max;
+	}	
+	public float getMin() {
+		return this.Min;
+	}
+
+	public void setMin(float Min) {
+		this.Min = Min;
+	}
 }
