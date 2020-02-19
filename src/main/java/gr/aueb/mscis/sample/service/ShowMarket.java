@@ -29,17 +29,24 @@ public class ShowMarket {
 		
 		
 		return MarketImage;
-		
 	}
-
+	
+	/*gurnaei th teleutaia timh tou xrhmatisthriou pou exei sth vash*/
+	public String getOfflineMarketImage(){
+		
+		String MarketImage;
+		EntityTransaction tx = em.getTransaction();
+		tx.begin();
+		Query query = null;
+        query = em.createNativeQuery("select MarketsData from JpaClass MarketsData order by MarketsData.MDID desc ");
+        query.executeUpdate();
+        MarketImage=query.getSingleResult();
+		tx.commit();
+		return MarketImage;
+	}
 	
 	public String setMarketImage(Date date, float FTSE, float Closing){
 
-		MarketsData newMarketsData = new MarketsData(date,FTSE,Closing);
-		EntityTransaction tx = em.getTransaction();
-		tx.begin();
-		em.persist(MarketsData);
-		tx.commit();
 		
 		return newMovie;
 	}

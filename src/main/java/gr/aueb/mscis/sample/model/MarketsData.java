@@ -14,7 +14,11 @@ import java.util.*;
 @Entity
 @Table(name = "MarketsData")
 public class MarketsData {
-
+ 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int MDID;
+	
 	@Column(name = "date", nullable = false)
 	private String date;
 
@@ -30,7 +34,8 @@ public class MarketsData {
 	@Column(name="Min", nullable=false)
 	private float Min;
 	
-	public MarketsData(String date,float Opening,float Closing, float Max, float Min) {
+	public MarketsData(int MDID,String date,float Opening,float Closing, float Max, float Min) {
+		this.MDID=MDID;
 		this.date=date;
 		this.Opening=Opening;
 		this.Closing=Closing;
