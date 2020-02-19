@@ -1,4 +1,4 @@
-package gr.aueb.mscis.sample.persistence;
+package gr.aueb.mscis.sample.persistence; 
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;

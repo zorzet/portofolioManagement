@@ -3,7 +3,7 @@ package gr.aueb.mscis.sample.service;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
-
+ 
 import gr.aueb.mscis.sample.model.MarketsData;
 import gr.aueb.mscis.sample.persistence.JPAUtil;
 
