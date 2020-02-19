@@ -16,18 +16,26 @@ import java.util.*;
 public class MarketsData {
 
 	@Column(name = "date", nullable = false)
-	private Date date;
+	private String date;
 
-	@Column(name = "FTSE", nullable = false)
-	private float FTSE;
-
+	@Column(name="Operning", nullable=false)
+	private float Opening;
+	
 	@Column(name="Closing", nullable=false)
 	private float Closing;
-
-	public MarketsData(Date date, float FTSE,float Closing) {
+	
+	@Column(name="Max", nullable=false)
+	private float Max;
+	
+	@Column(name="Min", nullable=false)
+	private float Min;
+	
+	public MarketsData(String date,float Opening,float Closing, float Max, float Min) {
 		this.date=date;
-		this.FTSE=FTSE;
+		this.Opening=Opening;
 		this.Closing=Closing;
+		this.Max=Max;
+		this.Min=Min;
 	}
 	public MarketsData() {
 	
