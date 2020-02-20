@@ -8,6 +8,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.CascadeType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.UniqueConstrain;
 
 @Entity
 @Table(name = "DX",uniqueConstraints = {
@@ -40,7 +44,10 @@ public class Customer {
 	@Column(name="BirthDate", nullable = false)
 	private String BirthDate;
 	
-	
+	/*1 DX EXEI POLLA XARTOFYLAKIA*/
+	@OneToMany(cascade={CascadeType.PERSIST, CascadeType.MERGE}, 
+            mappedBy="DXno", fetch=FetchType.LAZY)
+    private Set<Xartofulakio> loans = new HashSet<Xartofulakio>();
 	
 	public int getId() {
 		return id;
@@ -161,6 +168,5 @@ public class Customer {
 		return "Customer [id=" + id + ", ADT=" + ADT + ", AFM=" + AFM + ", Name=" + Name + ", Surname=" + Surname
 				+ ", Tel=" + Tel + ", email=" + email + ", BirthDate=" + BirthDate + "]";
 	}
-/*1 DX EXEI POLLA XARTOFYLAKIA*/
 
 }

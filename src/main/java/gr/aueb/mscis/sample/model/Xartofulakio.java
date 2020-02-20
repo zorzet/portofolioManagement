@@ -6,6 +6,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.CascadeType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.UniqueConstrain;
 
 @Entity
 @Table(name="Xartofulakio",uniqueConstraints = {
@@ -20,6 +24,10 @@ public class Xartofulakio {
 	@Column(name = "trexousathesi", length = 512, nullable = false)
 	private String trexousathesi;
 	
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="Xartofulakiono")
+    private Xartofulakio X;
+    
 	public int getXid() {
 		return Xid;
 	}
