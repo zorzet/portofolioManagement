@@ -23,6 +23,29 @@ public class Customer {
 	@Column(name="AFM", nullable = false)
 	private String AFM;
 	
+	@Column(name="Name", nullable = false)
+	private String Name;
+	
+	@Column(name="Surname", nullable = false)
+	private String Surname;
+	
+	@Column(name="Tel", nullable = false)
+	private String Tel;
+	
+	@Column(name="Email", nullable = false)
+	private String email;
+	
+	@Column(name="BirthDate", nullable = false)
+	private String BirthDate;
+	
+	@Column(name="InvestAmount", nullable = false)
+	private int InvestAmount;
+	
+	@Column(name="BankAccountNo", nullable = false)
+	private string BankAccountNo;
+	
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -46,15 +69,119 @@ public class Customer {
 	public void setAFM(String aFM) {
 		AFM = aFM;
 	}
-
-	public Date getDate() {
-		return date;
+	public String getName() {
+		return Name;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setName(String name) {
+		Name = name;
 	}
 
-	@Column(name = "date", nullable = false)
-	private Date date;
+	public String getSurname() {
+		return Surname;
+	}
+
+	public void setSurname(String surname) {
+		Surname = surname;
+	}
+
+	public String getTel() {
+		return Tel;
+	}
+
+	public void setTel(String tel) {
+		Tel = tel;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getBirthDate() {
+		return BirthDate;
+	}
+
+	public void setBirthDate(String birthDate) {
+		BirthDate = birthDate;
+	}
+
+	public int getInvestAmount() {
+		return InvestAmount;
+	}
+
+	public void setInvestAmount(int investAmount) {
+		InvestAmount = investAmount;
+	}
+
+	public string getBankAccountNo() {
+		return BankAccountNo;
+	}
+
+	public void setBankAccountNo(string bankAccountNo) {
+		BankAccountNo = bankAccountNo;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Customer other = (Customer) obj;
+		if (ADT == null) {
+			if (other.ADT != null)
+				return false;
+		} else if (!ADT.equals(other.ADT))
+			return false;
+		if (AFM == null) {
+			if (other.AFM != null)
+				return false;
+		} else if (!AFM.equals(other.AFM))
+			return false;
+		if (BirthDate == null) {
+			if (other.BirthDate != null)
+				return false;
+		} else if (!BirthDate.equals(other.BirthDate))
+			return false;
+		if (InvestAmount != other.InvestAmount)
+			return false;
+		if (Name == null) {
+			if (other.Name != null)
+				return false;
+		} else if (!Name.equals(other.Name))
+			return false;
+		if (Surname == null) {
+			if (other.Surname != null)
+				return false;
+		} else if (!Surname.equals(other.Surname))
+			return false;
+		if (Tel == null) {
+			if (other.Tel != null)
+				return false;
+		} else if (!Tel.equals(other.Tel))
+			return false;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", ADT=" + ADT + ", AFM=" + AFM + ", Name=" + Name + ", Surname=" + Surname
+				+ ", Tel=" + Tel + ", email=" + email + ", BirthDate=" + BirthDate + ", InvestAmount=" + InvestAmount
+				+ "]";
+	}
+
 }
