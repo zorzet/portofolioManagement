@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.UniqueConstrain;
 import java.util.*;
+import java.util.HashSet;
 
 @Entity
 @Table(name="Metoxh"uniqueConstraints = {

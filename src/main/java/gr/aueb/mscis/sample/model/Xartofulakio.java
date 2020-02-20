@@ -10,6 +10,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.UniqueConstrain;
+import java.util.HashSet;
 
 @Entity
 @Table(name="Xartofulakio",uniqueConstraints = {

@@ -12,7 +12,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.UniqueConstrain;
-
+import java.util.HashSet;
 @Entity
 @Table(name = "DX",uniqueConstraints = {
         @UniqueConstraint(columnNames = "DXId")})
@@ -48,6 +48,7 @@ public class Customer {
 	@OneToMany(cascade={CascadeType.PERSIST, CascadeType.MERGE}, 
             mappedBy="DXno", fetch=FetchType.LAZY)
     private Set<Xartofulakio> loans = new HashSet<Xartofulakio>();
+	
 	
 	public int getId() {
 		return id;
