@@ -9,13 +9,16 @@ import javax.persistence.Table;
 //import java.util.*;
 
 @Entity
-@Table(name = "MarketsData")
+@Table(name = "MarketsData",uniqueConstraints = {
+        @UniqueConstraint(columnNames = "MDId")})
 public class MarketsData{
  
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int MDID;
+	@Column(name = "MDId", unique = true, nullable = false)
+	private int MDId;
 	
+
 	@Column(name = "date", nullable = false)
 	private String date;
 

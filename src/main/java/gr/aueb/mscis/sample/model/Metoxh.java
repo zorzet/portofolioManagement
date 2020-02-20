@@ -10,13 +10,14 @@ import javax.persistence.Table;
 import java.util.*;
 
 @Entity
-@Table(name="Metoxh")
+@Table(name="Metoxh"uniqueConstraints = {
+        @UniqueConstraint(columnNames = "StockId")})
 public class Metoxh {
-	
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	@Column(name = "StockId"", unique = true, nullable = false)
+	private int StockId;
 	
 	@Column(name = "Name", length = 512, nullable = false)
 	private String Name;

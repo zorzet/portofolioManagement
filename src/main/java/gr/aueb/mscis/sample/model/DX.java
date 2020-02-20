@@ -10,16 +10,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Customer",uniqueConstraints = {
-        @UniqueConstraint(columnNames = "CustomerId")})
+@Table(name = "DX",uniqueConstraints = {
+        @UniqueConstraint(columnNames = "DXId")})
 public class Customer { 
 
-	
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "CustomerId", unique = true, nullable = false)
-	private int CustomerId;
+	@Column(name = "DXId", unique = true, nullable = false)
+	private int DXId;
 	
 	@Column(name = "ADT", length = 9, nullable = false)
 	private String ADT;
@@ -41,12 +39,6 @@ public class Customer {
 	
 	@Column(name="BirthDate", nullable = false)
 	private String BirthDate;
-	
-	@Column(name="InvestAmount", nullable = false)
-	private int InvestAmount;
-	
-	@Column(name="BankAccountNo", nullable = false)
-	private string BankAccountNo;
 	
 	
 	
@@ -113,21 +105,6 @@ public class Customer {
 		BirthDate = birthDate;
 	}
 
-	public int getInvestAmount() {
-		return InvestAmount;
-	}
-
-	public void setInvestAmount(int investAmount) {
-		InvestAmount = investAmount;
-	}
-
-	public string getBankAccountNo() {
-		return BankAccountNo;
-	}
-
-	public void setBankAccountNo(string bankAccountNo) {
-		BankAccountNo = bankAccountNo;
-	}
 
 
 	@Override
@@ -153,8 +130,6 @@ public class Customer {
 			if (other.BirthDate != null)
 				return false;
 		} else if (!BirthDate.equals(other.BirthDate))
-			return false;
-		if (InvestAmount != other.InvestAmount)
 			return false;
 		if (Name == null) {
 			if (other.Name != null)
@@ -184,8 +159,8 @@ public class Customer {
 	@Override
 	public String toString() {
 		return "Customer [id=" + id + ", ADT=" + ADT + ", AFM=" + AFM + ", Name=" + Name + ", Surname=" + Surname
-				+ ", Tel=" + Tel + ", email=" + email + ", BirthDate=" + BirthDate + ", InvestAmount=" + InvestAmount
-				+ "]";
+				+ ", Tel=" + Tel + ", email=" + email + ", BirthDate=" + BirthDate + "]";
 	}
+/*1 DX EXEI POLLA XARTOFYLAKIA*/
 
 }
