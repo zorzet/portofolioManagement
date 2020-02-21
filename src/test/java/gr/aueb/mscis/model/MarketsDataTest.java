@@ -35,7 +35,7 @@ public class MarketsDataTest {
 		double exp_closing = 5.578f;
 		m.setClosing(5.578f);
 		double closing = m.getClosing();
-		assertEquals(exp_closing, closing, 0.0d);
+		assertEquals(exp_closing, closing, 0.0f);
 	}
 
 	@Test
