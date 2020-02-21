@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,12 +12,13 @@ import javax.persistence.Table;
 import javax.persistence.CascadeType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.UniqueConstrain;
+import javax.persistence.UniqueConstraint;
 import java.util.HashSet;
+import java.util.Set;
 @Entity
 @Table(name = "DX",uniqueConstraints = {
         @UniqueConstraint(columnNames = "DXId")})
-public class Customer { 
+public class DX { 
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -50,12 +52,12 @@ public class Customer {
     private Set<Xartofulakio> loans = new HashSet<Xartofulakio>();
 	
 	
-	public int getId() {
-		return id;
+	public int getDXId() {
+		return DXId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setDXId(int id) {
+		this.DXId = id;
 	}
 
 	public String getADT() {
@@ -123,7 +125,7 @@ public class Customer {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Customer other = (Customer) obj;
+		DX other = (DX) obj;
 		if (ADT == null) {
 			if (other.ADT != null)
 				return false;
@@ -159,14 +161,14 @@ public class Customer {
 				return false;
 		} else if (!email.equals(other.email))
 			return false;
-		if (id != other.id)
+		if (DXId != other.DXId)
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Customer [id=" + id + ", ADT=" + ADT + ", AFM=" + AFM + ", Name=" + Name + ", Surname=" + Surname
+		return "Customer [id=" + DXId + ", ADT=" + ADT + ", AFM=" + AFM + ", Name=" + Name + ", Surname=" + Surname
 				+ ", Tel=" + Tel + ", email=" + email + ", BirthDate=" + BirthDate + "]";
 	}
 

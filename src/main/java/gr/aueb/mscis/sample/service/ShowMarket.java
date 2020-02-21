@@ -1,9 +1,12 @@
 package gr.aueb.mscis.sample.service;
 
+import java.util.Iterator;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
- 
+
+import antlr.collections.List;
 import gr.aueb.mscis.sample.model.MarketsData;
 import gr.aueb.mscis.sample.persistence.JPAUtil;
 
@@ -25,7 +28,7 @@ public class ShowMarket {
  * Den gurnaei kati apo th vash*/
 	
 	public String getOnlineMarketImage(){
-		String MarketImage;
+		String MarketImage="something";
 		
 		
 		
@@ -41,21 +44,21 @@ public class ShowMarket {
 		Query query = null;
         query = em.createNativeQuery("select MarketsData from JpaClass MarketsData order by MarketsData.MDID desc ");
         query.executeUpdate();
-        MarketImage=query.getSingleResult();
+        MarketImage=(String) query.getSingleResult();
 		tx.commit();
 		return MarketImage;
 	}
 	/**/
 	public String ShowMarketHistory(int days){
-		String history;
+		String history="somthing";
 		EntityTransaction tx = em.getTransaction();
 	    tx.begin();
 	    Query query = null;
 	    query = em.createNativeQuery("select from MarketsData");
 	    query.executeUpdate();
-	    histroy=query.setMaxResults(days);
-	    List stuList=query.getResultList();
-	    Iterator stuIterator=stuList.iterator();
+	    //history=(String) query.setMaxResults(days);
+	    List stuList=(List) query.getResultList();
+	    Iterator stuIterator=((java.util.List) stuList).iterator();
 	    while(stuIterator.hasNext()){
 	    	MarketsData md=(MarketsData)stuIterator.next();
 	    	

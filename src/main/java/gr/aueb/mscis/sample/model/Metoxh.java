@@ -10,18 +10,18 @@ import javax.persistence.Table;
 import javax.persistence.CascadeType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.UniqueConstrain;
+import javax.persistence.UniqueConstraint;
 import java.util.*;
 import java.util.HashSet;
 
 @Entity
-@Table(name="Metoxh"uniqueConstraints = {
+@Table(name="Metoxh",uniqueConstraints = {
         @UniqueConstraint(columnNames = "StockId")})
 public class Metoxh {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "StockId"", unique = true, nullable = false)
+	@Column(name = "StockId", unique = true, nullable = false)
 	private int StockId;
 	
 	@Column(name = "Name", length = 512, nullable = false)
@@ -39,12 +39,12 @@ public class Metoxh {
 	@Column(name = "Closing", length = 10, nullable = false)
 	private Float Closing;
 
-	public int getId() {
-		return id;
+	public int getStockId() {
+		return StockId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setStockId(int id) {
+		this.StockId = id;
 	}
 
 	public String getName() {
@@ -91,7 +91,7 @@ public class Metoxh {
 	}
 
 	public Metoxh(int id, String name, Date date, Float high, Float low, Float closing) {
-		this.id = id;
+		this.StockId = id;
 		this.Name = name;
 		this.date = date;
 		this.High = high;
@@ -108,7 +108,7 @@ public class Metoxh {
 		result = prime * result + ((Low == null) ? 0 : Low.hashCode());
 		result = prime * result + ((Name == null) ? 0 : Name.hashCode());
 		result = prime * result + ((date == null) ? 0 : date.hashCode());
-		result = prime * result + id;
+		result = prime * result + StockId;
 		return result;
 	}
 
@@ -146,7 +146,7 @@ public class Metoxh {
 				return false;
 		} else if (!date.equals(other.date))
 			return false;
-		if (id != other.id)
+		if (StockId != other.StockId)
 			return false;
 		return true;
 	}

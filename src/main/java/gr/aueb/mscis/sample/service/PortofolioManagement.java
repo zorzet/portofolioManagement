@@ -16,7 +16,8 @@ public class PortofolioManagement {
 		this.em = em;
 	}
 	
-	public Portofolio ShowPortofolio(Customer c) {
+/*	public Portofolio ShowPortofolio(Customer c) {
 		
 	}
+*/
 }

@@ -9,7 +9,9 @@ import javax.persistence.Table;
 import javax.persistence.CascadeType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.UniqueConstrain;
+import javax.persistence.UniqueConstraint;
+import javax.persistence.UniqueConstraint;
+
 import java.util.HashSet;
 //import java.util.*;
 
@@ -28,19 +30,19 @@ public class MarketsData{
 	private String date;
 
 	@Column(name="Operning", nullable=false)
-	private float Opening;
+	private double Opening;
 	
 	@Column(name="Closing", nullable=false)
-	private float Closing;
+	private double Closing;
 	
 	@Column(name="Max", nullable=false)
-	private float Max;
+	private double Max;
 	
 	@Column(name="Min", nullable=false)
-	private float Min;
+	private double Min;
 	
-	public MarketsData(int MDID, String date, float Opening, float Closing, float Max, float Min) {
-		this.MDID=MDID;
+	public MarketsData(int MDID, String date, double Opening, double Closing, double Max, double Min) {
+		this.MDId=MDID;
 		this.date=date;
 		this.Opening=Opening;
 		this.Closing=Closing;
@@ -57,28 +59,28 @@ public class MarketsData{
 	public void setDate(String date) {
 		this.date = date;
 	}
-	public float getOpening() {
+	public double getOpening() {
 		return this.Opening;
 	}
 
 	public void setOpening(float Opening) {
 		this.Opening = Opening;
 	}
-	public float getClosing() {
+	public double getClosing() {
 		return this.Closing;
 	}
 
 	public void setClosing(float Closing) {
 		this.Closing = Closing;
 	}
-	public float getMax() {
+	public double getMax() {
 		return this.Max;
 	}
 
 	public void setMax(float Max) {
 		this.Max = Max;
 	}	
-	public float getMin() {
+	public double getMin() {
 		return this.Min;
 	}
 

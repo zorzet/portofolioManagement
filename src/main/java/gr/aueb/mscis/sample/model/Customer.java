@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import javax.persistence.CascadeType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.UniqueConstrain;
+import javax.persistence.UniqueConstraint;
 import java.util.HashSet;
 
 @Entity
@@ -51,16 +51,16 @@ public class Customer {
 	private int InvestAmount;
 	
 	@Column(name="BankAccountNo", nullable = false)
-	private string BankAccountNo;
+	private String BankAccountNo;
 	
 	
 	
-	public int getId() {
-		return id;
+	public int getCustomerId() {
+		return CustomerId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setCustomerId(int id) {
+		this.CustomerId = id;
 	}
 
 	public String getADT() {
@@ -126,11 +126,11 @@ public class Customer {
 		InvestAmount = investAmount;
 	}
 
-	public string getBankAccountNo() {
+	public String getBankAccountNo() {
 		return BankAccountNo;
 	}
 
-	public void setBankAccountNo(string bankAccountNo) {
+	public void setBankAccountNo(String bankAccountNo) {
 		BankAccountNo = bankAccountNo;
 	}
 
@@ -181,14 +181,14 @@ public class Customer {
 				return false;
 		} else if (!email.equals(other.email))
 			return false;
-		if (id != other.id)
+		if (CustomerId != other.CustomerId)
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Customer [id=" + id + ", ADT=" + ADT + ", AFM=" + AFM + ", Name=" + Name + ", Surname=" + Surname
+		return "Customer [CustomerId=" + CustomerId + ", ADT=" + ADT + ", AFM=" + AFM + ", Name=" + Name + ", Surname=" + Surname
 				+ ", Tel=" + Tel + ", email=" + email + ", BirthDate=" + BirthDate + ", InvestAmount=" + InvestAmount
 				+ "]";
 	}

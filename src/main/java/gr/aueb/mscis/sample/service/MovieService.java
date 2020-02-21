@@ -3,7 +3,7 @@ package gr.aueb.mscis.sample.service;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-import gr.aueb.mscis.sample.model.Movie;
+
 import gr.aueb.mscis.sample.persistence.JPAUtil;
 
 /**
@@ -12,6 +12,7 @@ import gr.aueb.mscis.sample.persistence.JPAUtil;
  * @author bzafiris
  *
  */
+/*
 public class MovieService {
 
 	EntityManager em;
@@ -38,3 +39,4 @@ public class MovieService {
 	}
 	
 }
+*/
