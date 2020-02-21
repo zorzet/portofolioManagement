@@ -42,14 +42,23 @@ public class Xartofulakio {
             mappedBy="Xartofulakio", fetch=FetchType.LAZY)    
     private Set<Transaction> trans = new HashSet<Transaction>();
 
-    
-
+    /**
+     * Επιστρεφει τον αριθμό του χαρτοφυλακίου
+     * που προσδιοριζει μοναδικά κάθε χαρτοφυλάκιο.
+     * @return Τον αριθμό του χαρτοφυλακίου
+     */
 	public int getXid() {
 		return Xid;
 	}
+	 /**
+	  * Θέτει τον αριθμό του χαρτοφυλακίου
+      * που προσδιοριζει μοναδικά κάθε χαρτοφυλάκιο.
+	  * @param xid
+	  */
 	public void setXid(int xid) {
 		Xid = xid;
 	}
+	
 	public String getTrexousathesi() {
 		return trexousathesi;
 	}
@@ -91,5 +100,29 @@ public class Xartofulakio {
 		cus.setSurname(surname);
 		cus.setTel(tel);
 	}
+	
+	/**
+	 *  Επιστέφει τη συλλογή των συναλλαγών
+	 *  Η συλλογή είναι αντίγραφο της συλλογής των συναλλαγών
+	 * @return H συλλογή των συναλλαγών
+	 */
+    public Set<Transaction> getTransactions() {
+        return new HashSet<Transaction>(trans);
+    }
+    
+	/**
+	 * Επιστρέφει τον αριθμό των συναλλαγών που δεν έχουν εκτελεστεί ακόμα
+	 * χρησιμοποιείται για έλεγχο
+	 * @return
+	 */
 
+	private int countPendingStocks() {
+        int pendingItems = 0;
+        for (Transaction tran : trans) {
+            if (tran.isPending()) {
+                pendingItems++;
+            }
+        }
+        return pendingItems;
+    }
 }

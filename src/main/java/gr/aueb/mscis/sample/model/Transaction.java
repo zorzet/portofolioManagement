@@ -47,7 +47,11 @@ public class Transaction {
 	
 	@Column(name = "Date", length = 10, nullable = false)
 	private String date;
+	
 
+	
+	@Column(name = "State", length = 10, nullable = false)
+	private String state;
 	/* Each transaction belongs to one Xartofulakio */ 
 	@ManyToOne(fetch=FetchType.LAZY, 
             cascade= {CascadeType.PERSIST, CascadeType.MERGE}    
@@ -103,6 +107,15 @@ public class Transaction {
 	public void setDate(String date) {
 		this.date = date;
 	}
+	
+	//open an exw metoxes sth katoxh mou, closed an tis poulhsa kai den exw, pending otan mpainei mexri na katalavw ti einai
+	public String getState() {
+		return state;
+	}
+	
+	public void setState(String state) {
+		this.state = state;
+	}
 
 	public Transaction(String cmdType, String stock, String units, double price, String date) {
 		super();
@@ -111,8 +124,12 @@ public class Transaction {
 		Units = units;
 		this.price = price;
 		this.date = date;
+		this.state="pending";
 	}
-
+    public boolean isPending() {
+        return state.equalsIgnoreCase("pending");
+    }
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
