@@ -65,8 +65,15 @@ public class Xartofulakio {
 	public void setTrexousathesi(String trexousathesi) {
 		this.trexousathesi = trexousathesi;
 	}
+		
 	public Xartofulakio() {
 		super();
+	}
+	public Customer getCus() {
+		return cus;
+	}
+	public void setCus(Customer cus) {
+		this.cus = cus;
 	}
 	/**
 	 *Βοηθητικός Κώδικας που αρχικοποιεί τα στοιχεία του κάθε χαρτοφυλακίου,
@@ -109,6 +116,7 @@ public class Xartofulakio {
     public Set<Transaction> getTransactions() {
         return new HashSet<Transaction>(trans);
     }
+    /*Convert Xartofulakio to String. get Transactions as well*/
     
 	/**
 	 * Επιστρέφει τον αριθμό των συναλλαγών που δεν έχουν εκτελεστεί ακόμα
@@ -117,12 +125,12 @@ public class Xartofulakio {
 	 */
 
 	private int countPendingStocks() {
-        int pendingItems = 0;
+        int pendingTrans = 0;
         for (Transaction tran : trans) {
             if (tran.isPending()) {
-                pendingItems++;
+                pendingTrans++;
             }
         }
-        return pendingItems;
+        return pendingTrans;
     }
 }

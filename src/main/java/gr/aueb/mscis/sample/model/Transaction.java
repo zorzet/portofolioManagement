@@ -40,18 +40,17 @@ public class Transaction {
 	private String Stock;
 	
 	@Column(name = "Units", length = 512, nullable = false)
-	private String Units;
+	private int Units;
 	
 	@Column(name = "Price", length = 512, nullable = false)
 	private double price;
 	
 	@Column(name = "Date", length = 10, nullable = false)
 	private String date;
-	
-
-	
+		
 	@Column(name = "State", length = 10, nullable = false)
 	private String state;
+	
 	/* Each transaction belongs to one Xartofulakio */ 
 	@ManyToOne(fetch=FetchType.LAZY, 
             cascade= {CascadeType.PERSIST, CascadeType.MERGE}    
@@ -84,11 +83,11 @@ public class Transaction {
 		Stock = stock;
 	}
 
-	public String getUnits() {
+	public int getUnits() {
 		return Units;
 	}
 
-	public void setUnits(String units) {
+	public void setUnits(int units) {
 		Units = units;
 	}
 
@@ -117,11 +116,11 @@ public class Transaction {
 		this.state = state;
 	}
 
-	public Transaction(String cmdType, String stock, String units, double price, String date) {
+	public Transaction(String cmdType, String stock, int units, double price, String date) {
 		super();
-		CmdType = cmdType;
-		Stock = stock;
-		Units = units;
+		this.CmdType = cmdType;
+		this.Stock = stock;
+		this.Units = units;
 		this.price = price;
 		this.date = date;
 		this.state="pending";
@@ -137,7 +136,7 @@ public class Transaction {
 		result = prime * result + ((CmdType == null) ? 0 : CmdType.hashCode());
 		result = prime * result + ((Stock == null) ? 0 : Stock.hashCode());
 		result = prime * result + TransId;
-		result = prime * result + ((Units == null) ? 0 : Units.hashCode());
+		result = prime * result + Units;
 		result = prime * result + ((date == null) ? 0 : date.hashCode());
 		long temp;
 		temp = Double.doubleToLongBits(price);
@@ -145,40 +144,6 @@ public class Transaction {
 		return result;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Transaction other = (Transaction) obj;
-		if (CmdType == null) {
-			if (other.CmdType != null)
-				return false;
-		} else if (!CmdType.equals(other.CmdType))
-			return false;
-		if (Stock == null) {
-			if (other.Stock != null)
-				return false;
-		} else if (!Stock.equals(other.Stock))
-			return false;
-		if (TransId != other.TransId)
-			return false;
-		if (Units == null) {
-			if (other.Units != null)
-				return false;
-		} else if (!Units.equals(other.Units))
-			return false;
-		if (date == null) {
-			if (other.date != null)
-				return false;
-		} else if (!date.equals(other.date))
-			return false;
-		if (Double.doubleToLongBits(price) != Double.doubleToLongBits(other.price))
-			return false;
-		return true;
-	}
+	
 	
 }
