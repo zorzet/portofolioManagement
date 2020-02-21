@@ -29,9 +29,13 @@ public class Xartofulakio {
 	@Column(name = "trexousathesi", length = 512, nullable = false)
 	private String trexousathesi;
 	
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="Xartofulakiono")
-    private Xartofulakio X;
+	
+	
+	/*1 portofolio is associated with many transactions.*/
+    @OneToMany(orphanRemoval=true, 
+            cascade = CascadeType.ALL, 
+            mappedBy="Xartofulakio", fetch=FetchType.LAZY)    
+    private Set<Transaction> items = new HashSet<Transaction>();
     
 	public int getXid() {
 		return Xid;

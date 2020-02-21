@@ -15,7 +15,7 @@ public class PortofolioManagement {
 	public PortofolioManagement(EntityManager em) {
 		this.em = em;
 	}
-	
+	/*AddPosition*/
 /*	public Portofolio ShowPortofolio(Customer c) {
 		
 	}

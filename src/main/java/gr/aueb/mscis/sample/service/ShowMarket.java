@@ -11,9 +11,7 @@ import gr.aueb.mscis.sample.model.MarketsData;
 import gr.aueb.mscis.sample.persistence.JPAUtil;
 
 /**
- * CRUD operations and other functionality related to movies
- * 
- * @author bzafiris
+Περίπτωση Χρήσης 
  *
  */
 public class ShowMarket {
