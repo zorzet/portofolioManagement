@@ -27,7 +27,7 @@ public class Xartofulakio {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "XId", unique = true, nullable = false)
-	private int Xid;
+	private int XId;
 	
 	@Column(name = "trexousathesi", length = 512, nullable = false)
 	private String trexousathesi;
@@ -48,7 +48,7 @@ public class Xartofulakio {
      * @return Τον αριθμό του χαρτοφυλακίου
      */
 	public int getXid() {
-		return Xid;
+		return XId;
 	}
 	 /**
 	  * Θέτει τον αριθμό του χαρτοφυλακίου
@@ -56,7 +56,7 @@ public class Xartofulakio {
 	  * @param xid
 	  */
 	public void setXid(int xid) {
-		Xid = xid;
+		XId = xid;
 	}
 	
 	public String getTrexousathesi() {
@@ -87,7 +87,7 @@ public class Xartofulakio {
 	public Xartofulakio(int xid, String trexousathesi,int CustomerId,String aDT, String aFM, String name, String surname, String tel, String email, String birthDate,
 			int investAmount, String bankAccountNo) {
 		super();
-		this.Xid = xid;
+		this.XId = xid;
 		this.trexousathesi = trexousathesi;
 		cus.setADT(aDT);
 		cus.setAFM(aFM);
