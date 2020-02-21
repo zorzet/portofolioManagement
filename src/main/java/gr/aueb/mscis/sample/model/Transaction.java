@@ -17,7 +17,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.UniqueConstraint;
 import java.util.HashSet;
 
-/**Kataxoreite ka8e sunallagh pou ginetai gia ena pelath
+/**Kataxoreitai ka8e sunallagh pou ginetai gia ena pelath
  * Susxetizetai me th class Xartofulakio
  * */
 

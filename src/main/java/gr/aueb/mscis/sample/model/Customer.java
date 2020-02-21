@@ -18,8 +18,6 @@ import java.util.HashSet;
 @Table(name = "Customer",uniqueConstraints = {
         @UniqueConstraint(columnNames = "CustomerId")})
 public class Customer { 
-
-	
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -191,6 +189,25 @@ public class Customer {
 		return "Customer [CustomerId=" + CustomerId + ", ADT=" + ADT + ", AFM=" + AFM + ", Name=" + Name + ", Surname=" + Surname
 				+ ", Tel=" + Tel + ", email=" + email + ", BirthDate=" + BirthDate + ", InvestAmount=" + InvestAmount
 				+ "]";
+	}
+
+	public Customer(int CustomerId,String aDT, String aFM, String name, String surname, String tel, String email, String birthDate,
+			int investAmount, String bankAccountNo) {
+		super();
+		
+		this.ADT = aDT;
+		this.AFM = aFM;
+		this.Name = name;
+		this.Surname = surname;
+		this.Tel = tel;
+		this.email = email;
+		this.BirthDate = birthDate;
+		this.InvestAmount = investAmount;
+		this.BankAccountNo = bankAccountNo;
+	}
+
+	public Customer() {
+		super();
 	}
 
 }

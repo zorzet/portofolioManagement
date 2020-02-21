@@ -3,6 +3,7 @@ package gr.aueb.mscis.sample.model;
 
 import java.util.Set;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -15,6 +16,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.UniqueConstraint;
 import java.util.HashSet;
+import gr.aueb.mscis.sample.model.Customer;
+
 
 @Entity
 @Table(name="Xartofulakio",uniqueConstraints = {
@@ -29,32 +32,64 @@ public class Xartofulakio {
 	@Column(name = "trexousathesi", length = 512, nullable = false)
 	private String trexousathesi;
 	
+    @Embedded
+    private Customer cus = new Customer();
 	
 	
 	/*1 portofolio is associated with many transactions.*/
     @OneToMany(orphanRemoval=true, 
             cascade = CascadeType.ALL, 
             mappedBy="Xartofulakio", fetch=FetchType.LAZY)    
-    private Set<Transaction> items = new HashSet<Transaction>();
+    private Set<Transaction> trans = new HashSet<Transaction>();
+
     
+
 	public int getXid() {
 		return Xid;
 	}
-
-
 	public void setXid(int xid) {
 		Xid = xid;
 	}
-
-
 	public String getTrexousathesi() {
 		return trexousathesi;
 	}
-
-
 	public void setTrexousathesi(String trexousathesi) {
 		this.trexousathesi = trexousathesi;
 	}
-
+	public Xartofulakio() {
+		super();
+	}
+	/**
+	 *Βοηθητικός Κώδικας που αρχικοποιεί τα στοιχεία του κάθε χαρτοφυλακίου,
+	 *τόσο τεχνικές πληροφορίες όσο και προς τον ιδιοκτήτη του
+	 * @param xid
+	 * @param trexousathesi
+	 * @param CustomerId
+	 * @param aDT
+	 * @param aFM
+	 * @param name
+	 * @param surname
+	 * @param tel
+	 * @param email
+	 * @param birthDate
+	 * @param investAmount
+	 * @param bankAccountNo
+	 */
+	public Xartofulakio(int xid, String trexousathesi,int CustomerId,String aDT, String aFM, String name, String surname, String tel, String email, String birthDate,
+			int investAmount, String bankAccountNo) {
+		super();
+		this.Xid = xid;
+		this.trexousathesi = trexousathesi;
+		cus.setADT(aDT);
+		cus.setAFM(aFM);
+		cus.setBankAccountNo(bankAccountNo);
+		cus.setBirthDate(birthDate);
+		cus.setCustomerId(CustomerId);
+		cus.setEmail(email);
+		cus.setInvestAmount(investAmount);
+		cus.setName(name);
+		cus.setSurname(surname);
+		cus.setTel(tel);
+	}
 
 }
