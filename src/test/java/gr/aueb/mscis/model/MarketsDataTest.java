@@ -24,33 +24,33 @@ public class MarketsDataTest {
 	
 	@Test
 	public void test_Opening() {
-		float exp_opening = 3.123f;
+		double exp_opening = 3.123f;
 		m.setOpening(3.123f);
-		float opening = m.getOpening();
+		double opening = m.getOpening();
 		assertEquals(exp_opening, opening, 0.0f);
 	}
 
 	@Test
 	public void test_Closing() {
-		float exp_closing = 5.578f;
+		double exp_closing = 5.578f;
 		m.setClosing(5.578f);
-		float closing = m.getClosing();
-		assertEquals(exp_closing, closing, 0.0f);
+		double closing = m.getClosing();
+		assertEquals(exp_closing, closing, 0.0d);
 	}
 
 	@Test
 	public void test_Max() {
-		float exp_max = 8.234f;
+		double exp_max = 8.234f;
 		m.setMax(8.234f);
-		float max = m.getMax();
+		double max = m.getMax();
 		assertEquals(exp_max, max, 0.0f);
 	}
 	
 	@Test
 	public void test_Min() {
-		float exp_min = 1.987f;
+		double exp_min = 1.987f;
 		m.setMin(1.987f);
-		float min = m.getMin();
+		double min = m.getMin();
 		assertEquals(exp_min, min, 0.0f);
 	}
 }
