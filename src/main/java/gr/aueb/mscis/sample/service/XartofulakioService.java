@@ -106,6 +106,35 @@ public class XartofulakioService {
 	 * ENHMERWNEI TO STATE TOU TRANSACTION
 	 * PROS TO PARON VAZW TH SUNALLAGH SAN PENDING
 	 */
+/*	public Borrower createBorrower(Map<String, String> data) {
+		Borrower b = new Borrower();
+		try {
+			b.setBorrowerNo(Integer.valueOf(data
+					.get(BorrowerInfo.BORROWERNO_KEY)));
+			b.setFirstName(data.get(BorrowerInfo.FIRSTNAME_KEY));
+			b.setLastName(data.get(BorrowerInfo.LASTNAME_KEY));
+			b.setEmail(data.get(BorrowerInfo.EMAIL_KEY));
+			b.setTelephone(data.get(BorrowerInfo.TELEPHONE_KEY));
+			return b;
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	
+	*
+	*
+	*
+	*
+	*public boolean saveOrUpdateBorrower(Borrower b) {
+
+		if (b != null) {
+			em.merge(b);
+			return true;
+		}
+
+		return false;
+	}
+/	
 /*	public int transact(String cmdType, String stock, String units, double price, String date, Xartofulakio x) {
 		if (x== null) {
 			throw new Exception();

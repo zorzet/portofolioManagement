@@ -106,7 +106,7 @@ public class Metoxh {
    
     
     @OneToOne(orphanRemoval=true,cascade = CascadeType.ALL,
-    		  mappedBy="metoxh", fetch=FetchType.LAZY)
+    		  mappedBy="Metoxh", fetch=FetchType.LAZY)
     private Deiktes deikths;
 	
 	public Metoxh() {
@@ -121,6 +121,8 @@ public class Metoxh {
 		this.Closing = closing;
 		this.Beta=beta;
 		this.Volume=Volume;
+	
+	
 	}
 
 
