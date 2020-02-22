@@ -1,10 +1,14 @@
 package gr.aueb.mscis.sample.persistence; 
 
+import java.util.Date;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
-
+import gr.aueb.mscis.sample.model.Metoxh;
 import gr.aueb.mscis.sample.model.MarketsData;
+import gr.aueb.mscis.sample.model.Xartofulakio;
+
 
 public class Initializer {
 
@@ -54,6 +58,18 @@ public class Initializer {
         MarketsData temp30 = new MarketsData(30,"1/11/2017",1770.94,1781.5,1767.13,1780.84);
         MarketsData temp31 = new MarketsData(31,"1/12/2017",1783.33,1797.3,1774.43,1782.88);
         
+        Metoxh st1=new Metoxh(1, "AEGN" , "22/02/2020", 8.70, 8.60, 8.69,0.6,132000);
+        Metoxh st2=new Metoxh(2, "INTRK" , "22/02/2020", 0.9, 0.80, 0.88,0.0,69000);
+        Metoxh st3=new Metoxh(3, "MOH" , "22/02/2020", 20.6, 20.45, 20.52,1.3,80200);
+        Metoxh st4=new Metoxh(4, "ELPE" , "22/02/2020", 8.41, 8.20,8.36,0.75,123000);
+        Metoxh st5=new Metoxh(5, "OPAP" , "22/02/2020", 11.46,11.39,11.44,1.71,654000);
+        
+        Xartofulakio x1=new Xartofulakio(1, "created",1001,"AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",
+    			12345, "GE075 1234 1234 1234 1234");
+        Xartofulakio x2=new Xartofulakio(2, "created",2002,"AE12345", "123456789", "Marios","Papas", "2121212121", "msp@gmail.com", "16/07/1980",
+    			12000, "GE075 5678 5678 5678 5678");
+      
+        
         EntityManager em = JPAUtil.getCurrentEntityManager();
         EntityTransaction tx = em.getTransaction();
         tx.begin();
@@ -89,6 +105,15 @@ public class Initializer {
         em.persist(temp29);
         em.persist(temp30);
         em.persist(temp31);
+        
+        em.persist(st1);
+        em.persist(st2);
+        em.persist(st3);
+        em.persist(st4);
+        em.persist(st5);
+        
+        em.persist(x1);
+        em.persist(x2);
         
         tx.commit();
 	}
