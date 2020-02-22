@@ -28,7 +28,7 @@ public class Metoxh {
 	private String Name;
 
 	@Column(name = "date", nullable = false)
-	private Date date;
+	private String date;
 
 	@Column(name = "High", length = 10, nullable = false)
 	private Float High;
@@ -39,6 +39,12 @@ public class Metoxh {
 	@Column(name = "Closing", length = 10, nullable = false)
 	private Float Closing;
 
+	@Column(name = "Beta", length = 10, nullable = false)
+	private Float Beta;
+	
+	@Column(name = "Volume", length = 10, nullable = false)
+	private Float Volume;
+	
 	public int getStockId() {
 		return StockId;
 	}
@@ -55,11 +61,11 @@ public class Metoxh {
 		Name = name;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
@@ -87,16 +93,26 @@ public class Metoxh {
 		Closing = closing;
 	}
 
+	public Float getBeta() {
+		return Beta;
+	}
+
+	public void setBeta(Float beta) {
+		Beta = beta;
+	}
+
 	public Metoxh() {
 	}
 
-	public Metoxh(int id, String name, Date date, Float high, Float low, Float closing) {
+	public Metoxh(int id, String name, String date, Float high, Float low, Float closing,Float beta,Float Volume) {
 		this.StockId = id;
 		this.Name = name;
 		this.date = date;
 		this.High = high;
 		this.Low = low;
 		this.Closing = closing;
+		this.Beta=beta;
+		this.Volume=Volume;
 	}
 
 	@Override
@@ -112,44 +128,7 @@ public class Metoxh {
 		return result;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Metoxh other = (Metoxh) obj;
-		if (Closing == null) {
-			if (other.Closing != null)
-				return false;
-		} else if (!Closing.equals(other.Closing))
-			return false;
-		if (High == null) {
-			if (other.High != null)
-				return false;
-		} else if (!High.equals(other.High))
-			return false;
-		if (Low == null) {
-			if (other.Low != null)
-				return false;
-		} else if (!Low.equals(other.Low))
-			return false;
-		if (Name == null) {
-			if (other.Name != null)
-				return false;
-		} else if (!Name.equals(other.Name))
-			return false;
-		if (date == null) {
-			if (other.date != null)
-				return false;
-		} else if (!date.equals(other.date))
-			return false;
-		if (StockId != other.StockId)
-			return false;
-		return true;
-	}
+
 	/*Metoxh get_stock(String Name,Date date ) {
 	}
 	*/
