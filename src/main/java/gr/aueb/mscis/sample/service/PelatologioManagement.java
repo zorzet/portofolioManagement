@@ -15,9 +15,16 @@ public class PelatologioManagement {
 	public PelatologioManagement(EntityManager em) {
 		this.em = em;
 	}
-	/*AddPosition*/
-/*	public Portofolio ShowPortofolio(Customer c) {
-		
-	}
-*/
+/*Emfanise oles tis metoxes*/
+	
+	
+/*Gia mia metoxh emfanise olous tous deiktes*/
+	
+	
+/*Gia mia metoxh kane protash PPO*/
+	
+	
+/*Emfanise Plhorofories Metoxhs*/	
+
+	
 }
