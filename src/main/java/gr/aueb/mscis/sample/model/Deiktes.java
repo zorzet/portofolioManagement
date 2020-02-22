@@ -36,7 +36,7 @@ public class Deiktes {
 	public Deiktes() {
 	}
 
-	public Deiktes(Double ΜΚΟ15, Double ΜΚΟ80, Double yk20, Double xk20) {
+	public Deiktes(int Id, Double ΜΚΟ15, Double ΜΚΟ80, Double yk20, Double xk20) {
 		this.ΜΚΟ15 = ΜΚΟ15;
 		this.ΜΚΟ80 = ΜΚΟ80;
 		this.yk20 = yk20;
@@ -45,6 +45,10 @@ public class Deiktes {
 
 	public int getId() {
 		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public Double getΜΚΟ15() {

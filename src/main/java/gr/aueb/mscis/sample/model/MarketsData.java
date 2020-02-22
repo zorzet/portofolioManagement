@@ -29,7 +29,7 @@ public class MarketsData{
 	@Column(name = "date", nullable = false)
 	private String date;
 
-	@Column(name="Operning", nullable=false)
+	@Column(name="Opening", nullable=false)
 	private double Opening;
 	
 	@Column(name="Closing", nullable=false)
@@ -63,28 +63,28 @@ public class MarketsData{
 		return this.Opening;
 	}
 
-	public void setOpening(float Opening) {
+	public void setOpening(double Opening) {
 		this.Opening = Opening;
 	}
 	public double getClosing() {
 		return this.Closing;
 	}
 
-	public void setClosing(float Closing) {
+	public void setClosing(double Closing) {
 		this.Closing = Closing;
 	}
 	public double getMax() {
 		return this.Max;
 	}
 
-	public void setMax(float Max) {
+	public void setMax(double Max) {
 		this.Max = Max;
 	}	
 	public double getMin() {
 		return this.Min;
 	}
 
-	public void setMin(float Min) {
+	public void setMin(double Min) {
 		this.Min = Min;
 	}
 }

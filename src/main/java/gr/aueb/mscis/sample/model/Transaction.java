@@ -115,9 +115,12 @@ public class Transaction {
 	public void setState(String state) {
 		this.state = state;
 	}
-
-	public Transaction(String cmdType, String stock, int units, double price, String date) {
-		super();
+	
+	public Transaction() {
+	}
+	
+	public Transaction(int TransId, String cmdType, String stock, int units, double price, String date, String state) {
+		super();	
 		this.CmdType = cmdType;
 		this.Stock = stock;
 		this.Units = units;

@@ -10,10 +10,8 @@ import gr.aueb.mscis.sample.model.MarketsData;
 import gr.aueb.mscis.sample.model.Metoxh;
 import gr.aueb.mscis.sample.persistence.JPAUtil;
 
-/**
-Περίπτωση Χρήσης 5
- *
- */
+/** Περίπτωση Χρήσης 5 **/
+
 public class ShowMarketService {
 
 	EntityManager em;
@@ -22,18 +20,15 @@ public class ShowMarketService {
 		em = JPAUtil.getCurrentEntityManager();
 	}
 	
-/*Xtupaei to site kai gurnaei pisw times pou vazoume se ena string
- * Den gurnaei kati apo th vash*/
+	/* Xtupaei to site kai gurnaei pisw times pou vazoume se ena string
+	 * Den gurnaei kati apo th vash */
 	
 	public String getOnlineMarketImage(){
 		String MarketImage="something";
-		
-		
-		
 		return MarketImage;
 	}
 	
-	/*gurnaei th teleutaia timh tou xrhmatisthriou pou exei sth vash*/
+	/* gurnaei th teleutaia timh tou xrhmatisthriou pou exei sth vash */
 	public String getOfflineMarketImage(){
 		
 		String MarketImage;
@@ -47,13 +42,11 @@ public class ShowMarketService {
 		return MarketImage;
 	}
 	
-	/*diexnei */
 	public List<MarketsData> ShowMarketHistory(int days){
 		EntityTransaction tx = em.getTransaction();
 	    tx.begin();
 	    List<MarketsData> results = null;
-	    results = em.createQuery("select from MarketsData")
-				.getResultList();
+	    results = em.createQuery("select from MarketsData").getResultList();
 	    tx.commit();
 	    if(results==null) {
 			throw new java.lang.RuntimeException("NO RECORDS FOUND");

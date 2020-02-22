@@ -103,6 +103,13 @@ public class Metoxh {
 		Beta = beta;
 	}
 
+	public int getVolume() {
+		return Volume;
+	}
+
+	public void setVolume(int volume) {
+		Volume = volume;
+	}
    
     
     @OneToOne(orphanRemoval=true,cascade = CascadeType.ALL,

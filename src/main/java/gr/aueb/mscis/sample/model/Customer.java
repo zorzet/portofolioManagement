@@ -188,7 +188,7 @@ public class Customer {
 	public String toString() {
 		return "Customer [CustomerId=" + CustomerId + ", ADT=" + ADT + ", AFM=" + AFM + ", Name=" + Name + ", Surname=" + Surname
 				+ ", Tel=" + Tel + ", email=" + email + ", BirthDate=" + BirthDate + ", InvestAmount=" + InvestAmount
-				+ "]";
+				+ ", BankAccountNo=" + BankAccountNo + "]";
 	}
 
 	public Customer(int CustomerId,String aDT, String aFM, String name, String surname, String tel, String email, String birthDate,

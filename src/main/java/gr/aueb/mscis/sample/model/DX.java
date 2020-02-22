@@ -51,6 +51,8 @@ public class DX {
             mappedBy="DXno", fetch=FetchType.LAZY)
     private Set<Xartofulakio> loans = new HashSet<Xartofulakio>();
 	
+	public DX() {
+	}
 	
 	public int getDXId() {
 		return DXId;
@@ -115,8 +117,16 @@ public class DX {
 		BirthDate = birthDate;
 	}
 
-
-
+	public DX(int DXId,String aDT, String aFM, String name, String surname, String tel, String email, String birthDate) {	
+		this.ADT = aDT;
+		this.AFM = aFM;
+		this.Name = name;
+		this.Surname = surname;
+		this.Tel = tel;
+		this.email = email;
+		this.BirthDate = birthDate;
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
