@@ -5,20 +5,20 @@ import java.util.Iterator;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
-
-import antlr.collections.List;
+import java.util.List;
 import gr.aueb.mscis.sample.model.MarketsData;
+import gr.aueb.mscis.sample.model.Metoxh;
 import gr.aueb.mscis.sample.persistence.JPAUtil;
 
 /**
 Περίπτωση Χρήσης 5
  *
  */
-public class ShowMarket {
+public class ShowMarketService {
 
 	EntityManager em;
 	
-	public ShowMarket() {
+	public ShowMarketService() {
 		em = JPAUtil.getCurrentEntityManager();
 	}
 	
@@ -46,22 +46,18 @@ public class ShowMarket {
 		tx.commit();
 		return MarketImage;
 	}
-	/**/
-	public String ShowMarketHistory(int days){
-		String history="somthing";
+	
+	/*diexnei */
+	public List<MarketsData> ShowMarketHistory(int days){
 		EntityTransaction tx = em.getTransaction();
 	    tx.begin();
-	    Query query = null;
-	    query = em.createNativeQuery("select from MarketsData");
-	    query.executeUpdate();
-	    //history=(String) query.setMaxResults(days);
-	    List stuList=(List) query.getResultList();
-	    Iterator stuIterator=((java.util.List) stuList).iterator();
-	    while(stuIterator.hasNext()){
-	    	MarketsData md=(MarketsData)stuIterator.next();
-	    	
-	    }	
+	    List<MarketsData> results = null;
+	    results = em.createQuery("select from MarketsData")
+				.getResultList();
 	    tx.commit();
-		return history;
+	    if(results==null) {
+			throw new java.lang.RuntimeException("NO RECORDS FOUND");
+		}
+		return results;
 	}
 }
