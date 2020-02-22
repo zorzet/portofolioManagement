@@ -3,6 +3,7 @@ package gr.aueb.mscis.sample.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -10,6 +11,7 @@ import javax.persistence.Table;
 import javax.persistence.CascadeType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.UniqueConstraint;
 import java.util.*;
 import java.util.HashSet;
@@ -31,19 +33,19 @@ public class Metoxh {
 	private String date;
 
 	@Column(name = "High", length = 10, nullable = false)
-	private Float High;
+	private Double High;
 	
 	@Column(name = "Low", length = 10, nullable = false)
-	private Float Low;
+	private Double Low;
 	
 	@Column(name = "Closing", length = 10, nullable = false)
-	private Float Closing;
+	private Double Closing;
 
 	@Column(name = "Beta", length = 10, nullable = false)
-	private Float Beta;
+	private Double Beta;
 	
 	@Column(name = "Volume", length = 10, nullable = false)
-	private Float Volume;
+	private int Volume;
 	
 	public int getStockId() {
 		return StockId;
@@ -69,42 +71,48 @@ public class Metoxh {
 		this.date = date;
 	}
 
-	public Float getHigh() {
+	public Double getHigh() {
 		return High;
 	}
 
-	public void setHigh(Float high) {
+	public void setHigh(Double high) {
 		High = high;
 	}
 
-	public Float getLow() {
+	public Double getLow() {
 		return Low;
 	}
 
-	public void setLow(Float low) {
+	public void setLow(Double low) {
 		Low = low;
 	}
 
-	public Float getClosing() {
+	public Double getClosing() {
 		return Closing;
 	}
 
-	public void setClosing(Float closing) {
+	public void setClosing(Double closing) {
 		Closing = closing;
 	}
 
-	public Float getBeta() {
+	public Double getBeta() {
 		return Beta;
 	}
 
-	public void setBeta(Float beta) {
+	public void setBeta(Double beta) {
 		Beta = beta;
 	}
 
+   
+    
+    @OneToOne(orphanRemoval=true,cascade = CascadeType.ALL,
+    		  mappedBy="metoxh", fetch=FetchType.LAZY)
+    private Deiktes deikths;
+	
 	public Metoxh() {
 	}
 
-	public Metoxh(int id, String name, String date, Float high, Float low, Float closing,Float beta,Float Volume) {
+	public Metoxh(int id, String name, String date, Double high, Double low, Double closing,Double beta,int Volume) {
 		this.StockId = id;
 		this.Name = name;
 		this.date = date;
@@ -115,21 +123,6 @@ public class Metoxh {
 		this.Volume=Volume;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((Closing == null) ? 0 : Closing.hashCode());
-		result = prime * result + ((High == null) ? 0 : High.hashCode());
-		result = prime * result + ((Low == null) ? 0 : Low.hashCode());
-		result = prime * result + ((Name == null) ? 0 : Name.hashCode());
-		result = prime * result + ((date == null) ? 0 : date.hashCode());
-		result = prime * result + StockId;
-		return result;
-	}
 
 
-	/*Metoxh get_stock(String Name,Date date ) {
-	}
-	*/
 }
