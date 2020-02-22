@@ -1,6 +1,6 @@
 package gr.aueb.mscis.sample.service; 
 
-/* Περίπτωση Χρήσης 2 */
+/* Περίπτωση Χρήσης 6 */
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -8,11 +8,11 @@ import javax.persistence.Query;
 
 
 
-public class PortofolioManagement {
+public class PelatologioManagement {
 
 	private EntityManager em;
 
-	public PortofolioManagement(EntityManager em) {
+	public PelatologioManagement(EntityManager em) {
 		this.em = em;
 	}
 	/*AddPosition*/

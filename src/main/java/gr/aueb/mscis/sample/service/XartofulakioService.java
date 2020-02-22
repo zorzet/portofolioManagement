@@ -1,6 +1,6 @@
 package gr.aueb.mscis.sample.service;
 
-/* Περίπτωση Χρήσης 6 */
+/* Περίπτωση Χρήσης 2 */
 
 import java.util.Iterator;
 import java.util.List;
@@ -106,7 +106,7 @@ public class XartofulakioService {
 	 * ENHMERWNEI TO STATE TOU TRANSACTION
 	 * PROS TO PARON VAZW TH SUNALLAGH SAN PENDING
 	 */
-	public int transact(String cmdType, String stock, String units, double price, String date, Xartofulakio x) {
+/*	public int transact(String cmdType, String stock, String units, double price, String date, Xartofulakio x) {
 		if (x== null) {
 			throw new Exception();
 		}
@@ -119,10 +119,11 @@ public class XartofulakioService {
 	      .setParameter(3, trans.getUnits()))
 		  .setParameter(3, trans.getUnits())
 	      .executeUpdate();
+	      
 		em.persist(trans);
 		tx.commit();
 		
 		return trans.getTransId();
-
 	}
+	*/
 }
