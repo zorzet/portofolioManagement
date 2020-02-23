@@ -22,9 +22,13 @@ public class Xartofulakio {
     @Embedded
     private Customer cus = new Customer();
 	/**/
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="Dxno")
-    private DX dx;
+
+
+	@ManyToOne(fetch=FetchType.LAZY, 
+            cascade= {CascadeType.PERSIST, CascadeType.MERGE}    
+            ) 
+    @JoinColumn(name="DXno")
+    DX dx;
     
     public DX getDX() {
     	return this.dx;
@@ -35,7 +39,7 @@ public class Xartofulakio {
 	/*1 portofolio is associated with many transactions.*/
     @OneToMany(orphanRemoval=true, 
             cascade = CascadeType.ALL, 
-            mappedBy="DXId", fetch=FetchType.LAZY)    
+            mappedBy="Xartofulakio", fetch=FetchType.LAZY)    
     private Set<Transaction> trans = new HashSet<Transaction>();
 
     /**
