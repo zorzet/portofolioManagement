@@ -21,7 +21,6 @@ public class Xartofulakio {
 	
     @Embedded
     private Customer cus = new Customer();
-	/**/
 
     public DX getDX() {
     	return this.dx;

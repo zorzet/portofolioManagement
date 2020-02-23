@@ -95,7 +95,7 @@ public class MetoxhTest {
 		double exp_Closing = 12.33;
 		double exp_Beta = 12.33;
 		int exp_volume = 500;
-		Metoxh test = new Metoxh(1, "ACC", "12.02.2020", 12.33, 12.33, 12.33, 12.33, 500);
+		Metoxh test = new Metoxh("ACC", "12.02.2020", 12.33, 12.33, 12.33, 12.33, 500);
 		String name = test.getName();
 		String date = test.getDate();
 		double High = test.getHigh();
