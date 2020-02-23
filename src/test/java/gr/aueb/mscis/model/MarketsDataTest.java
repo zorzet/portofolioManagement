@@ -61,7 +61,7 @@ public class MarketsDataTest {
 		double exp_closing = 5.578;
 		double exp_max = 8.234;
 		double exp_min = 1.987;
-		MarketsData test = new MarketsData(1, "20.02.2020", 3.123, 5.578, 8.234, 1.987);
+		MarketsData test = new MarketsData("20.02.2020", 3.123, 5.578, 8.234, 1.987);
 		String date = test.getDate();
 		double opening = test.getOpening();
 		double closing = test.getClosing();

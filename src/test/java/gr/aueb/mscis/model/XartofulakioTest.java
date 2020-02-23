@@ -33,8 +33,8 @@ public class XartofulakioTest {
 	
 	@Test
 	public void test_Customer() {
-		Customer exp_customer = new Customer(10, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
-		x.setCus(new Customer(10, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890"));
+		Customer exp_customer = new Customer("AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
+		x.setCus(new Customer("AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890"));
 		Customer customer = x.getCus();
 		assertEquals(exp_customer, customer);
 	}
@@ -52,7 +52,7 @@ public class XartofulakioTest {
 		String exp_BirthDate = "26.05.1990";
 		double exp_InvestAmount = 5000;
 		String exp_BankAccountNo = "1234567890";
-		Xartofulakio test = new Xartofulakio(1, "ΑΔΕΙΟ ΧΑΡΤΟΦΥΛΑΚΙΟ", 10, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
+		Xartofulakio test = new Xartofulakio("ΑΔΕΙΟ ΧΑΡΤΟΦΥΛΑΚΙΟ", 10, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
 		String TrexousaThesi = test.getTrexousathesi();
 		int CustomerId = test.getCus().getCustomerId();
 		String ADT = test.getCus().getADT();
@@ -79,7 +79,7 @@ public class XartofulakioTest {
 	
 	@Test
 	public void test_countPendingStocks() {
-		Xartofulakio test = new Xartofulakio(1, "ΑΔΕΙΟ ΧΑΡΤΟΦΥΛΑΚΙΟ", 10, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
+		Xartofulakio test = new Xartofulakio("ΑΔΕΙΟ ΧΑΡΤΟΦΥΛΑΚΙΟ", 10, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
 		int pend = test.countPendingStocks();
 		assertEquals(1, pend);
 	}

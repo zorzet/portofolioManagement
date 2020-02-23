@@ -3,10 +3,10 @@ package gr.aueb.mscis.sample.persistence;
 import java.util.Date;
 
 import javax.persistence.*;
-import gr.aueb.mscis.sample.model.Metoxh;
 import gr.aueb.mscis.sample.model.MarketsData;
+import gr.aueb.mscis.sample.model.Metoxh;
 import gr.aueb.mscis.sample.model.Xartofulakio;
-
+import gr.aueb.mscis.sample.model.Customer;
 
 public class Initializer {
 	
@@ -76,6 +76,8 @@ public class Initializer {
     			12345, "GE075 1234 1234 1234 1234");
         Xartofulakio x2=new Xartofulakio("created",2002,"AE12345", "123456789", "Marios","Papas", "2121212121", "msp@gmail.com", "16/07/1980",
     			12000, "GE075 5678 5678 5678 5678");
+        
+        Customer c1 = new Customer("AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
       
         EntityManager em = JPAUtil.getCurrentEntityManager();
         EntityTransaction tx = em.getTransaction();
@@ -121,6 +123,8 @@ public class Initializer {
         
         em.persist(x1);
         em.persist(x2);
+        
+        //em.persist(c1);
         
         tx.commit();
 	}

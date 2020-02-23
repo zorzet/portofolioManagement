@@ -3,23 +3,8 @@ package gr.aueb.mscis.sample.service;
 /* Περίπτωση Χρήσης 4 */ 
 /*ΕΧΩ ΠΑΡΕΙ ΤΗ ΠΑΡΑΔΟΧΗ ΟΤΙ Ο ΠΙΝΑΚΑΣ ΤΩΝ ΜΕΤΟΧΩΝ ΕΙΝΑΙ ΕΝΗΜΕΡΩΜΕΝΟΣ*/
 
-import java.util.Set;
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.EntityManager;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.CascadeType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.UniqueConstraint;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
+import javax.persistence.*;
 
 import gr.aueb.mscis.sample.model.Deiktes;
 import gr.aueb.mscis.sample.model.Metoxh;
@@ -38,11 +23,11 @@ public class UpdateIndicatorsService {
 		List<Metoxh> mtxlist=null;
 	    mtxlist = em
 				.createQuery(
-						"select from Metoxh m where m.StockId like :StockId ")
+						"select m from Metoxh m where m.StockId like :StockId")
 				.setParameter("StockId", StockId).
 				setMaxResults(14)
 				.getResultList();
-	    if(mtxlist==null) {
+	    if(mtxlist.isEmpty()) {
 			throw new java.lang.RuntimeException("NO RECORDS FOUND");
 		}
 
@@ -66,7 +51,7 @@ public class UpdateIndicatorsService {
 			.setParameter("StockId", StockId).
 			setMaxResults(79)
 			.getResultList();
-    if(mtxlist==null) {
+    if(mtxlist.isEmpty()) {
 		throw new java.lang.RuntimeException("NO RECORDS FOUND");
 	}
 
