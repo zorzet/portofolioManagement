@@ -85,7 +85,7 @@ EntityManager em;
 	public void showUnitsofStocksperPortofolio(int StockId, int XId,int CusId) {
 		//PARE OLA TA XARTOFULAKIA TOU DX
 		List<Xartofulakio> xlist=null;
-		xlist= em.createQuery("select x from Xartofulakio x where x.XId like :DXId ").setParameter("DXId", DXId)
+		xlist= em.createQuery("select x from Xartofulakio x where x.XId like :DXId ").setParameter("DXId", XId)
 				.getResultList();
 		//VRES AUTO TOU PELATH
 		Xartofulakio x=null;
