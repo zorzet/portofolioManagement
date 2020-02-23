@@ -42,6 +42,10 @@ public class Xartofulakio {
             mappedBy="Xartofulakio", fetch=FetchType.LAZY)    
     private Set<Transaction> trans = new HashSet<Transaction>();
 
+
+
+ 
+    }
     /**
      * Επιστρεφει τον αριθμό του χαρτοφυλακίου
      * που προσδιοριζει μοναδικά κάθε χαρτοφυλάκιο.

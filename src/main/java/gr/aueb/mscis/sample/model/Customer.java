@@ -46,7 +46,7 @@ public class Customer {
 	private String BirthDate;
 	
 	@Column(name="InvestAmount", nullable = false)
-	private int InvestAmount;
+	private double InvestAmount;
 	
 	@Column(name="BankAccountNo", nullable = false)
 	private String BankAccountNo;
@@ -116,11 +116,11 @@ public class Customer {
 		BirthDate = birthDate;
 	}
 
-	public int getInvestAmount() {
+	public double getInvestAmount() {
 		return InvestAmount;
 	}
 
-	public void setInvestAmount(int investAmount) {
+	public void setInvestAmount(double investAmount) {
 		InvestAmount = investAmount;
 	}
 

@@ -46,7 +46,7 @@ public class ShowMarketService {
 		EntityTransaction tx = em.getTransaction();
 	    tx.begin();
 	    List<MarketsData> results = null;
-	    results = em.createQuery("select from MarketsData").getResultList();
+	    results = em.createQuery("select m from MarketsData ", MarketsData.class).getResultList();
 	    tx.commit();
 	    if(results==null) {
 			throw new java.lang.RuntimeException("NO RECORDS FOUND");
