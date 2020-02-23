@@ -25,8 +25,16 @@ public class Deiktes {
 	@JoinColumn(name="id", referencedColumnName="StockId")
 	private Metoxh metoxh;
 	 
-	@Column(name = "ΜΚΟ15", length = 50, nullable = false)
-	private Double ΜΚΟ15;
+	public Metoxh getMetoxh() {
+		return this.metoxh;
+	}
+	public void setMetoxh(Metoxh metoxh) {
+		this.metoxh=metoxh;
+	}
+	
+	
+	@Column(name = "MKO30", length = 50, nullable = false)
+	private Double MKO30;
 
 	@Column(name = "ΜΚΟ80", length = 50, nullable = false)
 	private Double ΜΚΟ80;
@@ -43,8 +51,8 @@ public class Deiktes {
 	public Deiktes() {
 	}
 
-	public Deiktes(int Id, Double ΜΚΟ15, Double ΜΚΟ80, Double yk20, Double xk20) {
-		this.ΜΚΟ15 = ΜΚΟ15;
+	public Deiktes(int Id, Double MKO30, Double ΜΚΟ80, Double yk20, Double xk20) {
+		this.MKO30 = MKO30;
 		this.ΜΚΟ80 = ΜΚΟ80;
 		this.yk20 = yk20;
 		this.xk20 = xk20;
@@ -58,12 +66,12 @@ public class Deiktes {
 		this.id = id;
 	}
 
-	public Double getΜΚΟ15() {
-		return ΜΚΟ15;
+	public Double getMKO30() {
+		return MKO30;
 	}
 
-	public void setΜΚΟ15(Double μΚΟ15) {
-		ΜΚΟ15 = μΚΟ15;
+	public void setMKO30(Double MKO30) {
+		MKO30 = MKO30;
 	}
 
 	public Double getΜΚΟ80() {
