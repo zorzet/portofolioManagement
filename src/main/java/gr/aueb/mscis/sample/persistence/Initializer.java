@@ -70,7 +70,7 @@ public class Initializer {
         Metoxh st2=new Metoxh("INTRK" , "22/02/2020", 0.9, 0.80, 0.88,0.0,69000);
         Metoxh st3=new Metoxh("MOH" , "22/02/2020", 20.6, 20.45, 20.52,1.3,80200);
         Metoxh st4=new Metoxh("ELPE" , "22/02/2020", 8.41, 8.20,8.36,0.75,123000);
-        Metoxh st5=new Metoxh("OPAP" , "22/02/2020", 11.46,11.39,11.44,1.71,654000);
+        Metoxh st5=new Metoxh("OPAP" , "22/02/2020", 11.46,11.39,0.0,1.71,654000);
         
         Xartofulakio x1=new Xartofulakio("created",1001,"AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",
     			12345, "GE075 1234 1234 1234 1234");

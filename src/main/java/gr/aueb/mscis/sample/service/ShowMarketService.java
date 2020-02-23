@@ -16,8 +16,8 @@ public class ShowMarketService {
 
 	EntityManager em;
 	
-	public ShowMarketService() {
-		em = JPAUtil.getCurrentEntityManager();
+	public ShowMarketService(EntityManager em) {
+		this.em = em;
 	}
 	
 	/* Xtupaei to site kai gurnaei pisw times pou vazoume se ena string
@@ -46,9 +46,9 @@ public class ShowMarketService {
 		EntityTransaction tx = em.getTransaction();
 	    tx.begin();
 	    List<MarketsData> results = null;
-	    results = em.createQuery("select m from MarketsData ", MarketsData.class).getResultList();
+	    results = em.createQuery("select m from MarketsData ", MarketsData.class).setMaxResults(days).getResultList();
 	    tx.commit();
-	    if(results==null) {
+	    if(results.isEmpty()) {
 			throw new java.lang.RuntimeException("NO RECORDS FOUND");
 		}
 	    

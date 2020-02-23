@@ -4,7 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
 import org.junit.After;
-import org.junit.Assert;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -18,9 +18,9 @@ public class ShowMarketServiceTest {
 	
 	@Before
 	public void setup(){
-		em = JPAUtil.getCurrentEntityManager();
 		Initializer dataHelper = new Initializer();
 		dataHelper.prepareData();
+		em = JPAUtil.getCurrentEntityManager();
 	}
 	
 	@After
@@ -29,7 +29,18 @@ public class ShowMarketServiceTest {
 	}
 	
 	@Test
+	public void test_getOnlineMarketImage() {
+		String exp_result="something";
+		ShowMarketService s = new ShowMarketService(em);
+		String result = s.getOnlineMarketImage();
+		assertEquals(exp_result,result);
+	}
+	
+	@Test
 	public void test_getOfflineMarketImage() {
-		
+		String exp_result="something";
+		ShowMarketService s = new ShowMarketService(em);
+		String result = s.getOnlineMarketImage();
+		assertEquals(exp_result,result);
 	}
 }

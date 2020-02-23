@@ -47,6 +47,10 @@ public class Metoxh {
 	@Column(name = "Volume", length = 10, nullable = false)
 	private int Volume;
 	
+    @OneToOne(orphanRemoval=true,cascade = CascadeType.MERGE,
+     		  mappedBy="metoxh", fetch=FetchType.LAZY)
+      private Deiktes deikths;
+    
 	public int getStockId() {
 		return StockId;
 	}
@@ -110,11 +114,6 @@ public class Metoxh {
 	public void setVolume(int volume) {
 		Volume = volume;
 	}
-   
-    
-    @OneToOne(orphanRemoval=true,cascade = CascadeType.MERGE,
-   		  mappedBy="metoxh", fetch=FetchType.LAZY)
-    private Deiktes deikths;
 	
     public void setDeiktes(Deiktes deiktes) {
         this.deikths = deiktes;

@@ -75,7 +75,7 @@ public class UpdateIndicatorsService {
 			.setParameter("StockId", StockId).
 			setMaxResults(19)
 			.getResultList();
-    if(mtxlist==null) {
+    if(mtxlist.isEmpty()) {
 		throw new java.lang.RuntimeException("NO RECORDS FOUND");
 	}
 
@@ -99,7 +99,7 @@ public class UpdateIndicatorsService {
 			.setParameter("StockId", StockId).
 			setMaxResults(19)
 			.getResultList();
-    if(mtxlist==null) {
+    if(mtxlist.isEmpty()) {
 		throw new java.lang.RuntimeException("NO RECORDS FOUND");
 	}
 

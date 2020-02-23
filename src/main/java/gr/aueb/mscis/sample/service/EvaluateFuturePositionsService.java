@@ -14,10 +14,10 @@ import gr.aueb.mscis.sample.persistence.JPAUtil;
 /* Περίπτωση Χρήσης 3 */
 public class EvaluateFuturePositionsService {
 
-EntityManager em;
+	EntityManager em;
 	
-	public EvaluateFuturePositionsService() {
-		em = JPAUtil.getCurrentEntityManager();
+	public EvaluateFuturePositionsService(EntityManager em) {
+		this.em = em;
 	}
 	
 	
@@ -33,6 +33,7 @@ EntityManager em;
 		}
 		return results;
 	}
+	
 	/*Emfanise oles tis metoxes*/
 	public void showStocks() {
 		List <Metoxh> list=findAllMotoxes();
@@ -41,6 +42,7 @@ EntityManager em;
             		           " "+metoxh.getHigh()+" "+metoxh.getLow());
         }
 	}
+	
 	/*vres mia metoxh */
 	public Metoxh findMetoxh(int StockId) {
 		Metoxh results=null;
