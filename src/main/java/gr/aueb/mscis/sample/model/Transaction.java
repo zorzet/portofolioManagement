@@ -23,7 +23,7 @@ import java.util.HashSet;
 
 
 @Entity
-@Table(name="Xartofulakio",uniqueConstraints = {
+@Table(name="Transactions",uniqueConstraints = {
         @UniqueConstraint(columnNames = "TransId")})
 public class Transaction {
 	
