@@ -26,8 +26,8 @@ public class DeiktesTest {
 	@Test
 	public void test_MKO15() {
 		double exp_MKO15 = 12.33;
-		d.setΜΚΟ15(12.33);
-		double MKO15 = d.getΜΚΟ15();
+		d.setMKO15(12.33);
+		double MKO15 = d.getMKO15();
 		assertEquals(exp_MKO15, MKO15, 0.0);
 	}
 	
@@ -62,7 +62,7 @@ public class DeiktesTest {
 		double exp_yk20 = 12.33;
 		double exp_xk20 = 12.33;
 		Deiktes test = new Deiktes(1, 12.33, 12.33, 12.33, 12.33);
-		double ΜΚΟ15 = test.getΜΚΟ15();
+		double ΜΚΟ15 = test.getMKO15();
 		double ΜΚΟ80 = test.getΜΚΟ80();
 		double yk20 = test.getYk20();
 		double xk20 = test.getXk20();

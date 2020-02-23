@@ -79,6 +79,8 @@ public class XartofulakioTest {
 	
 	@Test
 	public void test_countPendingStocks() {
-		
+		Xartofulakio test = new Xartofulakio(1, "ΑΔΕΙΟ ΧΑΡΤΟΦΥΛΑΚΙΟ", 10, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
+		int pend = test.countPendingStocks();
+		assertEquals(1, pend);
 	}
 }

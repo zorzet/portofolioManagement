@@ -1,7 +1,6 @@
 package gr.aueb.mscis.model;
 
 import static org.junit.Assert.*;
-
 import org.junit.*;
 
 import gr.aueb.mscis.sample.model.Deiktes;
@@ -78,6 +77,13 @@ public class MetoxhTest {
 		m.setVolume(500);
 		int Volume = m.getVolume();
 		assertEquals(exp_Volume, Volume);
+	}
+	
+	@Test
+	public void test_Deiktes() {
+		Deiktes exp_deiktes = new Deiktes(1, 12.33, 12.33, 12.33, 12.33);
+		m.setDeiktes(new Deiktes(1, 12.33, 12.33, 12.33, 12.33));
+		Deiktes deiktes = m.getDeiktes();
 	}
 	
 	@Test

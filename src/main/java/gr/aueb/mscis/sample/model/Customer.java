@@ -1,25 +1,12 @@
 package gr.aueb.mscis.sample.model;
 
-import java.util.Date;
+import javax.persistence.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.CascadeType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.UniqueConstraint;
-import java.util.HashSet;
-
-@Entity
+@Embeddable
 @Table(name = "Customer",uniqueConstraints = {
         @UniqueConstraint(columnNames = "CustomerId")})
 public class Customer { 
 	
-	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "CustomerId", unique = true, nullable = false)
 	private int CustomerId;
@@ -210,7 +197,7 @@ public class Customer {
 		this.InvestAmount = investAmount;
 		this.BankAccountNo = bankAccountNo;
 	}
-
+	
 	public Customer() {
 		super();
 	}

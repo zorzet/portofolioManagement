@@ -131,22 +131,5 @@ public class Transaction {
     public boolean isPending() {
         return state.equalsIgnoreCase("pending");
     }
-	
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((CmdType == null) ? 0 : CmdType.hashCode());
-		result = prime * result + ((Stock == null) ? 0 : Stock.hashCode());
-		result = prime * result + TransId;
-		result = prime * result + Units;
-		result = prime * result + ((date == null) ? 0 : date.hashCode());
-		long temp;
-		temp = Double.doubleToLongBits(price);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		return result;
-	}
-
-	
-	
+		
 }

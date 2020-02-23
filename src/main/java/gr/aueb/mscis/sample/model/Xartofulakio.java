@@ -2,22 +2,9 @@ package gr.aueb.mscis.sample.model;
 //leipoun toString kai equals 
 
 import java.util.Set;
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.CascadeType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.UniqueConstraint;
+import javax.persistence.*;
 import java.util.HashSet;
 import gr.aueb.mscis.sample.model.Customer;
-
 
 @Entity
 @Table(name="Xartofulakio",uniqueConstraints = {
@@ -124,7 +111,7 @@ public class Xartofulakio {
 	 * @return
 	 */
 
-	private int countPendingStocks() {
+	public int countPendingStocks() {
         int pendingTrans = 0;
         for (Transaction tran : trans) {
             if (tran.isPending()) {
