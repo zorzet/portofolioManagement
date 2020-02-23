@@ -18,7 +18,7 @@ import java.util.Set;
 @Entity
 @Table(name = "DX",uniqueConstraints = {
         @UniqueConstraint(columnNames = "DXId")})
-public class DX { 
+public class DX extends User{ 
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

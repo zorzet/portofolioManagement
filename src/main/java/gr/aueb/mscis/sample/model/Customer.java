@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Embeddable
 @Table(name = "Customer",uniqueConstraints = {
         @UniqueConstraint(columnNames = "CustomerId")})
-public class Customer { 
+public class Customer extends User{ 
 	
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "CustomerId", unique = true, nullable = false)
