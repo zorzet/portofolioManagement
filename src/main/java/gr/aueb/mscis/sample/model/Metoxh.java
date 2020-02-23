@@ -22,7 +22,6 @@ import java.util.HashSet;
 public class Metoxh {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "StockId", unique = true, nullable = false)
 	private int StockId;
 	
@@ -116,6 +115,13 @@ public class Metoxh {
     		  mappedBy="Metoxh", fetch=FetchType.LAZY)
     private Deiktes deikths;
 	
+    public void setDeiktes(Deiktes deiktes) {
+        this.deikths = deiktes;
+    }
+    public Deiktes getDeiktes() {
+    	return this.deikths;
+    }
+    
 	public Metoxh() {
 	}
 
