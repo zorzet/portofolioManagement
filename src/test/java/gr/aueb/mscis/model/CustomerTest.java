@@ -81,10 +81,10 @@ public class CustomerTest {
 	
 	@Test
 	public void test_InvestAmount() {
-		int exp_InvestAmount = 5000;
+		double exp_InvestAmount = 5000;
 		c.setInvestAmount(5000);
-		int InvestAmount = c.getInvestAmount();
-		assertEquals(exp_InvestAmount, InvestAmount);
+		double InvestAmount = c.getInvestAmount();
+		assertEquals(exp_InvestAmount, InvestAmount, 0.0);
 	}
 	
 	@Test
@@ -110,7 +110,7 @@ public class CustomerTest {
 		String exp_Tel = "6999999999";
 		String exp_Email = "mpapadopoulou@gmail.com";
 		String exp_BirthDate = "26.05.1990";
-		int exp_InvestAmount = 5000;
+		double exp_InvestAmount = 5000;
 		String exp_BankAccountNo = "1234567890";
 		Customer test = new Customer(1, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
 		String ADT = test.getADT();
@@ -120,7 +120,7 @@ public class CustomerTest {
 		String Tel = test.getTel();
 		String Email = test.getEmail();
 		String BirthDate = test.getBirthDate();
-		int InvestAmount = test.getInvestAmount();
+		double InvestAmount = test.getInvestAmount();
 		String BankAccountNo = test.getBankAccountNo();
 		assertEquals(exp_ADT, ADT);
 		assertEquals(exp_AFM, AFM);
@@ -129,7 +129,7 @@ public class CustomerTest {
 		assertEquals(exp_Tel, Tel);
 		assertEquals(exp_Email, Email);
 		assertEquals(exp_BirthDate, BirthDate);
-		assertEquals(exp_InvestAmount, InvestAmount);
+		assertEquals(exp_InvestAmount, InvestAmount, 0.0);
 		assertEquals(exp_BankAccountNo, BankAccountNo);
 	}
 	

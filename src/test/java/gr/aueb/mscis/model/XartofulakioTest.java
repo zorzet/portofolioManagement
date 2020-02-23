@@ -50,7 +50,7 @@ public class XartofulakioTest {
 		String exp_Tel = "6999999999";
 		String exp_Email = "mpapadopoulou@gmail.com";
 		String exp_BirthDate = "26.05.1990";
-		int exp_InvestAmount = 5000;
+		double exp_InvestAmount = 5000;
 		String exp_BankAccountNo = "1234567890";
 		Xartofulakio test = new Xartofulakio(1, "ΑΔΕΙΟ ΧΑΡΤΟΦΥΛΑΚΙΟ", 10, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
 		String TrexousaThesi = test.getTrexousathesi();
@@ -62,7 +62,7 @@ public class XartofulakioTest {
 		String Tel = test.getCus().getTel();
 		String Email = test.getCus().getEmail();
 		String BirthDate = test.getCus().getBirthDate();
-		int InvestAmount = test.getCus().getInvestAmount();
+		double InvestAmount = test.getCus().getInvestAmount();
 		String BankAccountNo = test.getCus().getBankAccountNo();
 		assertEquals(exp_TrexousaThesi, TrexousaThesi);
 		assertEquals(exp_CustomerId, CustomerId);
@@ -73,7 +73,7 @@ public class XartofulakioTest {
 		assertEquals(exp_Tel, Tel);
 		assertEquals(exp_Email, Email);
 		assertEquals(exp_BirthDate, BirthDate);
-		assertEquals(exp_InvestAmount, InvestAmount);
+		assertEquals(exp_InvestAmount, InvestAmount, 0.0);
 		assertEquals(exp_BankAccountNo, BankAccountNo);
 	}
 	
