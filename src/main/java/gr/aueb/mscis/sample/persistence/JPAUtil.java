@@ -13,7 +13,7 @@ public class JPAUtil {
     
     public static EntityManagerFactory getEntityManagerFactory() {
         if (emf == null) {
-            emf = Persistence.createEntityManagerFactory("gr.aueb.mscis.sample");
+            emf = Persistence.createEntityManagerFactory("sample");
         }
         return emf;
     }

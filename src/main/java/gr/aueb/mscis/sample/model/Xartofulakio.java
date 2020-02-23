@@ -23,7 +23,7 @@ public class Xartofulakio {
     private Customer cus = new Customer();
 	/**/
     @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="Dxno")
+    @JoinColumn(name="DXno")
     private DX dx;
     
     public DX getDX() {
@@ -32,12 +32,13 @@ public class Xartofulakio {
     public void setDX(DX dx) {
     	this.dx=dx;
     }
+    
 	/*1 portofolio is associated with many transactions.*/
     @OneToMany(orphanRemoval=true, 
             cascade = CascadeType.ALL, 
-            mappedBy="DXId", fetch=FetchType.LAZY)    
+            mappedBy="Xartofulakio", fetch=FetchType.LAZY)    
     private Set<Transaction> trans = new HashSet<Transaction>();
-
+    
     /**
      * Επιστρεφει τον αριθμό του χαρτοφυλακίου
      * που προσδιοριζει μοναδικά κάθε χαρτοφυλάκιο.

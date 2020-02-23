@@ -112,7 +112,7 @@ public class Metoxh {
    
     
     @OneToOne(orphanRemoval=true,cascade = CascadeType.ALL,
-    		  mappedBy="Metoxh", fetch=FetchType.LAZY)
+   		  mappedBy="metoxh", fetch=FetchType.LAZY)
     private Deiktes deikths;
 	
     public void setDeiktes(Deiktes deiktes) {
