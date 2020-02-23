@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.*;
 import gr.aueb.mscis.sample.model.Customer;
+import gr.aueb.mscis.sample.model.DX;
 
 public class CustomerTest {
 
@@ -135,8 +136,81 @@ public class CustomerTest {
 	@Test
 	public void test_Equals() {
 		Customer exp_cust = new Customer(1, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
-		Customer cust = new Customer(1, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
-		assertTrue(cust.equals(exp_cust));
-		assertFalse(cust.equals(null));
+		Customer test = new Customer(1, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
+		assertTrue(test.equals(exp_cust));
+		assertFalse(test.equals(null));
+		
+		test = null;
+		test = new Customer(2, "AH252699", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
+		assertFalse(test.equals(exp_cust));
+		
+		test = null;
+		test = new Customer(1, null, "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
+		assertFalse(test.equals(exp_cust));
+		
+		test = null;
+		test = new Customer(1, "AH252699", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
+		assertFalse(test.equals(exp_cust));
+		
+		test = null;
+		test = new Customer(1, "AH252687", null, "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
+		assertFalse(test.equals(exp_cust));
+		
+		test = null;
+		test = new Customer(1, "AH252687", "12345699", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
+		assertFalse(test.equals(exp_cust));
+		
+		test = null;
+		test = new Customer(1, "AH252687", "12345678", null, "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
+		assertFalse(test.equals(exp_cust));
+		
+		test = null;
+		test = new Customer(1, "AH252687", "12345678", "Maria1", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
+		assertFalse(test.equals(exp_cust));
+		
+		test = null;
+		test = new Customer(1, "AH252687", "12345678", "Maria", null, "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
+		assertFalse(test.equals(exp_cust));
+		
+		test = null;
+		test = new Customer(1, "AH252687", "12345678", "Maria", "Papadopoulou1", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
+		assertFalse(test.equals(exp_cust));
+		
+		test = null;
+		test = new Customer(1, "AH252687", "12345678", "Maria", "Papadopoulou", null, "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
+		assertFalse(test.equals(exp_cust));
+		
+		test = null;
+		test = new Customer(1, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999998", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
+		assertFalse(test.equals(exp_cust));
+		
+		test = null;
+		test = new Customer(1, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", null, "26.05.1990", 5000, "1234567890");
+		assertFalse(test.equals(exp_cust));
+		
+		test = null;
+		test = new Customer(1, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.gr", "26.05.1990", 5000, "1234567890");
+		assertFalse(test.equals(exp_cust));
+		
+		test = null;
+		test = new Customer(1, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", null, 5000, "1234567890");
+		assertFalse(test.equals(exp_cust));
+		
+		test = null;
+		test = new Customer(1, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1991", 5000, "1234567890");
+		assertFalse(test.equals(exp_cust));
+			
+		test = null;
+		test = new Customer(1, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5001, "1234567890");
+		assertFalse(test.equals(exp_cust));
+		
+		test = null;
+		test = new Customer(1, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, null);
+		assertFalse(test.equals(exp_cust));
+		
+		test = null;
+		test = new Customer(1, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567899");
+		assertFalse(test.equals(exp_cust));
+
 	}
 }

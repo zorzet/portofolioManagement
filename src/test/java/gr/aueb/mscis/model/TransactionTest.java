@@ -91,4 +91,10 @@ public class TransactionTest {
 		assertEquals(exp_Price, Price, 0.0);
 		assertEquals(exp_Date, Date);
 	}
+	
+	@Test
+	public void test_isPending() {
+		Transaction test = new Transaction(1, "Αγορά", "ACC", 100, 5.22, "20.02.2020", "Pending");
+		assertTrue(test.isPending());
+	}
 }

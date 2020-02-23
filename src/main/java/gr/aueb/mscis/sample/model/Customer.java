@@ -152,10 +152,17 @@ public class Customer {
 				return false;
 		} else if (!AFM.equals(other.AFM))
 			return false;
+		if (BankAccountNo == null) {
+			if (other.BankAccountNo != null)
+				return false;
+		} else if (!BankAccountNo.equals(other.BankAccountNo))
+			return false;
 		if (BirthDate == null) {
 			if (other.BirthDate != null)
 				return false;
 		} else if (!BirthDate.equals(other.BirthDate))
+			return false;
+		if (CustomerId != other.CustomerId)
 			return false;
 		if (InvestAmount != other.InvestAmount)
 			return false;
@@ -178,8 +185,6 @@ public class Customer {
 			if (other.email != null)
 				return false;
 		} else if (!email.equals(other.email))
-			return false;
-		if (CustomerId != other.CustomerId)
 			return false;
 		return true;
 	}
