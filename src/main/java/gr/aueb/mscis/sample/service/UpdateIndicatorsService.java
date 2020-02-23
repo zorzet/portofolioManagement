@@ -31,31 +31,32 @@ public class UpdateIndicatorsService {
 		this.em = em;
 	}
 	
-	/*pare tis teleutaia 29 kleisimata mias metoxhs */
+	/*pare tis teleutaia 14 kleisimata mias metoxhs */
 	@SuppressWarnings("unchecked")
-	public double GetLast29ClosingsOfStock(int StockId) {
-		double Closings29=0.0;
+	public double GetLast14ClosingsOfStock(int StockId) {
+		double Closings14=0.0;
 		List<Metoxh> mtxlist=null;
 	    mtxlist = em
 				.createQuery(
 						"select from Metoxh m where m.StockId like :StockId ")
 				.setParameter("StockId", StockId).
-				setMaxResults(29)
+				setMaxResults(14)
 				.getResultList();
 	    if(mtxlist==null) {
 			throw new java.lang.RuntimeException("NO RECORDS FOUND");
 		}
 
 	    for (int i = 0; i < mtxlist.size(); i++) {
-            Closings29+=mtxlist.get(i).getClosing();
+            Closings14+=mtxlist.get(i).getClosing();
         }
-	    if(Closings29==0) {
+	    if(Closings14==0) {
 	    	throw new java.lang.RuntimeException("MKO30 COULD NOT BE CALCULATED");
 	    }
-		return (Closings29);
+		return (Closings14);
 	}
 	
 	/*pare tis teleutaia 79 kleisimata mias metoxhs */
+	@SuppressWarnings("unchecked")
 	public double GetLast79ClosingsOfStock(int StockId) {
 	double Closings79=0.0;
 	List<Metoxh> mtxlist=null;
@@ -167,12 +168,12 @@ public class UpdateIndicatorsService {
 		Deiktes deikths = new Deiktes();
 		double ghigh=GetLast19HighsOfStock(stockid);
 		double glow=GetLast19LowsOfStock(stockid);
-		double gclosing29=GetLast29ClosingsOfStock(stockid); 
+		double gclosing14=GetLast14ClosingsOfStock(stockid); 
 		double gclosing79=GetLast79ClosingsOfStock(stockid); 
 		try {
 			deikths.setXk20((glow+low/20));
 			deikths.setYk20((ghigh+high)/20);
-			deikths.setMKO30((gclosing29+closing)/30);
+			deikths.setMKO15((gclosing14+closing)/30);
 			deikths.setΜΚΟ80((gclosing79+closing)/80); 
 		} catch (Exception e) {
 			return null;
