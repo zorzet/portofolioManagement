@@ -2,9 +2,7 @@ package gr.aueb.mscis.sample.persistence;
 
 import java.util.Date;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Query;
+import javax.persistence.*;
 import gr.aueb.mscis.sample.model.Metoxh;
 import gr.aueb.mscis.sample.model.MarketsData;
 import gr.aueb.mscis.sample.model.Xartofulakio;
