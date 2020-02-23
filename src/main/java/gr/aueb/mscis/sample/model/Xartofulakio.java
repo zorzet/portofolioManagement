@@ -32,13 +32,13 @@ public class Xartofulakio {
     
 	/*1 portofolio is associated with many transactions.*/
     @OneToMany(orphanRemoval=true, 
-            cascade = CascadeType.ALL, 
+            cascade = CascadeType.MERGE, 
             mappedBy="Xartofulakio", fetch=FetchType.LAZY)    
     private Set<Transaction> trans = new HashSet<Transaction>();
     
 	/* kathe xartofulakio exei 1 diaxeiristi */ 
 	@ManyToOne(fetch=FetchType.LAZY, 
-            cascade= {CascadeType.ALL}    
+            cascade= {CascadeType.MERGE}    
             ) 
     @JoinColumn(name="DXno")
     DX dx;
@@ -92,10 +92,10 @@ public class Xartofulakio {
 	 * @param investAmount
 	 * @param bankAccountNo
 	 */
-	public Xartofulakio(int xid, String trexousathesi,int CustomerId,String aDT, String aFM, String name, String surname, String tel, String email, String birthDate,
+	public Xartofulakio(String trexousathesi,int CustomerId,String aDT, String aFM, String name, String surname, String tel, String email, String birthDate,
 			int investAmount, String bankAccountNo) {
 		super();
-		this.XId = xid;
+		//this.XId = xid;
 		this.trexousathesi = trexousathesi;
 		cus.setADT(aDT);
 		cus.setAFM(aFM);

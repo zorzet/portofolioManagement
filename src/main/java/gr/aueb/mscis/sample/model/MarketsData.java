@@ -41,8 +41,8 @@ public class MarketsData{
 	@Column(name="Min", nullable=false)
 	private double Min;
 	
-	public MarketsData(int MDID, String date, double Opening, double Closing, double Max, double Min) {
-		this.MDId=MDID;
+	public MarketsData(String date, double Opening, double Closing, double Max, double Min) {
+		//this.MDId=MDID;
 		this.date=date;
 		this.Opening=Opening;
 		this.Closing=Closing;

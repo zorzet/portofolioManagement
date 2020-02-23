@@ -22,6 +22,7 @@ import java.util.HashSet;
 public class Metoxh {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "StockId", unique = true, nullable = false)
 	private int StockId;
 	
@@ -111,7 +112,7 @@ public class Metoxh {
 	}
    
     
-    @OneToOne(orphanRemoval=true,cascade = CascadeType.ALL,
+    @OneToOne(orphanRemoval=true,cascade = CascadeType.MERGE,
    		  mappedBy="metoxh", fetch=FetchType.LAZY)
     private Deiktes deikths;
 	
@@ -125,8 +126,8 @@ public class Metoxh {
 	public Metoxh() {
 	}
 
-	public Metoxh(int id, String name, String date, Double high, Double low, Double closing,Double beta,int Volume) {
-		this.StockId = id;
+	public Metoxh(String name, String date, Double high, Double low, Double closing,Double beta,int Volume) {
+		//this.StockId = id;
 		this.Name = name;
 		this.date = date;
 		this.High = high;

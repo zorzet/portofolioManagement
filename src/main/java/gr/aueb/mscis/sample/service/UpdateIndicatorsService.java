@@ -150,7 +150,7 @@ public class UpdateIndicatorsService {
 		if(m==null)
 			throw new java.lang.RuntimeException("Eror Updating Stock");
 		try {
-			m.setStockId(id);
+//			m.setStockId(id);
 			m.setDate(date);
 			m.setLow(low);
 			m.setHigh(high);
