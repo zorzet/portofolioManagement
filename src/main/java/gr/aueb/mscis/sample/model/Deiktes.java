@@ -33,8 +33,8 @@ public class Deiktes {
 	}
 	
 	
-	@Column(name = "MKO30", length = 50, nullable = false)
-	private Double MKO30;
+	@Column(name = "MKO15", length = 50, nullable = false)
+	private Double MKO15;
 
 	@Column(name = "ΜΚΟ80", length = 50, nullable = false)
 	private Double ΜΚΟ80;
@@ -51,8 +51,8 @@ public class Deiktes {
 	public Deiktes() {
 	}
 
-	public Deiktes(int Id, Double MKO30, Double ΜΚΟ80, Double yk20, Double xk20) {
-		this.MKO30 = MKO30;
+	public Deiktes(int Id, Double MKO15, Double ΜΚΟ80, Double yk20, Double xk20) {
+		this.MKO15 = MKO15;
 		this.ΜΚΟ80 = ΜΚΟ80;
 		this.yk20 = yk20;
 		this.xk20 = xk20;
@@ -66,12 +66,12 @@ public class Deiktes {
 		this.id = id;
 	}
 
-	public Double getMKO30() {
-		return MKO30;
+	public Double getMKO15() {
+		return MKO15;
 	}
 
-	public void setMKO30(Double MKO30) {
-		MKO30 = MKO30;
+	public void setMKO15(Double MKO15) {
+		MKO15 = MKO15;
 	}
 
 	public Double getΜΚΟ80() {
