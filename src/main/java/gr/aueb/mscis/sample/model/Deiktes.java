@@ -13,11 +13,18 @@ public class Deiktes {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	// 1 DEIKTES YPOLOGIZONTAI ME VASI * METOXI
+/*	// 1 DEIKTES YPOLOGIZONTAI ME VASI * METOXI
 
 	@OneToMany(orphanRemoval = true, cascade = CascadeType.ALL, mappedBy = "deiktes", fetch = FetchType.LAZY)
 	private Set<Metoxh> metoxi = new HashSet<Metoxh>();
-
+*/
+	//GIA KA8E MIA EGGRAFH STO PINAKA METOXH, KANOUME MIA EGGRAFH STO PINAKA DEIKTES
+	
+	@OneToOne(orphanRemoval=true,cascade = CascadeType.ALL,
+	  		   fetch=FetchType.LAZY)
+	@JoinColumn(name="id", referencedColumnName="StockId")
+	private Metoxh metoxh;
+	 
 	@Column(name = "ΜΚΟ15", length = 50, nullable = false)
 	private Double ΜΚΟ15;
 
@@ -30,9 +37,9 @@ public class Deiktes {
 	@Column(name = "xk20", length = 50, nullable = false)
 	private Double xk20;
 
-	@OneToOne(mappedBy = "Deiktes")
+/*	@OneToOne(mappedBy = "Deiktes")
 	private Metoxh metoxh;
-
+*/
 	public Deiktes() {
 	}
 
