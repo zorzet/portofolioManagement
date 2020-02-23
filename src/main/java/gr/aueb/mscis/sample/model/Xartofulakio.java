@@ -22,10 +22,7 @@ public class Xartofulakio {
     @Embedded
     private Customer cus = new Customer();
 	/**/
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="DXno")
-    private DX dx;
-    
+
     public DX getDX() {
     	return this.dx;
     }
@@ -39,6 +36,13 @@ public class Xartofulakio {
             mappedBy="Xartofulakio", fetch=FetchType.LAZY)    
     private Set<Transaction> trans = new HashSet<Transaction>();
     
+	/* kathe xartofulakio exei 1 diaxeiristi */ 
+	@ManyToOne(fetch=FetchType.LAZY, 
+            cascade= {CascadeType.ALL}    
+            ) 
+    @JoinColumn(name="DXno")
+    DX dx;
+	
     /**
      * Επιστρεφει τον αριθμό του χαρτοφυλακίου
      * που προσδιοριζει μοναδικά κάθε χαρτοφυλάκιο.

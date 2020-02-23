@@ -71,7 +71,7 @@ EntityManager em;
 		Metoxh m=null;
 		m=findMetoxh(StockId);
 		d=findDeiktesPerStock(StockId);
-		if(((d.getMKO15()>d.getΜΚΟ80())&(m.getClosing()>d.getYk20()))){
+		if(((d.getMKO15()>d.getMKO80())&(m.getClosing()>d.getYk20()))){
 			decision="buy";
 		}else if(m.getClosing()<d.getXk20()){
 			decision="sell";

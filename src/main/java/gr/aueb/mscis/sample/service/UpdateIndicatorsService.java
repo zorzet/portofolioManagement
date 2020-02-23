@@ -174,7 +174,7 @@ public class UpdateIndicatorsService {
 			deikths.setXk20((glow+low/20));
 			deikths.setYk20((ghigh+high)/20);
 			deikths.setMKO15((gclosing14+closing)/30);
-			deikths.setΜΚΟ80((gclosing79+closing)/80); 
+			deikths.setMKO80((gclosing79+closing)/80); 
 		} catch (Exception e) {
 			return null;
 		}

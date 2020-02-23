@@ -33,5 +33,17 @@ public class JPAUtil {
     	return getEntityManagerFactory().createEntityManager();
     }
 
-   
+    public static void transactional(Runnable runnable){
+    	
+    	EntityManager em = getCurrentEntityManager();
+    	EntityTransaction tx = em.getTransaction();
+    	tx.begin();
+    	
+    	runnable.run();
+    	
+    	tx.rollback();
+    	em.close();
+    	
+    }
+    
 }

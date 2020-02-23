@@ -9,15 +9,23 @@ import gr.aueb.mscis.sample.model.Xartofulakio;
 
 
 public class Initializer {
-
+	
 	public void eraseData() {
         EntityManager em = JPAUtil.getCurrentEntityManager();
         EntityTransaction tx = em.getTransaction();
-        tx.begin();
+        if (!tx.isActive()) {
+        	tx.begin();
+        }
         
         Query query = em.createNativeQuery("delete from MarketsData");
         query.executeUpdate();
+        query = em.createNativeQuery("delete from Metoxh");
+        query.executeUpdate();
+        query = em.createNativeQuery("delete from Xartofulakio");
+        query.executeUpdate();
+        query.executeUpdate();
         tx.commit();
+
         em.close();
 	} 
 	
@@ -67,7 +75,6 @@ public class Initializer {
         Xartofulakio x2=new Xartofulakio(2, "created",2002,"AE12345", "123456789", "Marios","Papas", "2121212121", "msp@gmail.com", "16/07/1980",
     			12000, "GE075 5678 5678 5678 5678");
       
-        
         EntityManager em = JPAUtil.getCurrentEntityManager();
         EntityTransaction tx = em.getTransaction();
         tx.begin();

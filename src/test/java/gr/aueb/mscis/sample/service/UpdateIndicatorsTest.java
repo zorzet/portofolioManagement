@@ -14,8 +14,8 @@ public class UpdateIndicatorsTest {
 	
 	@Before
 	public void setup(){
-		Initializer dataHelper = new Initializer();
 		em = JPAUtil.getCurrentEntityManager();
+		Initializer dataHelper = new Initializer();
 		dataHelper.prepareData();
 	}
 	
