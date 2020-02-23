@@ -30,6 +30,7 @@ public class UpdateIndicatorsService {
 	public UpdateIndicatorsService(EntityManager em) {
 		this.em = em;
 	}
+	
 	/*pare tis teleutaia 29 kleisimata mias metoxhs */
 	@SuppressWarnings("unchecked")
 	public double GetLast29ClosingsOfStock(int StockId) {
@@ -125,6 +126,8 @@ public class UpdateIndicatorsService {
 	return (Lows19);
 	}
 	
+
+	
 	/*pare mia mia oles tis metoxes, to shmerino tous kleisimo, upshlo kai xamhlo kai 
 	 * gia ka8e mia kane kainourgiaeggrafh sto pinaka deiktes*/
 	@SuppressWarnings("unchecked")
@@ -134,28 +137,54 @@ public class UpdateIndicatorsService {
 			.createQuery("select m from Metoxh m.date like: today")
 			.setParameter("today", date).getResultList();
     for (int i = 0; i < mtxlist.size(); i++) {
-    	UpdateDeiktes(mtxlist.get(i).getStockId(),mtxlist.get(i).getHigh(),mtxlist.get(i).getLow(),mtxlist.get(i).getClosing());
+    	UpdateDeiktesAndStock(mtxlist.get(i).getStockId(),mtxlist.get(i).getDate(),mtxlist.get(i).getName(),mtxlist.get(i).getHigh(),mtxlist.get(i).getLow(),mtxlist.get(i).getClosing(),mtxlist.get(i).getBeta(),mtxlist.get(i).getVolume());
     }
+	
 	}
 	
-	/*UNDER CONSTRUCTION*/
-	public void UpdateDeiktes(int stockid,double high,double low,double closing) {
-		
+	
+	@SuppressWarnings("unused")
+	public Metoxh createMetoxh(int id, String name, String date, Double high, Double low, Double closing,Double beta,int Volume) {
+		Metoxh m=new Metoxh();
+		if(m==null)
+			throw new java.lang.RuntimeException("Eror Updating Stock");
+		try {
+			m.setStockId(id);
+			m.setDate(date);
+			m.setLow(low);
+			m.setHigh(high);
+			m.setClosing(closing);
+			m.setBeta(beta);
+			m.setVolume(Volume);
+		}catch(Exception e){
+			throw new java.lang.RuntimeException("Eror Updating Stock");
+		}
+		return m;
 	}
+	
+
 	public Deiktes createDeikth(int stockid,double high,double low,double closing) {
-		Deiktes d = new Deiktes();
+		Deiktes deikths = new Deiktes();
 		double ghigh=GetLast19HighsOfStock(stockid);
 		double glow=GetLast19LowsOfStock(stockid);
 		double gclosing29=GetLast29ClosingsOfStock(stockid); 
 		double gclosing79=GetLast79ClosingsOfStock(stockid); 
 		try {
-			d.setXk20((glow+low/20));
-			d.setYk20((ghigh+high)/20);
-			
-			return d;
+			deikths.setXk20((glow+low/20));
+			deikths.setYk20((ghigh+high)/20);
+			deikths.setMKO30((gclosing29+closing)/30);
+			deikths.setΜΚΟ80((gclosing79+closing)/80); 
 		} catch (Exception e) {
 			return null;
 		}
+		return deikths;
 	}
-	
+	/*UNDER CONSTRUCTION*/
+	public void UpdateDeiktesAndStock(int stockid,String date,String name,double high,double low,double closing,double beta,int Volume) {
+		Metoxh m=createMetoxh(stockid,name, date, high, low, closing,beta,Volume);
+		Deiktes d=createDeikth(stockid,high,low,closing);
+		m.setDeiktes(d);
+		d.setMetoxh(m);
+		em.persist(m);
+	}
 }
