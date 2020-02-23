@@ -51,6 +51,13 @@ public class ShowMarketService {
 	    if(results==null) {
 			throw new java.lang.RuntimeException("NO RECORDS FOUND");
 		}
+	    
 		return results;
+	}
+	public void showResults(List<MarketsData> data) {
+		for (int j = 0; j < data.size(); j++) {
+			System.out.println("STOCK MARKETS IMAGE AT"+data.get(j).getDate()+" OPENING "+data.get(j).getOpening()+" CLOSING "+data.get(j).getClosing()
+					+"  HIGH "+data.get(j).getMax()+" LOW "+data.get(j).getMin());
+		}
 	}
 }
