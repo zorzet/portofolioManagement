@@ -3,6 +3,7 @@ package gr.aueb.mscis.sample.service;
 import java.util.List;
 import javax.persistence.EntityManager;
 import gr.aueb.mscis.sample.model.Metoxh;
+import gr.aueb.mscis.sample.model.Transaction;
 import gr.aueb.mscis.sample.model.Customer;
 import gr.aueb.mscis.sample.model.Deiktes;
 import gr.aueb.mscis.sample.service.XartofulakioService;
@@ -32,7 +33,14 @@ EntityManager em;
 		}
 		return results;
 	}
-	
+	/*Emfanise oles tis metoxes*/
+	public void showStocks() {
+		List <Metoxh> list=findAllMotoxes();
+        for(Metoxh metoxh : list) {
+            System.out.println(metoxh.getName()+" "+metoxh.getClosing()+" "+metoxh.getBeta()+" "+metoxh.getDate()+
+            		           " "+metoxh.getHigh()+" "+metoxh.getLow());
+        }
+	}
 	/*vres mia metoxh */
 	public Metoxh findMetoxh(int StockId) {
 		Metoxh results=null;
@@ -44,14 +52,6 @@ EntityManager em;
 		return results;
 	}
 	
-	/*Emfanise oles tis metoxes*/
-	public void showStocks() {
-		List <Metoxh> list=findAllMotoxes();
-        for(Metoxh metoxh : list) {
-            System.out.println(metoxh.getName()+" "+metoxh.getClosing()+" "+metoxh.getBeta()+" "+metoxh.getDate()+
-            		           " "+metoxh.getHigh()+" "+metoxh.getLow());
-        }
-	}
 	
 	/*Gia mia metoxh emfanise olous tous deiktes*/
 	public Deiktes findDeiktesPerStock(int StockId){
@@ -71,7 +71,7 @@ EntityManager em;
 		Metoxh m=null;
 		m=findMetoxh(StockId);
 		d=findDeiktesPerStock(StockId);
-		if(((d.getΜΚΟ15()>d.getΜΚΟ80())&(m.getClosing()>d.getYk20()))){
+		if(((d.getMKO15()>d.getΜΚΟ80())&(m.getClosing()>d.getYk20()))){
 			decision="buy";
 		}else if(m.getClosing()<d.getXk20()){
 			decision="sell";
@@ -82,15 +82,28 @@ EntityManager em;
 	}	
 		
 	/*Emfanise Plhorofories Metoxhs sto Xarofulakio- an uparxei transaction open*/
-	public void showUnitsofStocksperPortofolio(int StockId, int XId,int CusId) {
+	@SuppressWarnings("unchecked")
+	public void showUnitsofStocksperPortofolio(String Stock, int XId,int CusId) {
 		//PARE OLA TA XARTOFULAKIA TOU DX
 		List<Xartofulakio> xlist=null;
+		List<Transaction> translist=null;
 		xlist= em.createQuery("select x from Xartofulakio x where x.XId like :DXId ").setParameter("DXId", XId)
 				.getResultList();
 		//VRES AUTO TOU PELATH
 		Xartofulakio x=null;
-		
+		for (int i = 0; i < xlist.size(); i++) {
+			if((xlist.get(i).getCus().getCustomerId())==CusId) {
+				translist=em.createQuery("select t from Transaction t where t.Xartofulakio.XId like :Id ")
+						.setParameter("Id", xlist.get(i).getXid()).getResultList();
+			}
+		}
 		//VRES TA TRANSACTION POU EGINAN GIA AUTH TH METOXH & EINAI OPEN
-		
+		for (int j = 0; j < translist.size(); j++) {
+			if((translist.get(j).getState().equalsIgnoreCase("Open")&(translist.get(j).getStock().equalsIgnoreCase(Stock)))){
+				System.out.println("Stock in Portofolio "+translist.get(j).getStock()+" Units "+translist.get(j).getUnits()
+						+"Bought at Price "+translist.get(j).getPrice()+" at date "+translist.get(j).getDate());
+			}
+		}
 	}
+
 }
