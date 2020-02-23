@@ -21,8 +21,17 @@ public class Xartofulakio {
 	
     @Embedded
     private Customer cus = new Customer();
-	
-	
+	/**/
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="Dxno")
+    private DX dx;
+    
+    public DX getDX() {
+    	return this.dx;
+    }
+    public void setDX(DX dx) {
+    	this.dx=dx;
+    }
 	/*1 portofolio is associated with many transactions.*/
     @OneToMany(orphanRemoval=true, 
             cascade = CascadeType.ALL, 

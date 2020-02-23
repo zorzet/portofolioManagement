@@ -48,8 +48,8 @@ public class DX extends User{
 	
 	/*1 DX EXEI POLLA XARTOFYLAKIA*/
 	@OneToMany(cascade={CascadeType.PERSIST, CascadeType.MERGE}, 
-            mappedBy="DXno", fetch=FetchType.LAZY)
-    private Set<Xartofulakio> loans = new HashSet<Xartofulakio>();
+            mappedBy="xartofulakio", fetch=FetchType.LAZY)
+    private Set<Xartofulakio> xartofulakia = new HashSet<Xartofulakio>();
 	
 	public DX() {
 	}
