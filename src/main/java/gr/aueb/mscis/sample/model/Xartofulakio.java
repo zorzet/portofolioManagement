@@ -35,7 +35,7 @@ public class Xartofulakio {
 	/*1 portofolio is associated with many transactions.*/
     @OneToMany(orphanRemoval=true, 
             cascade = CascadeType.ALL, 
-            mappedBy="Xartofulakio", fetch=FetchType.LAZY)    
+            mappedBy="DXId", fetch=FetchType.LAZY)    
     private Set<Transaction> trans = new HashSet<Transaction>();
 
     /**
