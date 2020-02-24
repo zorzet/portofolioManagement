@@ -15,7 +15,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.UniqueConstraint;
 import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.DiscriminatorValue;
+
 @Entity
+@DiscriminatorValue("B")
 @Table(name = "DX",uniqueConstraints = {
         @UniqueConstraint(columnNames = "DXId")})
 public class DX extends User{ 

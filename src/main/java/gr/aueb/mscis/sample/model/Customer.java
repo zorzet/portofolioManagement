@@ -3,6 +3,7 @@ package gr.aueb.mscis.sample.model;
 import javax.persistence.*;
 
 @Embeddable
+@DiscriminatorValue("A")
 @Table(name = "Customer",uniqueConstraints = {
         @UniqueConstraint(columnNames = "CustomerId")})
 public class Customer extends User{ 
