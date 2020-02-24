@@ -66,13 +66,13 @@ public class UpdateIndicatorsService {
 	
 	/*pare tis teleutaia 19 upshla mias metoxhs */
 	@SuppressWarnings("unchecked")
-	public double GetLast19HighsOfStock(int StockId) {
+	public double GetLast19HighsOfStock(int m_id) {
 	double Highs19=0.0;
 	List<Metoxh> mtxlist=null;
     mtxlist = em
 			.createQuery(
 					"select m from Metoxh m where m.StockId like :StockId ")
-			.setParameter("StockId", StockId).
+			.setParameter("StockId", m_id).
 			setMaxResults(19)
 			.getResultList();
     if(mtxlist.isEmpty()) {
@@ -80,10 +80,10 @@ public class UpdateIndicatorsService {
 	}
 
     for (int i = 0; i < mtxlist.size(); i++) {
-    	Highs19+=mtxlist.get(i).getHigh();
+    	Highs19=mtxlist.get(i).getHigh()+Highs19;
     }
     if(Highs19==0) {
-    	throw new java.lang.RuntimeException("MKO30 COULD NOT BE CALCULATED");
+    	throw new java.lang.RuntimeException("HIGH20 COULD NOT BE CALCULATED");
     }
 	return (Highs19);
 	}	
@@ -107,7 +107,7 @@ public class UpdateIndicatorsService {
     	Lows19+=mtxlist.get(i).getLow();
     }
     if(Lows19==0) {
-    	throw new java.lang.RuntimeException("MKO30 COULD NOT BE CALCULATED");
+    	throw new java.lang.RuntimeException("LOW20 COULD NOT BE CALCULATED");
     }
 	return (Lows19);
 	}

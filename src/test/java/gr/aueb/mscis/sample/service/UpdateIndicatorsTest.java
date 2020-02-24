@@ -1,6 +1,9 @@
 package gr.aueb.mscis.sample.service;
 
 import static org.junit.Assert.*;
+
+import java.util.List;
+
 import javax.persistence.*;
 import org.junit.*;
 
@@ -124,16 +127,21 @@ public class UpdateIndicatorsTest {
 		}
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Test
 	public void test_GetLast19HighsOfStock() {
-		double exp_Closings = 8.69;
-	    int m_id = em.createQuery("select m.StockId from Metoxh m where m.Name = 'AEGN' ").getFirstResult();
-				
-		UpdateIndicatorsService update = new UpdateIndicatorsService(em);
+		double exp_Highs = 8.70;
+		int m_id=0;
+		List <Metoxh> mlist=null;
+			mlist=em.createQuery(
+				"select m from Metoxh m where m.StockId like : StockId")
+	    		.setParameter("StockId", 1).getResultList();
+			m_id=mlist.get(0).getStockId();
+			UpdateIndicatorsService update = new UpdateIndicatorsService(em);
 		
 		try {			
-			double Closings = update.GetLast19HighsOfStock(m_id);
-			assertEquals(exp_Closings, Closings, 0.0);
+			double Highs = update.GetLast19HighsOfStock(m_id);
+			assertEquals(exp_Highs, Highs, 0.0);
 		} catch(java.lang.RuntimeException message) {
 
 		}
