@@ -66,11 +66,11 @@ public class Initializer {
         MarketsData temp30 = new MarketsData("1/11/2017",1770.94,1781.5,1767.13,1780.84);
         MarketsData temp31 = new MarketsData("1/12/2017",1783.33,1797.3,1774.43,1782.88);
         
-        Metoxh st1=new Metoxh("AEGN" , "22/02/2020", 8.70, 8.60, 8.69,0.6,132000);
-        Metoxh st2=new Metoxh("INTRK" , "22/02/2020", 0.9, 0.80, 0.88,0.0,69000);
-        Metoxh st3=new Metoxh("MOH" , "22/02/2020", 20.6, 20.45, 20.52,1.3,80200);
-        Metoxh st4=new Metoxh("ELPE" , "22/02/2020", 8.41, 8.20,8.36,0.75,123000);
-        Metoxh st5=new Metoxh("OPAP" , "22/02/2020", 11.46,11.39,0.0,1.71,654000);
+        Metoxh st1=new Metoxh(1,"AEGN" , "22/02/2020", 8.70, 8.60, 8.69,0.6,132000);
+        Metoxh st2=new Metoxh(2,"INTRK" , "22/02/2020", 0.9, 0.80, 0.88,0.0,69000);
+        Metoxh st3=new Metoxh(3,"MOH" , "22/02/2020", 20.6, 20.45, 20.52,1.3,80200);
+        Metoxh st4=new Metoxh(4,"ELPE" , "22/02/2020", 8.41, 8.20,8.36,0.75,123000);
+        Metoxh st5=new Metoxh(5,"OPAP" , "22/02/2020", 11.46,11.39,0.0,1.71,654000);
         
         Xartofulakio x1=new Xartofulakio("created",1001,"AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",
     			12345, "GE075 1234 1234 1234 1234");
@@ -124,7 +124,7 @@ public class Initializer {
         em.persist(x1);
         em.persist(x2);
         
-        //em.persist(c1);
+        em.persist(c1);
         
         tx.commit();
 	}
