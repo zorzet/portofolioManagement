@@ -15,7 +15,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.UniqueConstraint;
 
-import com.mgiandia.library.domain.Metoxh;
+import gr.aueb.mscis.sample.model.Metoxh;
 
 import java.util.HashSet;
 import java.util.Set;
