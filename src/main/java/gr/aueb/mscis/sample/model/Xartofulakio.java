@@ -75,6 +75,7 @@ public class Xartofulakio {
 	public void setCus(Customer cus) {
 		this.cus = cus;
 	}
+	
 	/**
 	 *Βοηθητικός Κώδικας που αρχικοποιεί τα στοιχεία του κάθε χαρτοφυλακίου,
 	 *τόσο τεχνικές πληροφορίες όσο και προς τον ιδιοκτήτη του
@@ -91,21 +92,10 @@ public class Xartofulakio {
 	 * @param investAmount
 	 * @param bankAccountNo
 	 */
-	public Xartofulakio(String trexousathesi,int CustomerId,String aDT, String aFM, String name, String surname, String tel, String email, String birthDate,
-			int investAmount, String bankAccountNo) {
+	public Xartofulakio(String trexousathesi, Customer c) {
 		super();
-		//this.XId = xid;
 		this.trexousathesi = trexousathesi;
-		cus.setADT(aDT);
-		cus.setAFM(aFM);
-		cus.setBankAccountNo(bankAccountNo);
-		cus.setBirthDate(birthDate);
-		cus.setCustomerId(CustomerId);
-		cus.setEmail(email);
-		cus.setInvestAmount(investAmount);
-		cus.setName(name);
-		cus.setSurname(surname);
-		cus.setTel(tel);
+		this.cus = c;
 	}
 	
 	/**

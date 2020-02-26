@@ -11,17 +11,21 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.CascadeType;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.UniqueConstraint;
+
+import com.mgiandia.library.domain.Metoxh;
+
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.DiscriminatorValue;
 
 @Entity
-@DiscriminatorValue("B")
-@Table(name = "DX",uniqueConstraints = {
-        @UniqueConstraint(columnNames = "DXId")})
-public class DX extends User{ 
+//@DiscriminatorValue("B")
+@Table(name = "DX",
+	   uniqueConstraints = {@UniqueConstraint(columnNames = "DXId")})
+public class DX extends User { 
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -53,6 +57,11 @@ public class DX extends User{
 	@OneToMany(cascade={CascadeType.PERSIST, CascadeType.MERGE}, 
             mappedBy="dx", fetch=FetchType.LAZY)
     private Set<Xartofulakio> xartofulakia = new HashSet<Xartofulakio>();
+	
+	// * DX EPILEGEI POLLES METOXES 
+	@ManyToMany(mappedBy="dxs",fetch=FetchType.LAZY, 
+            cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+    private Set<Metoxh> metoxes = new HashSet<Metoxh>();
 	
 	public DX() {
 	}
@@ -120,7 +129,7 @@ public class DX extends User{
 		BirthDate = birthDate;
 	}
 
-	public DX(int DXId,String aDT, String aFM, String name, String surname, String tel, String email, String birthDate) {	
+	public DX(String aDT, String aFM, String name, String surname, String tel, String email, String birthDate) {	
 		this.ADT = aDT;
 		this.AFM = aFM;
 		this.Name = name;
@@ -128,6 +137,21 @@ public class DX extends User{
 		this.Tel = tel;
 		this.email = email;
 		this.BirthDate = birthDate;
+	}
+	
+	//ADD METOXH ME VASH TOUS DXs
+	public void addMetoxh(Metoxh metoxh) {
+		if (metoxh != null) {
+			metoxh.friendDXs().add(this);
+	        this.metoxes.add(metoxh);
+	    }
+	}
+
+	public void removeMetoxh(Metoxh metoxh) {
+	    if (metoxh != null) {
+	        metoxh.friendDXs().remove(this);
+	        this.metoxes.remove(metoxh);
+	    }
 	}
 	
 	@Override

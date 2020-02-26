@@ -1,7 +1,5 @@
 package gr.aueb.mscis.sample.model;
 
-import java.util.HashSet;
-import java.util.Set;
 import javax.persistence.*;
 
 @Entity
@@ -13,13 +11,7 @@ public class Deiktes {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-/*	// 1 DEIKTES YPOLOGIZONTAI ME VASI * METOXI
-
-	@OneToMany(orphanRemoval = true, cascade = CascadeType.ALL, mappedBy = "deiktes", fetch = FetchType.LAZY)
-	private Set<Metoxh> metoxi = new HashSet<Metoxh>();
-*/
 	//GIA KA8E MIA EGGRAFH STO PINAKA METOXH, KANOUME MIA EGGRAFH STO PINAKA DEIKTES
-	
 	@OneToOne(orphanRemoval=true,cascade = CascadeType.MERGE,
 	  		   fetch=FetchType.LAZY)
 	@JoinColumn(name="id", referencedColumnName="StockId")
@@ -31,7 +23,6 @@ public class Deiktes {
 	public void setMetoxh(Metoxh metoxh) {
 		this.metoxh=metoxh;
 	}
-	
 	
 	@Column(name = "MKO15", length = 50, nullable = false)
 	private Double MKO15;
@@ -45,13 +36,10 @@ public class Deiktes {
 	@Column(name = "xk20", length = 50, nullable = false)
 	private Double xk20;
 
-/*	@OneToOne(mappedBy = "Deiktes")
-	private Metoxh metoxh;
-*/
 	public Deiktes() {
 	}
 
-	public Deiktes(int Id, Double MKO15, Double MKO80, Double yk20, Double xk20) {
+	public Deiktes(Double MKO15, Double MKO80, Double yk20, Double xk20) {
 		this.MKO15 = MKO15;
 		this.MKO80 = MKO80;
 		this.yk20 = yk20;
@@ -88,7 +76,5 @@ public class Deiktes {
 	public void setXk20(Double xk20) {
 		this.xk20 = xk20;
 	}
-
-
 
 }

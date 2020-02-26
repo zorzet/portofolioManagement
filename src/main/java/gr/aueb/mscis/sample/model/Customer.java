@@ -39,8 +39,6 @@ public class Customer extends User{
 	@Column(name="BankAccountNo", nullable = false)
 	private String BankAccountNo;
 	
-	
-	
 	public int getCustomerId() {
 		return CustomerId;
 	}

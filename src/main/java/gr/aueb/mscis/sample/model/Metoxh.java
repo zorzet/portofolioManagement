@@ -1,20 +1,10 @@
 package gr.aueb.mscis.sample.model;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.CascadeType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.UniqueConstraint;
-import java.util.*;
 import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name="Metoxh",uniqueConstraints = {
@@ -50,6 +40,36 @@ public class Metoxh {
     @OneToOne(orphanRemoval=true,cascade = CascadeType.MERGE,
      		  mappedBy="metoxh", fetch=FetchType.LAZY)
       private Deiktes deikths;
+
+    //* DX EPILEGOUN * METOXES
+    
+    @ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE }, 
+            fetch=FetchType.LAZY)
+    @JoinTable(name="DXsandMetoxes", 
+            joinColumns = {@JoinColumn(name="StockId")},
+            inverseJoinColumns = {@JoinColumn(name="authorid")}
+    )
+    private Set<DX> dxs = new HashSet<DX>();
+    
+    public Set<DX> getDXs() {
+        return new HashSet<DX>(dxs);
+    }
+    
+    public void addDX(DX dx) {
+        if (dx != null) {
+            dx.addMetoxh(this);
+        }
+    }
+   
+    public void removeDX(DX dx) {
+        if (dx != null) {
+            dx.removeMetoxh(this);
+        }
+    }
+
+    Set<DX> friendDXs() {
+        return dxs;
+    }
     
 	public int getStockId() {
 		return StockId;
@@ -126,7 +146,6 @@ public class Metoxh {
 	}
 
 	public Metoxh(String name, String date, Double high, Double low, Double closing,Double beta,int Volume) {
-		//this.StockId = id;
 		this.Name = name;
 		this.date = date;
 		this.High = high;
@@ -134,10 +153,6 @@ public class Metoxh {
 		this.Closing = closing;
 		this.Beta=beta;
 		this.Volume=Volume;
-	
-	
 	}
-
-
 
 }
