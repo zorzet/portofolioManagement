@@ -24,6 +24,8 @@ public class Initializer {
 	        query2.executeUpdate();
 	        Query query3 = em.createNativeQuery("delete from Xartofulakio");
 	        query3.executeUpdate();
+	        Query query4 = em.createNativeQuery("delete from Customers");
+	        query4.executeUpdate();
 	        tx.commit();
         } catch(RuntimeException e) {
         	
@@ -66,21 +68,21 @@ public class Initializer {
         MarketsData temp30 = new MarketsData("1/11/2017",1770.94,1781.5,1767.13,1780.84);
         MarketsData temp31 = new MarketsData("1/12/2017",1783.33,1797.3,1774.43,1782.88);
         
-        Metoxh st1=new Metoxh("AEGN" , "22/02/2020", 8.70, 8.60, 8.69,0.6,132000);
-        Metoxh st2=new Metoxh("INTRK" , "22/02/2020", 0.9, 0.80, 0.88,0.0,69000);
-        Metoxh st3=new Metoxh("MOH" , "22/02/2020", 20.6, 20.45, 20.52,1.3,80200);
-        Metoxh st4=new Metoxh("ELPE" , "22/02/2020", 8.41, 8.20,8.36,0.75,123000);
-        Metoxh st5=new Metoxh("OPAP" , "22/02/2020", 11.46,11.39,0.0,1.71,654000);
+        Metoxh st1=new Metoxh("AEGN", "22/02/2020", 8.70, 8.60, 8.69,0.6,132000);
+        Metoxh st2=new Metoxh("INTRK", "22/02/2020", 0.9, 0.80, 0.88,0.0,69000);
+        Metoxh st3=new Metoxh("MOH", "22/02/2020", 20.6, 20.45, 20.52,1.3,80200);
+        Metoxh st4=new Metoxh("ELPE", "22/02/2020", 8.41, 8.20,8.36,0.75,123000);
+        Metoxh st5=new Metoxh("OPAP", "22/02/2020", 11.46,11.39,0.0,1.71,654000);
         
-        Xartofulakio x1=new Xartofulakio("created",1001,"AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",
-    			12345, "GE075 1234 1234 1234 1234");
-        Xartofulakio x2=new Xartofulakio("created",2002,"AE12345", "123456789", "Marios","Papas", "2121212121", "msp@gmail.com", "16/07/1980",
-    			12000, "GE075 5678 5678 5678 5678");
+        Xartofulakio x1 = new Xartofulakio("created", new Customer("AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",
+    			12345, "GE075 1234 1234 1234 1234"));
+        Xartofulakio x2 = new Xartofulakio("created", new Customer("AE12345", "123456789", "Marios","Papas", "2121212121", "msp@gmail.com", "16/07/1980",
+    			12000, "GE075 5678 5678 5678 5678"));
         
-        Customer c1 = new Customer("AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
-        x1.setCus(c1);
-        Customer c2 = new Customer("AH252688", "12345899", "Markos", "Pappas", "6999999998", "mpappas@gmail.com", "24.08.1994", 1000, "1234567890");
-        x2.setCus(c2);
+        //Customer c1 = new Customer("AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
+        //x1.setCus(c1);
+        //Customer c2 = new Customer("AH252688", "12345899", "Markos", "Pappas", "6999999998", "mpappas@gmail.com", "24.08.1994", 1000, "1234567890");
+        //x2.setCus(c2);
         
         EntityManager em = JPAUtil.getCurrentEntityManager();
         EntityTransaction tx = em.getTransaction();
@@ -124,8 +126,8 @@ public class Initializer {
         em.persist(st4);
         em.persist(st5);
         
-        em.persist(x1);
-        em.persist(x2);
+        //em.persist(x1);
+        //em.persist(x2);
         
         tx.commit();
 	}

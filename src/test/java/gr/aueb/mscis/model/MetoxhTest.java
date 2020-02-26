@@ -81,8 +81,8 @@ public class MetoxhTest {
 	
 	@Test
 	public void test_Deiktes() {
-		Deiktes exp_deiktes = new Deiktes(1, 12.33, 12.33, 12.33, 12.33);
-		m.setDeiktes(new Deiktes(1, 12.33, 12.33, 12.33, 12.33));
+		Deiktes exp_deiktes = new Deiktes(12.33, 12.33, 12.33, 12.33);
+		m.setDeiktes(new Deiktes(12.33, 12.33, 12.33, 12.33));
 		Deiktes deiktes = m.getDeiktes();
 	}
 	

@@ -1,25 +1,8 @@
 package gr.aueb.mscis.sample.model;
 
-import java.util.Date;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.CascadeType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.UniqueConstraint;
-
-import com.mgiandia.library.domain.Metoxh;
-
-import java.util.HashSet;
-import java.util.Set;
-import javax.persistence.DiscriminatorValue;
+import java.util.*;
+import javax.persistence.*;
+import gr.aueb.mscis.sample.model.Metoxh;
 
 @Entity
 //@DiscriminatorValue("B")
