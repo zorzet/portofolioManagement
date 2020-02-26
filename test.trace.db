@@ -720,3 +720,81 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/bza
 	at org.h2.mvstore.FileStore.open(FileStore.java:172)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:344)
 	... 72 more
+2020-02-26 23:53:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "CUSTOMERS" not found; SQL statement:
+delete from Customers [42102-192]
+2020-02-26 23:53:58 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "CUSTOMERS" not found; SQL statement:
+delete from Customers [42102-192]
+2020-02-26 23:53:58 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "CUSTOMERS" not found; SQL statement:
+delete from Customers [42102-192]
+2020-02-26 23:53:58 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Table "CUSTOMERS" not found; SQL statement:
+delete from Customers [42102-192]
+2020-02-26 23:53:58 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "CUSTOMERS" not found; SQL statement:
+delete from Customers [42102-192]
+2020-02-26 23:53:58 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLException: Table "CUSTOMERS" not found; SQL statement:
+delete from Customers [42102-192]
+2020-02-26 23:53:58 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "CUSTOMERS" not found; SQL statement:
+delete from Customers [42102-192]
+2020-02-26 23:53:58 jdbc[10]: exception
+org.h2.jdbc.JdbcSQLException: Table "CUSTOMERS" not found; SQL statement:
+delete from Customers [42102-192]
+2020-02-26 23:53:58 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Table "CUSTOMERS" not found; SQL statement:
+delete from Customers [42102-192]
+2020-02-26 23:53:58 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "CUSTOMERS" not found; SQL statement:
+delete from Customers [42102-192]
+2020-02-26 23:53:58 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Table "CUSTOMERS" not found; SQL statement:
+delete from Customers [42102-192]
+2020-02-26 23:53:58 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Table "CUSTOMERS" not found; SQL statement:
+delete from Customers [42102-192]
+2020-02-26 23:53:58 jdbc[15]: exception
+org.h2.jdbc.JdbcSQLException: Table "CUSTOMERS" not found; SQL statement:
+delete from Customers [42102-192]
+2020-02-26 23:55:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "CUSTOMERS" not found; SQL statement:
+delete from Customers [42102-192]
+2020-02-26 23:55:27 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "CUSTOMERS" not found; SQL statement:
+delete from Customers [42102-192]
+2020-02-26 23:55:29 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Timeout trying to lock table ; SQL statement:
+delete from MarketsData [50200-192]
+2020-02-26 23:55:31 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Timeout trying to lock table ; SQL statement:
+delete from MarketsData [50200-192]
+2020-02-26 23:55:33 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Timeout trying to lock table ; SQL statement:
+delete from MarketsData [50200-192]
+2020-02-26 23:55:35 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLException: Timeout trying to lock table ; SQL statement:
+delete from MarketsData [50200-192]
+2020-02-26 23:55:37 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Timeout trying to lock table ; SQL statement:
+delete from MarketsData [50200-192]
+2020-02-26 23:55:40 jdbc[10]: exception
+org.h2.jdbc.JdbcSQLException: Timeout trying to lock table ; SQL statement:
+delete from MarketsData [50200-192]
+2020-02-26 23:55:42 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Timeout trying to lock table ; SQL statement:
+delete from MarketsData [50200-192]
+2020-02-26 23:55:44 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Timeout trying to lock table ; SQL statement:
+delete from MarketsData [50200-192]
+2020-02-26 23:55:46 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Timeout trying to lock table ; SQL statement:
+delete from MarketsData [50200-192]
+2020-02-26 23:55:48 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Timeout trying to lock table ; SQL statement:
+delete from MarketsData [50200-192]
+2020-02-26 23:55:50 jdbc[15]: exception
+org.h2.jdbc.JdbcSQLException: Timeout trying to lock table ; SQL statement:
+delete from MarketsData [50200-192]
