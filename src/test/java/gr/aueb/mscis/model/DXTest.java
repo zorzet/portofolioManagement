@@ -83,76 +83,72 @@ public class DXTest {
 	
 	@Test
 	public void test_Equals() {
-		DX exp_result = new DX(1, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
-		DX test = new DX(1, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
+		DX exp_result = new DX("AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
+		DX test = new DX("AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
 		assertFalse(test.equals(null));
 		assertTrue(test.equals(exp_result));
-	
+
 		test = null;
-		test = new DX(2, "AH252699", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
+		test = new DX(null, "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
 		assertFalse(test.equals(exp_result));
 		
 		test = null;
-		test = new DX(1, null, "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
+		test = new DX("AH252699", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
 		assertFalse(test.equals(exp_result));
 		
 		test = null;
-		test = new DX(1, "AH252699", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
+		test = new DX("AH252687", null, "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
 		assertFalse(test.equals(exp_result));
 		
 		test = null;
-		test = new DX(1, "AH252687", null, "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
+		test = new DX("AH252687", "12345699", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
 		assertFalse(test.equals(exp_result));
 		
 		test = null;
-		test = new DX(1, "AH252687", "12345699", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
+		test = new DX("AH252687", "12345678", null, "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
 		assertFalse(test.equals(exp_result));
 		
 		test = null;
-		test = new DX(1, "AH252687", "12345678", null, "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
+		test = new DX("AH252687", "12345678", "Maria1", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
 		assertFalse(test.equals(exp_result));
 		
 		test = null;
-		test = new DX(1, "AH252687", "12345678", "Maria1", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
+		test = new DX("AH252687", "12345678", "Maria", null, "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
 		assertFalse(test.equals(exp_result));
 		
 		test = null;
-		test = new DX(1, "AH252687", "12345678", "Maria", null, "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
+		test = new DX("AH252687", "12345678", "Maria", "Papadopoulou1", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
 		assertFalse(test.equals(exp_result));
 		
 		test = null;
-		test = new DX(1, "AH252687", "12345678", "Maria", "Papadopoulou1", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
+		test = new DX("AH252687", "12345678", "Maria", "Papadopoulou", null, "mpapadopoulou@gmail.com", "26.05.1990");
 		assertFalse(test.equals(exp_result));
 		
 		test = null;
-		test = new DX(1, "AH252687", "12345678", "Maria", "Papadopoulou", null, "mpapadopoulou@gmail.com", "26.05.1990");
+		test = new DX("AH252687", "12345678", "Maria", "Papadopoulou", "6999999998", "mpapadopoulou@gmail.com", "26.05.1990");
 		assertFalse(test.equals(exp_result));
 		
 		test = null;
-		test = new DX(1, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999998", "mpapadopoulou@gmail.com", "26.05.1990");
+		test = new DX("AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", null, "26.05.1990");
 		assertFalse(test.equals(exp_result));
 		
 		test = null;
-		test = new DX(1, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", null, "26.05.1990");
+		test = new DX("AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.gr", "26.05.1990");
 		assertFalse(test.equals(exp_result));
 		
 		test = null;
-		test = new DX(1, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.gr", "26.05.1990");
+		test = new DX("AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", null);
 		assertFalse(test.equals(exp_result));
 		
 		test = null;
-		test = new DX(1, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", null);
-		assertFalse(test.equals(exp_result));
-		
-		test = null;
-		test = new DX(1, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1991");
+		test = new DX("AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1991");
 		assertFalse(test.equals(exp_result));
 	
 	}
 	
 	@Test
 	public void test_toString() {
-		DX test = new DX(1, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
+		DX test = new DX("AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
 		String str = test.toString();
 	}
 	
@@ -165,7 +161,7 @@ public class DXTest {
 		String exp_Tel = "6999999999";
 		String exp_Email = "mpapadopoulou@gmail.com";
 		String exp_BirthDate = "26.05.1990";
-		DX test = new DX(1, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
+		DX test = new DX("AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
 		String ADT = test.getADT();
 		String AFM = test.getAFM();
 		String Name = test.getName();

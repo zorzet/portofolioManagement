@@ -78,7 +78,7 @@ public class TransactionTest {
 		double exp_Price = 5.22;
 		String exp_Date = "20.02.2020";
 		String exp_State = "Pending";
-		Transaction test = new Transaction(1, "Αγορά", "ACC", 100, 5.22, "20.02.2020", "Pending");
+		Transaction test = new Transaction("Αγορά", "ACC", 100, 5.22, "20.02.2020", "Pending");
 		String CmdType = test.getCmdType();
 		String Stock = test.getStock();
 		int Units = test.getUnits();
@@ -94,7 +94,7 @@ public class TransactionTest {
 	
 	@Test
 	public void test_isPending() {
-		Transaction test = new Transaction(1, "Αγορά", "ACC", 100, 5.22, "20.02.2020", "Pending");
+		Transaction test = new Transaction("Αγορά", "ACC", 100, 5.22, "20.02.2020", "Pending");
 		assertTrue(test.isPending());
 	}
 }

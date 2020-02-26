@@ -24,8 +24,6 @@ public class Initializer {
 	        query2.executeUpdate();
 	        Query query3 = em.createNativeQuery("delete from Xartofulakio");
 	        query3.executeUpdate();
-	        Query query4 = em.createNativeQuery("delete from Customers");
-	        query4.executeUpdate();
 	        tx.commit();
         } catch(RuntimeException e) {
         	

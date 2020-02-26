@@ -66,7 +66,7 @@ public class DeiktesTest {
 		double exp_ΜΚΟ80 = 12.33;
 		double exp_yk20 = 12.33;
 		double exp_xk20 = 12.33;
-		Deiktes test = new Deiktes(1, 12.33, 12.33, 12.33, 12.33);
+		Deiktes test = new Deiktes(12.33, 12.33, 12.33, 12.33);
 		double ΜΚΟ15 = test.getMKO15();
 		double MKO80 = test.getMKO80();
 		double yk20 = test.getYk20();
