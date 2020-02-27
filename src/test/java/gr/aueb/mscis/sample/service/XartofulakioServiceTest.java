@@ -23,8 +23,4 @@ public class XartofulakioServiceTest {
 		em.close();
 	}
 	
-	@Test
-	public void test_XartofulakiobyId() {
-		
-	}
 }

@@ -33,7 +33,7 @@ public class UpdateIndicatorsTest {
 		String exp_message = "NO RECORDS FOUND";
 		UpdateIndicatorsService update = new UpdateIndicatorsService(em);
 		try {
-			update.GetLast14ClosingsOfStock(9999);
+			update.GetLast14ClosingsOfStock("MIMI");
 		} catch(java.lang.RuntimeException message) {
 			assertEquals(exp_message, message.getMessage());
 		}
@@ -42,10 +42,9 @@ public class UpdateIndicatorsTest {
 	@Test
 	public void test_ZeroClosings14() {
 		String exp_message = "MKO30 COULD NOT BE CALCULATED";
-		int m_id = em.createQuery("select m.StockId from Metoxh m where m.Name = 'OPAP'").getFirstResult();
 		UpdateIndicatorsService update = new UpdateIndicatorsService(em);
 		try {
-			update.GetLast14ClosingsOfStock(m_id);
+			update.GetLast14ClosingsOfStock("OPAP");
 		} catch(java.lang.RuntimeException message) {
 			assertEquals(exp_message, message.getMessage());
 		}
@@ -53,25 +52,18 @@ public class UpdateIndicatorsTest {
 	
 	@Test
 	public void test_GetLast14ClosingsOfStock() {
-		double exp_Closings = 8.69;
-	    int m_id = em.createQuery("select m.StockId from Metoxh m where m.Name = 'AEGN' ").getFirstResult();
+		double exp_Closings = 17.05;
 		UpdateIndicatorsService update = new UpdateIndicatorsService(em);
-		
-		try {			
-			double Closings = update.GetLast14ClosingsOfStock(m_id);
-			assertEquals(exp_Closings, Closings, 0.0);
-		} catch(java.lang.RuntimeException message) {
-			
-		}
+		double Closings = update.GetLast14ClosingsOfStock("AEGN");
+		assertEquals(exp_Closings, Closings, 0.01);
 	}
 
-	
 	@Test
 	public void test_StockMissing79() {
 		String exp_message = "NO RECORDS FOUND";
 		UpdateIndicatorsService update = new UpdateIndicatorsService(em);
 		try {
-			update.GetLast79ClosingsOfStock(9999);
+			update.GetLast79ClosingsOfStock("MIMI");
 		} catch(java.lang.RuntimeException message) {
 			assertEquals(exp_message, message.getMessage());
 		}
@@ -80,10 +72,9 @@ public class UpdateIndicatorsTest {
 	@Test
 	public void test_ZeroClosings79() {
 		String exp_message = "MKO30 COULD NOT BE CALCULATED";
-		int m_id = em.createQuery("select m.StockId from Metoxh m where m.Name = 'OPAP' ").getFirstResult();
 		UpdateIndicatorsService update = new UpdateIndicatorsService(em);
 		try {
-			update.GetLast79ClosingsOfStock(m_id);
+			update.GetLast79ClosingsOfStock("OPAP");
 		} catch(java.lang.RuntimeException message) {
 			assertEquals(exp_message, message.getMessage());
 		}
@@ -91,17 +82,10 @@ public class UpdateIndicatorsTest {
 	
 	@Test
 	public void test_GetLast79ClosingsOfStock() {
-		double exp_Closings = 8.69;
-	    int m_id = em.createQuery("select m.StockId from Metoxh m where m.Name = 'AEGN' ").getFirstResult();
-				
-		UpdateIndicatorsService update = new UpdateIndicatorsService(em);
-		
-		try {			
-			double Closings = update.GetLast79ClosingsOfStock(m_id);
-			assertEquals(exp_Closings, Closings, 0.0);
-		} catch(java.lang.RuntimeException message) {
-
-		}
+		double exp_Closings = 17.05;
+		UpdateIndicatorsService update = new UpdateIndicatorsService(em);	
+		double Closings = update.GetLast79ClosingsOfStock("AEGN");
+		assertEquals(exp_Closings, Closings, 0.01);
 	}
 	
 	@Test
@@ -109,7 +93,7 @@ public class UpdateIndicatorsTest {
 		String exp_message = "NO RECORDS FOUND";
 		UpdateIndicatorsService update = new UpdateIndicatorsService(em);
 		try {
-			update.GetLast19HighsOfStock(9999);
+			update.GetLast19HighsOfStock("MIMI");
 		} catch(java.lang.RuntimeException message) {
 			assertEquals(exp_message, message.getMessage());
 		}
@@ -117,33 +101,50 @@ public class UpdateIndicatorsTest {
 	
 	@Test
 	public void test_Zero19High() {
-		String exp_message = "MKO30 COULD NOT BE CALCULATED";
-		int m_id = em.createQuery("select m.StockId from Metoxh m where m.Name = 'OPAP' ").getFirstResult();
+		String exp_message = "HIGH20 COULD NOT BE CALCULATED";
 		UpdateIndicatorsService update = new UpdateIndicatorsService(em);
 		try {
-			update.GetLast19HighsOfStock(m_id);
+			update.GetLast19HighsOfStock("INTRK");
+		} catch(java.lang.RuntimeException message) {
+			assertEquals(exp_message, message.getMessage());
+		}
+	}
+
+	@Test
+	public void test_GetLast19HighsOfStock() {
+		double exp_Highs = 17.11;
+		UpdateIndicatorsService update = new UpdateIndicatorsService(em);		
+		double Highs = update.GetLast19HighsOfStock("AEGN");
+		assertEquals(exp_Highs, Highs, 0.01);
+	}
+	
+	@Test
+	public void test_StockMissing19Low() {
+		String exp_message = "NO RECORDS FOUND";
+		UpdateIndicatorsService update = new UpdateIndicatorsService(em);
+		try {
+			update.GetLast19LowsOfStock("MIMI");
 		} catch(java.lang.RuntimeException message) {
 			assertEquals(exp_message, message.getMessage());
 		}
 	}
 	
-	@SuppressWarnings("unchecked")
 	@Test
-	public void test_GetLast19HighsOfStock() {
-		double exp_Highs = 8.70;
-		int m_id=0;
-		List <Metoxh> mlist=null;
-			mlist=em.createQuery(
-				"select m from Metoxh m where m.StockId like : StockId")
-	    		.setParameter("StockId", 1).getResultList();
-			m_id=mlist.get(0).getStockId();
-			UpdateIndicatorsService update = new UpdateIndicatorsService(em);
-		
-		try {			
-			double Highs = update.GetLast19HighsOfStock(m_id);
-			assertEquals(exp_Highs, Highs, 0.0);
+	public void test_Zero19Low() {
+		String exp_message = "LOW20 COULD NOT BE CALCULATED";
+		UpdateIndicatorsService update = new UpdateIndicatorsService(em);
+		try {
+			update.GetLast19LowsOfStock("MOH");
 		} catch(java.lang.RuntimeException message) {
-
+			assertEquals(exp_message, message.getMessage());
 		}
+	}
+
+	@Test
+	public void test_GetLast19LowsOfStock() {
+		double exp_Lows = 16.80;
+		UpdateIndicatorsService update = new UpdateIndicatorsService(em);		
+		double Lows = update.GetLast19LowsOfStock("AEGN");
+		assertEquals(exp_Lows, Lows, 0.01);
 	}
 }

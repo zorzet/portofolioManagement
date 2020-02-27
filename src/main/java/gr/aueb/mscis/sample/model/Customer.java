@@ -182,10 +182,11 @@ public class Customer extends User{
 				+ ", BankAccountNo=" + BankAccountNo + "]";
 	}
 
-	public Customer(String aDT, String aFM, String name, String surname, String tel, String email, String birthDate,
+	public Customer(int CustomerId, String aDT, String aFM, String name, String surname, String tel, String email, String birthDate,
 			int investAmount, String bankAccountNo) {
 		super();
 		
+		this.CustomerId = CustomerId;
 		this.ADT = aDT;
 		this.AFM = aFM;
 		this.Name = name;
