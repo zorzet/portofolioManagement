@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.*;
 import gr.aueb.mscis.sample.model.Customer;
 import gr.aueb.mscis.sample.model.DX;
+import gr.aueb.mscis.sample.model.MarketsData;
 
 public class CustomerTest {
 
@@ -139,6 +140,10 @@ public class CustomerTest {
 		Customer test = new Customer("AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");
 		assertTrue(test.equals(exp_cust));
 		assertFalse(test.equals(null));
+		
+		test = null;
+		MarketsData mtest = new MarketsData("1/12/2017",1783.33,1797.3,1774.43,1782.88);
+		assertFalse(exp_cust.equals(mtest));
 		
 		test = null;
 		test = new Customer("AH252699", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890");

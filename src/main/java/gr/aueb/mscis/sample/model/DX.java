@@ -41,6 +41,26 @@ public class DX extends User {
             mappedBy="dx", fetch=FetchType.LAZY)
     private Set<Xartofulakio> xartofulakia = new HashSet<Xartofulakio>();
 	
+    public Set<Xartofulakio> getXartofulakio() {
+    	return this.xartofulakia;
+    }
+    
+    public void setXartofulakio(Set<Xartofulakio> x) {
+    	this.xartofulakia = x;
+    }
+    
+    public void addXartofulakio(Xartofulakio x) {
+        if (x != null) {
+            x.addDX(this);
+        }
+    }
+    
+    public void removeXartofulakio(Xartofulakio x) {
+    	if (x != null) {
+    		x.removeDX(this);
+    	}
+    }
+    
 	// * DX EPILEGEI POLLES METOXES 
 	@ManyToMany(mappedBy="dxs",fetch=FetchType.LAZY, 
             cascade = { CascadeType.PERSIST, CascadeType.MERGE })

@@ -1,9 +1,8 @@
 package gr.aueb.mscis.sample.model;
 //leipoun toString kai equals 
 
-import java.util.Set;
+import java.util.*;
 import javax.persistence.*;
-import java.util.HashSet;
 import gr.aueb.mscis.sample.model.Customer;
 
 @Entity
@@ -21,20 +20,54 @@ public class Xartofulakio {
 	
     @Embedded
     private Customer cus = new Customer();
-
-    public DX getDX() {
-    	return this.dx;
-    }
-    public void setDX(DX dx) {
-    	this.dx=dx;
-    }
     
 	/*1 portofolio is associated with many transactions.*/
     @OneToMany(orphanRemoval=true, 
             cascade = CascadeType.MERGE, 
             mappedBy="Xartofulakio", fetch=FetchType.LAZY)    
     private Set<Transaction> trans = new HashSet<Transaction>();
+
+	/**
+	 *  Επιστέφει τη συλλογή των συναλλαγών
+	 *  Η συλλογή είναι αντίγραφο της συλλογής των συναλλαγών
+	 * @return H συλλογή των συναλλαγών
+	 */
+    public Set<Transaction> getTransactions() {
+        return new HashSet<Transaction>(trans);
+    }
     
+    public void setTransactions(Set<Transaction> trans) {
+    	this.trans = trans;
+    }
+    
+    public void addTransaction(Transaction trans) {
+        if (trans != null) {
+            trans.addXartofulakio(this);
+        }
+    }
+    
+    public void removeTransaction(Transaction trans) {
+    	if (trans != null) {
+    		trans.removeXartofulakio(this);
+    	}
+    }
+    
+	/**
+	 * Επιστρέφει τον αριθμό των συναλλαγών που δεν έχουν εκτελεστεί ακόμα
+	 * χρησιμοποιείται για έλεγχο
+	 * @return
+	 */
+
+	public int countPendingStocks() {
+        int pendingTrans = 0;
+        for (Transaction tran : trans) {
+            if (tran.isPending()) {
+                pendingTrans++;
+            }
+        }
+        return pendingTrans;
+    }
+	
 	/* kathe xartofulakio exei 1 diaxeiristi */ 
 	@ManyToOne(fetch=FetchType.LAZY, 
             cascade= {CascadeType.MERGE}    
@@ -42,6 +75,26 @@ public class Xartofulakio {
     @JoinColumn(name="DXno")
     DX dx;
 	
+    public DX getDX() {
+    	return this.dx;
+    }
+    
+    public void setDX(DX dx) {
+    	this.dx=dx;
+    }
+    
+    public void addDX(DX dx) {
+        if (dx != null) {
+            dx.addXartofulakio(this);
+        }
+    }
+    
+    public void removeDX(DX dx) {
+    	if (dx != null) {
+    		dx.removeXartofulakio(this);
+    	}
+    }
+    
     /**
      * Επιστρεφει τον αριθμό του χαρτοφυλακίου
      * που προσδιοριζει μοναδικά κάθε χαρτοφυλάκιο.
@@ -98,29 +151,4 @@ public class Xartofulakio {
 		this.cus = c;
 	}
 	
-	/**
-	 *  Επιστέφει τη συλλογή των συναλλαγών
-	 *  Η συλλογή είναι αντίγραφο της συλλογής των συναλλαγών
-	 * @return H συλλογή των συναλλαγών
-	 */
-    public Set<Transaction> getTransactions() {
-        return new HashSet<Transaction>(trans);
-    }
-    /*Convert Xartofulakio to String. get Transactions as well*/
-    
-	/**
-	 * Επιστρέφει τον αριθμό των συναλλαγών που δεν έχουν εκτελεστεί ακόμα
-	 * χρησιμοποιείται για έλεγχο
-	 * @return
-	 */
-
-	public int countPendingStocks() {
-        int pendingTrans = 0;
-        for (Transaction tran : trans) {
-            if (tran.isPending()) {
-                pendingTrans++;
-            }
-        }
-        return pendingTrans;
-    }
 }

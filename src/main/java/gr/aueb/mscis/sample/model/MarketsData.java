@@ -75,4 +75,10 @@ public class MarketsData{
 	public void setMin(double Min) {
 		this.Min = Min;
 	}
+	
+	@Override
+	public String toString() {
+		return "MarketsData [Date=" + date + ", Opening=" + Opening + ", Closing=" + Closing
+				+ ", Max=" + Max + ", Min=" + Min + "]";
+	}
 }

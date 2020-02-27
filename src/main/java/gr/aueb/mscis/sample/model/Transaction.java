@@ -1,5 +1,7 @@
 package gr.aueb.mscis.sample.model;
 
+import java.util.Set;
+
 import javax.persistence.*;
 
 /**Kataxoreitai ka8e sunallagh pou ginetai gia ena pelath
@@ -41,6 +43,26 @@ public class Transaction {
             ) 
     @JoinColumn(name="Xartofulakiono")
     Xartofulakio Xartofulakio;
+	
+    public Xartofulakio getXartofulakio() {
+    	return this.Xartofulakio;
+    }
+    
+    public void setXartofulakio(Xartofulakio x) {
+    	this.Xartofulakio = x;
+    }
+    
+    public void addXartofulakio(Xartofulakio x) {
+        if (x != null) {
+            x.addTransaction(this);
+        }
+    }
+    
+    public void removeXartofulakio(Xartofulakio x) {
+    	if (x != null) {
+    		x.removeTransaction(this);
+    	}
+    }
     
     
 	public int getTransId() {
