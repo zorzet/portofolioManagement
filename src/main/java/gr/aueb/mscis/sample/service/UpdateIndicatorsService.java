@@ -101,12 +101,13 @@ public class UpdateIndicatorsService {
 	@SuppressWarnings("unchecked")
 	public void UpdateIndicators(String date) {
 		List<Metoxh> mtxlist=null;
+		
 		mtxlist = em.createQuery("select m from Metoxh m.date like :today")
 					.setParameter("today", date).getResultList();
+		
 	    for (int i = 0; i < mtxlist.size(); i++) {
-	    	UpdateDeiktesAndStock(mtxlist.get(i));
+	    	Deiktes d = UpdateDeiktesAndStock(mtxlist.get(i));
 	    }
-	
 	}
 		
 	@SuppressWarnings("unused")
@@ -134,7 +135,7 @@ public class UpdateIndicatorsService {
 	}
 	
 	/*UNDER CONSTRUCTION*/
-	public void UpdateDeiktesAndStock(Metoxh m) {
+	public Deiktes UpdateDeiktesAndStock(Metoxh m) {
 		//Metoxh m = createMetoxh(stockid,name, date, high, low, closing,beta,Volume);
 		Deiktes d = createDeikth(m.getName(), m.getHigh(), m.getLow(), m.getClosing());
 		m.setDeiktes(d);
@@ -145,5 +146,7 @@ public class UpdateIndicatorsService {
 		em.persist(m);
 		em.persist(d);
 		tx.commit();
+		
+		return d;
 	}
 }
