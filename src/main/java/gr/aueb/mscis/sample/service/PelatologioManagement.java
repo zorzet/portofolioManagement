@@ -13,7 +13,7 @@ public class PelatologioManagement {
 	@SuppressWarnings("unchecked")
 	public List<Customer> findCustomersById(int id) {
 		List<Customer> results = null;
-		results = em.createQuery("select c from Customer c where c.id like :id ").setParameter("id", id)
+		results = em.createQuery("select c  from Customer c where c.id like :id ").setParameter("id", id)
 				.getResultList();
 		return results;
 	}
