@@ -16,7 +16,89 @@ public class UpdateIndicatorsService {
 		this.em = em;
 	}
 	
-	/*pare tis teleutaia 14 kleisimata mias metoxhs */
+/////////////////////////////////////////////////////////////////////
+//Το σύστημα αποθηκεύει τα ημερήσια στοιχεία για την κίνηση των μετοχών (υψηλό, χαμηλό, κλείσιμο, άνοιγμα, τζίρος).
+/////////////////////////////////////////////////////////////////	
+	
+	/**
+	 * Δημιουργει instance μετοχής. Χρησιμοποιείται απο την UpdateDeiktesAndStock
+	 * @param name
+	 * @param date
+	 * @param high
+	 * @param low
+	 * @param closing
+	 * @param beta
+	 * @param Volume
+	 * @return Metoxh
+	 */
+	@SuppressWarnings("unused")
+	public Metoxh createMetoxh(String name, String date, Double high, Double low, Double closing, Double beta, int Volume) {
+		try {
+			Metoxh m = new Metoxh(name, date, high, low, closing, beta, Volume);
+			return m;
+		} catch(Exception e) {
+			throw new java.lang.RuntimeException("Error Updating Stock");
+		}
+	}
+	
+	/**
+	 * Δημιουργει instance δείκτη. Χρησιμοποιείται απο την UpdateDeiktesAndStock
+	 * @param date
+	 * @param Name
+	 * @param high
+	 * @param low
+	 * @param closing
+	 * @return Deiktes
+	 */
+	public Deiktes createDeikth(String date,String Name, double high, double low, double closing) {
+		double ghigh = GetLast19HighsOfStock(Name);
+		double glow = GetLast19LowsOfStock(Name);
+		double gclosing14 = GetLast14ClosingsOfStock(Name); 
+		double gclosing79 = GetLast79ClosingsOfStock(Name); 
+		try {
+			Deiktes d = new Deiktes(date,((glow+low/20)), ((ghigh+high)/20), ((gclosing14+closing)/30), ((gclosing79+closing)/80));
+			return d;
+		} catch (Exception e) {
+			throw new java.lang.RuntimeException("Error Updating Indicators");
+		}
+	}
+	
+	/**
+	 * Enhmrwnei sth vash tous metoxes kai tous deiktes
+	 * @param name
+	 * @param date
+	 * @param high
+	 * @param low
+	 * @param closing
+	 * @param beta
+	 * @param Volume
+	 * @param date
+	 * @return
+	 */
+	public Deiktes UpdateDeiktesAndStock(String name, String date, Double high, Double low, Double closing, Double beta, int Volume) {
+		Metoxh m = createMetoxh( name, date,  high,  low, closing, beta, Volume);
+		Deiktes d = createDeikth(date,m.getName(), m.getHigh(), m.getLow(), m.getClosing());
+		m.setDeiktes(d);
+		d.setMetoxh(m);
+		
+        EntityTransaction tx = em.getTransaction();
+        tx.begin();
+		em.persist(m);
+		em.persist(d);
+		tx.commit();
+		
+		return d;
+	}
+
+/////////////////////////////////////////////////////////////////////
+//Το σύστημα υπολογίζει τον κινητό μέσο όρο 15 ημερών (ΜΚΟ15) για όλες τις μετοχές ξεχωριστά και τον αποθηκεύει.
+////////////////////////////////////////////////////////////////////	
+	/**
+	 *Παίνρει τα τελευταία 14 κλεισίματα της μετοχής, με σκοπό να πάρει και το σημερινό
+	 *και να υποκλογίσει τον ΜΚΟ15. Χρησιμοποιείται απο την Deiktes createDeikth
+	 * @param Name
+	 * @return ΜΚΟ14
+	 */
 	@SuppressWarnings("unchecked")
 	public double GetLast14ClosingsOfStock(String Name) {
 		double Closings14 = 0.0;
@@ -36,7 +118,15 @@ public class UpdateIndicatorsService {
 		return (Closings14);
 	}
 	
-	/*pare tis teleutaia 79 kleisimata mias metoxhs */
+/////////////////////////////////////////////////////////////////////
+//Το σύστημα υπολογίζει τον κινητό μέσο όρο 80 ημερών (ΜΚΟ80) για όλες τις μετοχές ξεχωριστά και τον αποθηκεύει.
+////////////////////////////////////////////////////////////////////	
+	/**
+	 * Παίνρει τα τελευταία 79 κλεισίματα της μετοχής, με σκοπό να πάρει και το σημερινό
+	 *και να υποκλογίσει τον ΜΚΟ80. Χρησιμοποιείται απο την Deiktes createDeikth
+	 * @param Name
+	 * @return ΜΚΟ79
+	 */
 	@SuppressWarnings("unchecked")
 	public double GetLast79ClosingsOfStock(String Name) {
 		double Closings79=0.0;
@@ -55,8 +145,16 @@ public class UpdateIndicatorsService {
 	    }
 		return Closings79;
 	}
-	
-	/*pare tis teleutaia 19 upshla mias metoxhs */
+/////////////////////////////////////////////////////////////////////
+//Το σύστημα υπολογίζει το υψηλό 20 ημερών (yk20) και το χαμηλό 20 ημερών (xk20) για όλες τις μετοχές ξεχωριστά και τα αποθηκεύει.
+////////////////////////////////////////////////////////////////////	
+
+    /**
+     *Παίνρει τα τελευταία 19 Υψηλά της μετοχής, με σκοπό να πάρει και το σημερινό
+	 *και να υποκλογίσει τον ΥΚ20. Χρησιμοποιείται απο την Deiktes createDeikth
+     * @param Name
+     * @return ΥΚ19
+     */
 	@SuppressWarnings("unchecked")
 	public double GetLast19HighsOfStock(String Name) {
 		double Highs19=0.0;
@@ -76,7 +174,13 @@ public class UpdateIndicatorsService {
 		return (Highs19);
 	}	
 	
-	/*pare tis teleutaia 19 xamhla mias metoxhs */
+	/**
+	 * 
+     *Παίνρει τα τελευταία 19 Χαμηλά της μετοχής, με σκοπό να πάρει και το σημερινό
+	 *και να υποκλογίσει τον ΧΚ20. Χρησιμοποιείται απο την Deiktes createDeikth
+	 * @param Name
+	 * @return ΧΚ19
+	 */
 	@SuppressWarnings("unchecked")
 	public double GetLast19LowsOfStock(String Name) {
 		double Lows19=0.0;
@@ -96,57 +200,5 @@ public class UpdateIndicatorsService {
 		return (Lows19);
 	}
 	
-	/*pare mia mia oles tis metoxes, to shmerino tous kleisimo, upshlo kai xamhlo kai 
-	 * gia ka8e mia kane kainourgia eggrafh sto pinaka deiktes*/
-	@SuppressWarnings("unchecked")
-	public void UpdateIndicators(String date) {
-		List<Metoxh> mtxlist=null;
-		
-		mtxlist = em.createQuery("select m from Metoxh m.date like :today")
-					.setParameter("today", date).getResultList();
-		
-	    for (int i = 0; i < mtxlist.size(); i++) {
-	    	Deiktes d = UpdateDeiktesAndStock(mtxlist.get(i));
-	    }
-	}
-		
-	@SuppressWarnings("unused")
-	public Metoxh createMetoxh(String name, String date, Double high, Double low, Double closing, Double beta, int Volume) {
-		try {
-			Metoxh m = new Metoxh(name, date, high, low, closing, beta, Volume);
-			return m;
-		} catch(Exception e) {
-			throw new java.lang.RuntimeException("Error Updating Stock");
-		}
-	}
-	
-
-	public Deiktes createDeikth(String Name, double high, double low, double closing) {
-		double ghigh = GetLast19HighsOfStock(Name);
-		double glow = GetLast19LowsOfStock(Name);
-		double gclosing14 = GetLast14ClosingsOfStock(Name); 
-		double gclosing79 = GetLast79ClosingsOfStock(Name); 
-		try {
-			Deiktes d = new Deiktes(((glow+low/20)), ((ghigh+high)/20), ((gclosing14+closing)/30), ((gclosing79+closing)/80));
-			return d;
-		} catch (Exception e) {
-			throw new java.lang.RuntimeException("Error Updating Indicators");
-		}
-	}
-	
-	/*UNDER CONSTRUCTION*/
-	public Deiktes UpdateDeiktesAndStock(Metoxh m) {
-		//Metoxh m = createMetoxh(stockid,name, date, high, low, closing,beta,Volume);
-		Deiktes d = createDeikth(m.getName(), m.getHigh(), m.getLow(), m.getClosing());
-		m.setDeiktes(d);
-		d.setMetoxh(m);
-		
-        EntityTransaction tx = em.getTransaction();
-        tx.begin();
-		em.persist(m);
-		em.persist(d);
-		tx.commit();
-		
-		return d;
-	}
 }
+
