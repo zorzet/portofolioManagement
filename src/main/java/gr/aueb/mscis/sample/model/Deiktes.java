@@ -23,7 +23,15 @@ public class Deiktes {
 	public void setMetoxh(Metoxh metoxh) {
 		this.metoxh=metoxh;
 	}
+	@Column(name = "Date", length = 50, nullable = false)
+	private String date;
 	
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
 	@Column(name = "MKO15", length = 50, nullable = false)
 	private Double MKO15;
 
@@ -39,7 +47,8 @@ public class Deiktes {
 	public Deiktes() {
 	}
 
-	public Deiktes(Double MKO15, Double MKO80, Double yk20, Double xk20) {
+	public Deiktes(String date,Double MKO15, Double MKO80, Double yk20, Double xk20) {
+		this.date=date;
 		this.MKO15 = MKO15;
 		this.MKO80 = MKO80;
 		this.yk20 = yk20;
