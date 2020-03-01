@@ -12,7 +12,7 @@ import gr.aueb.mscis.sample.model.Transaction;
 import gr.aueb.mscis.sample.model.Xartofulakio;
 
 public class XartofulakioService {
-	private EntityManager em;
+	private static EntityManager em;
 
 	public XartofulakioService(EntityManager em) {
 		this.em = em;
@@ -29,7 +29,7 @@ public class XartofulakioService {
 	 * @return λίστα Χαρτοφυλακίων
 	 */
 	@SuppressWarnings("unchecked")
-	public List<Xartofulakio> findXartofulakiaById(int DXId) {
+	public static List<Xartofulakio> findXartofulakiaById(int DXId) {
 		List<Xartofulakio> results = null;
 		results = em.createQuery("select x from Xartofulakio x where x.XId like :DXId ").setParameter("DXId", DXId)
 				.getResultList();
@@ -61,14 +61,14 @@ public class XartofulakioService {
 	/**Χρησιμοποείται για να υπολογίσει το beta του χαρτοφυλακιου 
 	 * άθροισμα(beta metoxhs* τωρινη τιμή μετοχής* τεμάχια μετοχής)/τωρινη τιμή μετοχής* τεμάχια μετοχής
 	 * για τις μετοχές που έχουμε στο χαρτοφυλάκιο μας
-	 * @param xid
-	 * @param cusid
+	 * @param xid DX
+	 * @param cusid CS
 	 * @param date
 	 * @return double
 	 * Χρησιμοποιεί και τις δύο επόμενες συναρτήσεις
 	 */
 	@SuppressWarnings("unchecked")
-	public double CalculateBeta(int xid, int cusid,String date){
+	public static double CalculateBeta(int xid, int cusid,String date){
 		double beta=0.0;
 		double ari8mhths=0.0, paranomasths=0.0;
 		//PARE OLA TA XARTOFULAKIA TOU DX
@@ -103,7 +103,7 @@ public class XartofulakioService {
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	public double betaOfStock(String name, String date) {
+	public static double betaOfStock(String name, String date) {
 		double betaOfStock=0.0;
 		List<Metoxh> ml=null;
 		ml=em.createQuery("select m from Metoxh m where m.Name like :Name")
@@ -124,7 +124,7 @@ public class XartofulakioService {
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	public double priceOfStock(String name,String date) {
+	public static double priceOfStock(String name,String date) {
 		double priceOfStock=0.0;
 		List<Metoxh> ml=null;
 		ml=em.createQuery("select m from Metoxh m where m.Name like :Name")
