@@ -119,6 +119,7 @@ public class Initializer {
         DX dx1 = new DX("AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26/05/1990");
         x1.setDX(dx1);
         DX dx2 = new DX("AH252688", "12345679", "Eirini", "Papadopoulou", "6999999998", "epapadopoulou@gmail.com", "13/04/1984");
+        x2.setDX(dx2);
         
         EntityManager em = JPAUtil.getCurrentEntityManager();
         EntityTransaction tx = em.getTransaction();

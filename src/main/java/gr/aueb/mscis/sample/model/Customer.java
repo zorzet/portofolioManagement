@@ -11,10 +11,10 @@ public class Customer extends User{
 	@Column(name = "CustomerId", unique = true, nullable = false)
 	private int CustomerId;
 	
-	@Column(name = "ADT", length = 9, nullable = false)
+	@Column(name = "ADT", length = 9, unique = true, nullable = false)
 	private String ADT;
 
-	@Column(name="AFM", nullable = false)
+	@Column(name="AFM", unique = true, nullable = false)
 	private String AFM;
 	
 	@Column(name="Name", nullable = false)
@@ -35,7 +35,7 @@ public class Customer extends User{
 	@Column(name="InvestAmount", nullable = false)
 	private double InvestAmount;
 	
-	@Column(name="BankAccountNo", nullable = false)
+	@Column(name="BankAccountNo", unique = true, nullable = false)
 	private String BankAccountNo;
 	
 	public int getCustomerId() {

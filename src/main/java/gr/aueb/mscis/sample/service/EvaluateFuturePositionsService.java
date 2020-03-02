@@ -141,7 +141,7 @@ public class EvaluateFuturePositionsService {
 		List<Xartofulakio> xlist=null;
 		Xartofulakio found = null;
 		Set<Transaction> translist=null;
-		xlist= em.createQuery("select x from Xartofulakio x where x.XId like :DXId ").setParameter("DXId", DXId)
+		xlist= em.createQuery("select x from Xartofulakio x where x.dx.DXId like :DXId ").setParameter("DXId", DXId)
 				 .getResultList();
 
 		//VRES AUTO TOU PELATH
@@ -165,7 +165,7 @@ public class EvaluateFuturePositionsService {
 		
 		//PARE OLA TA XARTOFULAKIA TOU DX
 		List<Xartofulakio> xlist=null;
-		xlist= em.createQuery("select x from Xartofulakio x where x.XId like :DXId ", Xartofulakio.class).setParameter("DXId", XId)
+		xlist= em.createQuery("select x from Xartofulakio x where x.dx.DXId like :DXId ", Xartofulakio.class).setParameter("DXId", XId)
 				 .getResultList();
 		
 		//VRES AUTO TOU PELATH	

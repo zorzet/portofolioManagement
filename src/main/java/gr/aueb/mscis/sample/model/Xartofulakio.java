@@ -72,11 +72,11 @@ public class Xartofulakio {
     DX dx;
 	
     public DX getDX() {
-    	return this.dx;
+    	return dx;
     }
     
-    public void setDX(DX dx) {
-    	this.dx=dx;
+    public void setDX(DX Dx) {
+    	dx = Dx;
     }
    
     
