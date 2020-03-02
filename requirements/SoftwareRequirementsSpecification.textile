@@ -315,9 +315,15 @@ h2. α. Μοντέλο πεδίου
 h2. β. Ανάλυση περιπτώσεων χρήσης
 
 h3. Κλάσεις ανάλυσης
-
+!Class_Diagram.png!
 h3. Συμπεριφορές
-
+h4. Διαγραμμα Ακολουθίας Περίπτωσης Χρήσης 2
+!SequenceDiagramForUseCase2.png!
+h4. Διαγραμμα Ακολουθίας Περίπτωσης Χρήσης 3
+!SequenceDiagramForUserCase3.png!
+h4. Διαγραμμα Ακολουθίας Περίπτωσης Χρήσης 6
+!SequenceDiagramForUseCase6.png!
 h3. Άλλα μοντέλα
-
+h4. Διαγραμμα Μηχανής Καταστάσεων Transaction
+!state_machine_Transaction.png!
 h3. Επιχειρησιακοί κανόνες
