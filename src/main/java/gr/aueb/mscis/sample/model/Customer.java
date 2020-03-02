@@ -7,6 +7,7 @@ import javax.persistence.*;
 @Table(name = "Customer",uniqueConstraints = {
         @UniqueConstraint(columnNames = "CustomerId")})
 public class Customer extends User{ 
+	  
 	
 	@Column(name = "CustomerId", unique = true, nullable = false)
 	private int CustomerId;
