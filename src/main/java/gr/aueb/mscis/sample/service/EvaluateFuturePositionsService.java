@@ -134,19 +134,19 @@ public class EvaluateFuturePositionsService {
 	* @return
 	*/
 	@SuppressWarnings("unchecked")
-	public int showUnitsofStocksperPortofolio(String Stock, int XId,int CusId) {
+	public int showUnitsofStocksperPortofolio(String Stock, int DXId,int CusId) {
 		int units=0;
 		
 		//PARE OLA TA XARTOFULAKIA TOU DX
 		List<Xartofulakio> xlist=null;
 		Xartofulakio found = null;
 		Set<Transaction> translist=null;
-		xlist= em.createQuery("select x from Xartofulakio x where x.XId like :DXId ").setParameter("DXId", XId)
+		xlist= em.createQuery("select x from Xartofulakio x where x.XId like :DXId ").setParameter("DXId", DXId)
 				 .getResultList();
-		
+
 		//VRES AUTO TOU PELATH
-		for(Xartofulakio x : xlist) {
-			if(x.getCus().getCustomerId() == CusId) found = x;
+		for(Xartofulakio xartofulakio : xlist) {
+			if(xartofulakio.getCus().getCustomerId() == CusId) found = xartofulakio;
 		}		
 		translist = found.getTransactions();
 

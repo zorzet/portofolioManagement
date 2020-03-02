@@ -33,12 +33,11 @@ public class Xartofulakio {
 	 * @return H συλλογή των συναλλαγών
 	 */
     public Set<Transaction> getTransactions() {
-        return this.trans;
+        return trans;
     }
     
     public void addTransaction(Transaction t) {
     	this.friendTransactions().add(t);
-    	
     }
     
     public void removeTransaction(Transaction t) {

@@ -44,7 +44,7 @@ public class Transaction {
     Xartofulakio Xartofulakio;
 	
     public Xartofulakio getXartofulakio() {
-    	return this.Xartofulakio;
+    	return Xartofulakio;
     }
     
     public void setXartofulakio(Xartofulakio x) {
@@ -143,5 +143,49 @@ public class Transaction {
     public boolean isPending() {
         return state.equalsIgnoreCase("pending");
     }
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Transaction other = (Transaction) obj;
+		if (CmdType == null) {
+			if (other.CmdType != null)
+				return false;
+		} else if (!CmdType.equals(other.CmdType))
+			return false;
+		if (Stock == null) {
+			if (other.Stock != null)
+				return false;
+		} else if (!Stock.equals(other.Stock))
+			return false;
+		if (Units != other.Units)
+			return false;
+		if (date == null) {
+			if (other.date != null)
+				return false;
+		} else if (!date.equals(other.date))
+			return false;
+		if (Double.doubleToLongBits(price) != Double.doubleToLongBits(other.price))
+			return false;
+		if (state == null) {
+			if (other.state != null)
+				return false;
+		} else if (!state.equals(other.state))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Transaction [TransId=" + TransId + ", CmdType=" + CmdType + ", Stock=" + Stock + ", Units=" + Units
+				+ ", price=" + price + ", date=" + date + ", state=" + state + "]";
+	}
+    
+
 		
 }
