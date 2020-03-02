@@ -17,8 +17,8 @@ version="2.0">
           <property name="hibernate.dialect"
                     value="org.hibernate.dialect.H2Dialect"/>            
           <property name="hibernate.connection.username"
-                    value="sa"/>          
-          <property name="hibernate.hbm2ddl.auto" value="create"/> 	       	       
+                    value="sa"/>         
+          <property name="hibernate.hbm2ddl.auto" value="create"/> 	           
 	   </properties>
 	</persistence-unit>
 </persistence>

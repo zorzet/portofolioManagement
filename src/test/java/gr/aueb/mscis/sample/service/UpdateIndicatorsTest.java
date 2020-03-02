@@ -10,22 +10,47 @@ import org.junit.*;
 import gr.aueb.mscis.sample.persistence.Initializer;
 import gr.aueb.mscis.sample.persistence.JPAUtil;
 import gr.aueb.mscis.sample.service.UpdateIndicatorsService;
-import gr.aueb.mscis.sample.model.Metoxh;;
+import gr.aueb.mscis.sample.model.Metoxh;
+import gr.aueb.mscis.sample.model.Deiktes;
 
 public class UpdateIndicatorsTest {
 	
-	protected EntityManager em;
+	protected static EntityManager em;
 	
-	@Before
-	public void setup(){
+	@BeforeClass
+	public static void setup(){
 		Initializer dataHelper = new Initializer();
 		dataHelper.prepareData();
 		em = JPAUtil.getCurrentEntityManager();
 	}
 	
-	@After
-	public void tearDown(){
+	@AfterClass
+	public static void tearDown(){
 		em.close();
+	}
+	
+	@Test
+	public void test_createMetoxh() {
+		Metoxh exp_m = new Metoxh("ACC", "21/02/2020", 0.03, 0.23, 0.32, 0.86, 5000);
+		UpdateIndicatorsService update = new UpdateIndicatorsService(em);
+		Metoxh m = update.createMetoxh("ACC", "21/02/2020", 0.03, 0.23, 0.32, 0.86, 5000);
+		assertEquals(exp_m, m);
+	}
+	
+	@Test
+	public void test_createDeikth() {
+		Deiktes exp_d = new Deiktes("23/02/2020", 0.8, 0.3, 2.0, 2.0);
+		UpdateIndicatorsService update = new UpdateIndicatorsService(em);
+		Deiktes d = update.createDeikth("23/02/2020", "ELPE", 18.00, 19.00, 4.00);
+		assertEquals(exp_d, d);
+	}
+	
+	@Test
+	public void test_updateDeiktesAndStock() {
+		Deiktes exp_d = new Deiktes("24/02/2020", 0.8, 0.3, 2.0, 2.0);
+		UpdateIndicatorsService update = new UpdateIndicatorsService(em);
+		Deiktes d = update.UpdateDeiktesAndStock("ELPE", "24/02/2020", 18.00, 19.00, 4.00, 1.32, 5000);
+		assertEquals(exp_d, d);
 	}
 	
 	@Test

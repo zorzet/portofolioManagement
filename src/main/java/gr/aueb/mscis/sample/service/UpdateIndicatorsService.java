@@ -33,12 +33,8 @@ public class UpdateIndicatorsService {
 	 */
 	@SuppressWarnings("unused")
 	public Metoxh createMetoxh(String name, String date, Double high, Double low, Double closing, Double beta, int Volume) {
-		try {
-			Metoxh m = new Metoxh(name, date, high, low, closing, beta, Volume);
-			return m;
-		} catch(Exception e) {
-			throw new java.lang.RuntimeException("Error Updating Stock");
-		}
+		Metoxh m = new Metoxh(name, date, high, low, closing, beta, Volume);
+		return m;
 	}
 	
 	/**
@@ -55,12 +51,8 @@ public class UpdateIndicatorsService {
 		double glow = GetLast19LowsOfStock(Name);
 		double gclosing14 = GetLast14ClosingsOfStock(Name); 
 		double gclosing79 = GetLast79ClosingsOfStock(Name); 
-		try {
-			Deiktes d = new Deiktes(date,((glow+low/20)), ((ghigh+high)/20), ((gclosing14+closing)/30), ((gclosing79+closing)/80));
-			return d;
-		} catch (Exception e) {
-			throw new java.lang.RuntimeException("Error Updating Indicators");
-		}
+		Deiktes d = new Deiktes(date,((gclosing14+closing)/30), ((gclosing79+closing)/80), ((ghigh+high)/20), ((glow+low)/20));
+		return d;
 	}
 	
 	/**
@@ -78,12 +70,10 @@ public class UpdateIndicatorsService {
 	public Deiktes UpdateDeiktesAndStock(String name, String date, Double high, Double low, Double closing, Double beta, int Volume) {
 		Metoxh m = createMetoxh( name, date,  high,  low, closing, beta, Volume);
 		Deiktes d = createDeikth(date,m.getName(), m.getHigh(), m.getLow(), m.getClosing());
-		m.setDeiktes(d);
 		d.setMetoxh(m);
 		
         EntityTransaction tx = em.getTransaction();
         tx.begin();
-		em.persist(m);
 		em.persist(d);
 		tx.commit();
 		

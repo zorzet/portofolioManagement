@@ -7,6 +7,9 @@ import gr.aueb.mscis.sample.model.MarketsData;
 import gr.aueb.mscis.sample.model.Metoxh;
 import gr.aueb.mscis.sample.model.Xartofulakio;
 import gr.aueb.mscis.sample.model.Customer;
+import gr.aueb.mscis.sample.model.Transaction;
+import gr.aueb.mscis.sample.model.Deiktes;
+import gr.aueb.mscis.sample.model.DX;
 
 public class Initializer {
 	
@@ -100,6 +103,7 @@ public class Initializer {
         Metoxh st3=new Metoxh("MOH", "22/02/2020", 20.6, 0.0, 20.52,1.3, 80200);
         Metoxh st4=new Metoxh("AEGN", "23/02/2020", 8.41, 8.20, 8.36, 0.75, 123000);
         Metoxh st5=new Metoxh("OPAP", "22/02/2020", 11.46, 11.39, 0.0, 1.71, 654000);
+        Metoxh st6=new Metoxh("ELPE", "22/02/2020", 22.00, 21.00, 20.00, 2.00, 4000);
                
         Customer c1 = new Customer(1, "AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",
     			12345, "GE075 1234 1234 1234 1234");
@@ -107,6 +111,11 @@ public class Initializer {
     			12000, "GE075 5678 5678 5678 5678");
         Xartofulakio x1 = new Xartofulakio("created", c1);
         Xartofulakio x2 = new Xartofulakio("created", c2);
+        
+        Transaction t1 = new Transaction("Buy", "AEGN", 100, 30.6, "20/02/2020", "Open");
+        
+        DX dx1 = new DX("AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26/05/1990");
+        x1.setDX(dx1);
         
         EntityManager em = JPAUtil.getCurrentEntityManager();
         EntityTransaction tx = em.getTransaction();
@@ -144,15 +153,26 @@ public class Initializer {
         em.persist(temp30);
         em.persist(temp31);
         
-        em.persist(st1);
-        em.persist(st2);
-        em.persist(st3);
         em.persist(st4);
         em.persist(st5);
+        em.persist(st6);
         
         em.persist(x1);
+        //em.persist(t1);
         em.persist(x2);
+        t1.addXartofulakio(x1);
+        em.persist(t1);
         
+        Deiktes d1 = new Deiktes("22/02/2020", 8.98, 8.72, 8.20, 8.40);
+        d1.setMetoxh(st1);
+        Deiktes d2 = new Deiktes("22/02/2020", 0.83, 0.97, 0.80, 1.02);
+        d2.setMetoxh(st2);
+        Deiktes d3 = new Deiktes("22/02/2020", 20.6, 20.2, 20.6, 20.4);
+        d3.setMetoxh(st3);
+        em.persist(d1);
+        em.persist(d2);
+        em.persist(d3);
+
         tx.commit();
 	}
 }

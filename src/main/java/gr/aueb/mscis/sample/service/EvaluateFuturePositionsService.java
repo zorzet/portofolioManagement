@@ -2,7 +2,7 @@ package gr.aueb.mscis.sample.service;
 
 /* Περίπτωση Χρήσης 3 */
 
-import java.util.List;
+import java.util.*;
 import javax.persistence.EntityManager;
 import gr.aueb.mscis.sample.model.Metoxh;
 import gr.aueb.mscis.sample.model.Transaction;
@@ -26,13 +26,13 @@ public class EvaluateFuturePositionsService {
 	 *Επιστρέφει όλες τις μετοχές που παρακολουθούμε στη βάση μας 
 	 * @return List
 	 */
-	public List<Metoxh> findAllMotoxes() {
+	public List<Metoxh> findAllMetoxes() {
 		List<Metoxh> results = null;
 
-		results = em.createQuery("select DISTINCT(m.Name) from Metoxh m", Metoxh.class)
+		results = em.createQuery("select m from Metoxh m", Metoxh.class)
 				.getResultList();
 		
-		if(results==null) {
+		if(results.isEmpty()) {
 			throw new java.lang.RuntimeException("NO STOCK FOUND");
 		}
 		return results;
@@ -48,7 +48,7 @@ public class EvaluateFuturePositionsService {
 	public Metoxh InformationOfStock(String name, String date) {
 		String InformationOfStock=null;
 		List<Metoxh> ml=null;
-		ml=findAllMotoxes();
+		ml=findAllMetoxes();
 	    for (int i = 0; i < ml.size(); i++) {
 	    	if(ml.get(i).getDate().equalsIgnoreCase(date)&(ml.get(i).getName().equalsIgnoreCase(name))) {
 	    		return ml.get(i);
@@ -71,10 +71,11 @@ public class EvaluateFuturePositionsService {
 		List <Deiktes>  dlist=null;
 		Deiktes d=null;
 		Metoxh m=InformationOfStock(name,date);
-		dlist=em.createQuery("select d from Deiktes d where d.metoxh.Name like :metoxh ")
-				.setParameter("metoxh",name).getResultList();
+		dlist=em.createQuery("select d from Deiktes d")
+				.getResultList();
 		for(int i=0; i<dlist.size(); i++)
 			{
+				if(dlist.get(i).getMetoxh().getName() != name) { continue; }
 				if(dlist.get(i).getDate().equalsIgnoreCase(m.getDate()))
 						d=dlist.get(i);
 			}
@@ -90,7 +91,7 @@ public class EvaluateFuturePositionsService {
 	Deiktes d=null;
 	m=InformationOfStock(name,date);
 	d=findDeiktesPerStock(name,date);
-	InformationOfStock=" Name "+m.getName()+" Date "+m.getDate()+" Beta "+m.getBeta()+m.getClosing()
+	InformationOfStock="Name "+m.getName()+" Date "+m.getDate()+" Beta "+m.getBeta()+m.getClosing()
 						+ " MKO15 "+d.getMKO15()+" MKO80: "+d.getMKO80()+" XK20 "+d.getXk20()+" YK2O "+d.getYk20();
 	
 	return InformationOfStock;
@@ -124,48 +125,50 @@ public class EvaluateFuturePositionsService {
 //Το σύστημα εμφανίζει για τη συγκεκριμένη μετοχή τα τεμάχια που έχει ο χρήστης,
 //το ποσοστό του κεφαλαίου που καταλαμβάνουν και το beta του χαρτολακίου.
 /////////////////////////////////////////////////////////////////			
-	
+
 	/**
-	 * Επιστρέφει για τη συγκεκριμένη μετοχή τα τεμάχια που έχει ο χρήστης
-	 * @param Stock
-	 * @param XId
-	 * @param CusId
-	 * @return
-	 */
+	* Επιστρέφει για τη συγκεκριμένη μετοχή τα τεμάχια που έχει ο χρήστης
+	* @param Stock
+	* @param XId
+	* @param CusId
+	* @return
+	*/
 	@SuppressWarnings("unchecked")
 	public int showUnitsofStocksperPortofolio(String Stock, int XId,int CusId) {
 		int units=0;
+		
 		//PARE OLA TA XARTOFULAKIA TOU DX
 		List<Xartofulakio> xlist=null;
-		List<Transaction> translist=null;
+		Xartofulakio found = null;
+		Set<Transaction> translist=null;
 		xlist= em.createQuery("select x from Xartofulakio x where x.XId like :DXId ").setParameter("DXId", XId)
-				.getResultList();
+				 .getResultList();
+		
 		//VRES AUTO TOU PELATH
-		Xartofulakio x=null;
-		for (int i = 0; i < xlist.size(); i++) {
-			if((xlist.get(i).getCus().getCustomerId())==CusId) {
-				translist=em.createQuery("select t from Transaction t where t.Xartofulakio.XId like :Id ")
-						.setParameter("Id", xlist.get(i).getXid()).getResultList();
-			}
-		}
+		for(Xartofulakio x : xlist) {
+			if(x.getCus().getCustomerId() == CusId) found = x;
+		}		
+		translist = found.getTransactions();
+
 		//VRES TA TRANSACTION POU EGINAN GIA AUTH TH METOXH & EINAI OPEN
-		for (int j = 0; j < translist.size(); j++) {
-			if((translist.get(j).getState().equalsIgnoreCase("Open")&(translist.get(j).getStock().equalsIgnoreCase(Stock)))){
-				units=translist.get(j).getUnits();
+		for (Transaction t : translist) {
+			if((t.getState().equalsIgnoreCase("Open")&(t.getStock().equalsIgnoreCase(Stock)))){
+				units = units + t.getUnits();
 			}
 		}
 		return units;
 	}
+	
 	@SuppressWarnings("unchecked")
 	public double showPosostoofStocksperPortofolio(String Stockn, int XId,int CusId,String date) {
 		double pososto=0.0;
+		
 		//PARE OLA TA XARTOFULAKIA TOU DX
 		List<Xartofulakio> xlist=null;
-		List<Transaction> translist=null;
-		xlist= em.createQuery("select x from Xartofulakio x where x.XId like :DXId ").setParameter("DXId", XId)
-				.getResultList();
-		//VRES AUTO TOU PELATH
-		Xartofulakio x=null;
+		xlist= em.createQuery("select x from Xartofulakio x where x.XId like :DXId ", Xartofulakio.class).setParameter("DXId", XId)
+				 .getResultList();
+		
+		//VRES AUTO TOU PELATH	
 		for (int i = 0; i < xlist.size(); i++) {
 			if((xlist.get(i).getCus().getCustomerId())==CusId) {
 				pososto=xlist.get(i).getCus().getInvestAmount();
@@ -174,6 +177,7 @@ public class EvaluateFuturePositionsService {
 		pososto=(showUnitsofStocksperPortofolio(Stockn,XId,CusId)*InformationOfStock(Stockn,date).getClosing() )/pososto;
 		return pososto;
 	}
+	
 	public void printing(String Stockn, int XId,int CusId,String date) {
 		System.out.println("UNITS OF STOCK IN PORTOFOLIO "+showUnitsofStocksperPortofolio(Stockn,XId,CusId));
 		System.out.println("Percentage of Units of Stock In Portofolio "+showPosostoofStocksperPortofolio(Stockn,XId,CusId,date));

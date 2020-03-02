@@ -55,7 +55,26 @@ public class ShowMarketServiceTest {
 		exp_m.clear();
 		exp_m.add(new MarketsData("30/11/2019",1629.27,1657.17,1608.11,1657.17));
 		exp_m.add(new MarketsData("29/11/2019",1603.1,1636.48,1603.1,1633.34));		
-		assertThat(m, is(exp_m));
+		assertEquals(exp_m, m);
+	}
+	
+	@Test
+	public void test_ShowMarketHistoryNull() {
+		String exp_message = "NO RECORDS FOUND";
+		EntityTransaction tx = em.getTransaction();
+		ShowMarketService s = new ShowMarketService(em);
+        try {
+        	tx.begin();
+        	Query query = em.createNativeQuery("delete from MarketsData");
+	        query.executeUpdate();
+	        tx.commit();
+        } catch(RuntimeException exc) {}
+        
+        try {
+        	s.ShowMarketHistory(2);
+        } catch(java.lang.RuntimeException msg) {
+        	assertEquals(exp_message, msg.getMessage());
+        }
 	}
 	
 	@Test
@@ -69,7 +88,6 @@ public class ShowMarketServiceTest {
 		s.showResults(m);
 
 		String message = out.toString();
-		System.out.println(message);
 		assertEquals(exp_message,message);
 	}
 	

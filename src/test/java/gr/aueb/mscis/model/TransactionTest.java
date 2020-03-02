@@ -2,8 +2,14 @@ package gr.aueb.mscis.model;
 
 import static org.junit.Assert.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.junit.*;
+
+import gr.aueb.mscis.sample.model.Customer;
 import gr.aueb.mscis.sample.model.Transaction;
+import gr.aueb.mscis.sample.model.Xartofulakio;
 
 public class TransactionTest {
 	
@@ -71,6 +77,16 @@ public class TransactionTest {
 	}
 	
 	@Test
+	public void test_Xartofulakio() {
+		Xartofulakio exp_x = new Xartofulakio("created", new Customer(1, "AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",
+    			12345, "GE075 1234 1234 1234 1234"));
+		t.setXartofulakio(new Xartofulakio("created", new Customer(1, "AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",
+    			12345, "GE075 1234 1234 1234 1234")));
+		Xartofulakio x = t.getXartofulakio();
+		assertEquals(exp_x, x);
+	}
+	
+	@Test
 	public void test_Transaction() {
 		String exp_CmdType = "Αγορά";
 		String exp_Stock = "ACC";
@@ -90,6 +106,7 @@ public class TransactionTest {
 		assertEquals(exp_Units, Units);
 		assertEquals(exp_Price, Price, 0.0);
 		assertEquals(exp_Date, Date);
+		assertEquals(exp_State, State);
 	}
 	
 	@Test
@@ -97,4 +114,18 @@ public class TransactionTest {
 		Transaction test = new Transaction("Αγορά", "ACC", 100, 5.22, "20.02.2020", "Pending");
 		assertTrue(test.isPending());
 	}
+	
+	@Test
+	public void test_xartofulakio() {
+		Xartofulakio exp_x = new Xartofulakio("ΑΔΕΙΟ ΧΑΡΤΟΦΥΛΑΚΙΟ", new Customer(1, "AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990", 5000, "1234567890"));
+		Transaction test = new Transaction("Αγορά", "ACC", 100, 5.22, "20.02.2020", "Pending");
+		test.addXartofulakio(exp_x);
+		Xartofulakio x = test.getXartofulakio();
+		assertEquals(exp_x, x);
+		
+		test.removeXartofulakio(exp_x);
+		x = null;
+		x = test.getXartofulakio();
+		assertEquals(null, x);
+	}	
 }

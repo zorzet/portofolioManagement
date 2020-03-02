@@ -2,11 +2,15 @@ package gr.aueb.mscis.model;
 
 import static org.junit.Assert.*;
 
+import java.util.*;
+
 import org.junit.*;
 
 import gr.aueb.mscis.sample.model.Customer;
 import gr.aueb.mscis.sample.model.DX;
 import gr.aueb.mscis.sample.model.Deiktes;
+import gr.aueb.mscis.sample.model.Xartofulakio;
+import gr.aueb.mscis.sample.model.Metoxh;
 
 public class DXTest {
 
@@ -79,6 +83,20 @@ public class DXTest {
 		dx.setBirthDate("26.05.1990");
 		String BirthDate = dx.getBirthDate();
 		assertEquals(exp_BirthDate, BirthDate);
+	}
+	
+	@Test
+	public void test_Xartofulakia() {
+		Set<Xartofulakio> exp_xartofulakia = new HashSet<>();
+		Xartofulakio x1 = new Xartofulakio("created", new Customer(1, "AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",
+    			12345, "GE075 1234 1234 1234 1234"));
+		exp_xartofulakia.add(x1);
+		Xartofulakio x2 = new Xartofulakio("created", new Customer(2, "AE12345", "123456789", "Marios","Papas", "2121212121", "msp@gmail.com", "16/07/1980",
+    			12000, "GE075 5678 5678 5678 5678"));
+		exp_xartofulakia.add(x2);
+		dx.setXartofulakio(exp_xartofulakia);
+		Set<Xartofulakio> xartofulakia = dx.getXartofulakio();
+		assertEquals(exp_xartofulakia,xartofulakia);
 	}
 	
 	@Test
@@ -176,5 +194,21 @@ public class DXTest {
 		assertEquals(exp_Tel, Tel);
 		assertEquals(exp_Email, Email);
 		assertEquals(exp_BirthDate, BirthDate);
+	}
+	
+	@Test
+	public void test_metoxh() {
+		DX test = new DX("AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26.05.1990");
+		Metoxh m = new Metoxh("AEGN", "22/02/2020", 8.70, 8.60, 8.69, 0.6, 132000);
+		test.addMetoxh(m);
+		Set<Metoxh> metoxes = test.getMetoxh();
+		Set<Metoxh> exp_metoxes = new HashSet<Metoxh>();
+		exp_metoxes.add(m);
+		assertEquals(exp_metoxes, metoxes);
+		
+		test.removeMetoxh(m);
+		exp_metoxes.remove(m);
+		assertEquals(exp_metoxes, metoxes);
+		
 	}
 }

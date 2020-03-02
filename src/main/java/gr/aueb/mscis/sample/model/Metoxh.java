@@ -12,7 +12,7 @@ import javax.persistence.*;
 public class Metoxh {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "StockId", unique = true, nullable = false)
 	private int StockId;
 	
@@ -37,10 +37,18 @@ public class Metoxh {
 	@Column(name = "Volume", length = 10, nullable = false)
 	private int Volume;
 	
-    @OneToOne(orphanRemoval=true,cascade = CascadeType.MERGE,
+    @OneToOne(orphanRemoval=true,cascade = CascadeType.ALL,
      		  mappedBy="metoxh", fetch=FetchType.LAZY)
       private Deiktes deikths;
 
+	public Deiktes getDeikth() {
+		return this.deikths;
+	}
+	
+	public void setDeikth(Deiktes deikths) {
+		this.deikths=deikths;
+	}
+    
     //* DX EPILEGOUN * METOXES
     
     @ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE }, 
@@ -134,13 +142,6 @@ public class Metoxh {
 	public void setVolume(int volume) {
 		Volume = volume;
 	}
-	
-    public void setDeiktes(Deiktes deiktes) {
-        this.deikths = deiktes;
-    }
-    public Deiktes getDeiktes() {
-    	return this.deikths;
-    }
     
 	public Metoxh() {
 	}
@@ -155,4 +156,58 @@ public class Metoxh {
 		this.Volume=Volume;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Metoxh other = (Metoxh) obj;
+		if (Beta == null) {
+			if (other.Beta != null)
+				return false;
+		} else if (!Beta.equals(other.Beta))
+			return false;
+		if (Closing == null) {
+			if (other.Closing != null)
+				return false;
+		} else if (!Closing.equals(other.Closing))
+			return false;
+		if (High == null) {
+			if (other.High != null)
+				return false;
+		} else if (!High.equals(other.High))
+			return false;
+		if (Low == null) {
+			if (other.Low != null)
+				return false;
+		} else if (!Low.equals(other.Low))
+			return false;
+		if (Name == null) {
+			if (other.Name != null)
+				return false;
+		} else if (!Name.equals(other.Name))
+			return false;
+		if (Volume != other.Volume)
+			return false;
+		if (date == null) {
+			if (other.date != null)
+				return false;
+		} else if (!date.equals(other.date))
+			return false;
+		if (deikths == null) {
+			if (other.deikths != null)
+				return false;
+		} else if (!deikths.equals(other.deikths))
+			return false;
+		if (dxs == null) {
+			if (other.dxs != null)
+				return false;
+		} else if (!dxs.equals(other.dxs))
+			return false;
+		return true;
+	}
+	
 }

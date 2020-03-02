@@ -8,11 +8,11 @@ public class Deiktes {
 
 	@Id
 	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	//GIA KA8E MIA EGGRAFH STO PINAKA METOXH, KANOUME MIA EGGRAFH STO PINAKA DEIKTES
-	@OneToOne(orphanRemoval=true,cascade = CascadeType.MERGE,
+	@OneToOne(orphanRemoval=true,cascade = CascadeType.ALL,
 	  		   fetch=FetchType.LAZY)
 	@JoinColumn(name="id", referencedColumnName="StockId")
 	private Metoxh metoxh;
@@ -23,6 +23,7 @@ public class Deiktes {
 	public void setMetoxh(Metoxh metoxh) {
 		this.metoxh=metoxh;
 	}
+	
 	@Column(name = "Date", length = 50, nullable = false)
 	private String date;
 	
@@ -86,4 +87,41 @@ public class Deiktes {
 		this.xk20 = xk20;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Deiktes other = (Deiktes) obj;
+		if (MKO15 == null) {
+			if (other.MKO15 != null)
+				return false;
+		} else if (!MKO15.equals(other.MKO15))
+			return false;
+		if (MKO80 == null) {
+			if (other.MKO80 != null)
+				return false;
+		} else if (!MKO80.equals(other.MKO80))
+			return false;
+		if (date == null) {
+			if (other.date != null)
+				return false;
+		} else if (!date.equals(other.date))
+			return false;
+		if (xk20 == null) {
+			if (other.xk20 != null)
+				return false;
+		} else if (!xk20.equals(other.xk20))
+			return false;
+		if (yk20 == null) {
+			if (other.yk20 != null)
+				return false;
+		} else if (!yk20.equals(other.yk20))
+			return false;
+		return true;
+	}
+	
 }

@@ -1,9 +1,10 @@
 package gr.aueb.mscis.sample.model;
-//leipoun toString kai equals 
 
 import java.util.*;
 import javax.persistence.*;
+
 import gr.aueb.mscis.sample.model.Customer;
+import gr.aueb.mscis.sample.model.Transaction;
 
 @Entity
 @Table(name="Xartofulakio",uniqueConstraints = {
@@ -11,7 +12,7 @@ import gr.aueb.mscis.sample.model.Customer;
 public class Xartofulakio {
   
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "XId", unique = true, nullable = false)
 	private int XId;
 	
@@ -22,8 +23,7 @@ public class Xartofulakio {
     private Customer cus = new Customer();
     
 	/*1 portofolio is associated with many transactions.*/
-    @OneToMany(orphanRemoval=true, 
-            cascade = CascadeType.MERGE, 
+    @OneToMany(cascade = CascadeType.ALL, 
             mappedBy="Xartofulakio", fetch=FetchType.LAZY)    
     private Set<Transaction> trans = new HashSet<Transaction>();
 
@@ -33,23 +33,20 @@ public class Xartofulakio {
 	 * @return H συλλογή των συναλλαγών
 	 */
     public Set<Transaction> getTransactions() {
-        return new HashSet<Transaction>(trans);
+        return this.trans;
     }
     
-    public void setTransactions(Set<Transaction> trans) {
-    	this.trans = trans;
+    public void addTransaction(Transaction t) {
+    	this.friendTransactions().add(t);
+    	
     }
     
-    public void addTransaction(Transaction trans) {
-        if (trans != null) {
-            trans.addXartofulakio(this);
-        }
+    public void removeTransaction(Transaction t) {
+    	this.friendTransactions().remove(t);
     }
     
-    public void removeTransaction(Transaction trans) {
-    	if (trans != null) {
-    		trans.removeXartofulakio(this);
-    	}
+    Set<Transaction> friendTransactions() {
+        return trans;
     }
     
 	/**
@@ -70,7 +67,7 @@ public class Xartofulakio {
 	
 	/* kathe xartofulakio exei 1 diaxeiristi */ 
 	@ManyToOne(fetch=FetchType.LAZY, 
-            cascade= {CascadeType.MERGE}    
+            cascade= {CascadeType.ALL}    
             ) 
     @JoinColumn(name="DXno")
     DX dx;
@@ -82,18 +79,7 @@ public class Xartofulakio {
     public void setDX(DX dx) {
     	this.dx=dx;
     }
-    
-    public void addDX(DX dx) {
-        if (dx != null) {
-            dx.addXartofulakio(this);
-        }
-    }
-    
-    public void removeDX(DX dx) {
-    	if (dx != null) {
-    		dx.removeXartofulakio(this);
-    	}
-    }
+   
     
     /**
      * Επιστρεφει τον αριθμό του χαρτοφυλακίου
@@ -120,11 +106,12 @@ public class Xartofulakio {
 	}
 		
 	public Xartofulakio() {
-		super();
 	}
+	
 	public Customer getCus() {
 		return cus;
 	}
+	
 	public void setCus(Customer cus) {
 		this.cus = cus;
 	}
@@ -146,9 +133,32 @@ public class Xartofulakio {
 	 * @param bankAccountNo
 	 */
 	public Xartofulakio(String trexousathesi, Customer c) {
-		super();
 		this.trexousathesi = trexousathesi;
 		this.cus = c;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Xartofulakio other = (Xartofulakio) obj;
+		if (cus == null) {
+			if (other.cus != null)
+				return false;
+		} else if (!cus.equals(other.cus))
+			return false;
+		if (trexousathesi == null) {
+			if (other.trexousathesi != null)
+				return false;
+		} else if (!trexousathesi.equals(other.trexousathesi))
+			return false;
+		return true;
+	}
+	
+	
 	
 }

@@ -14,7 +14,7 @@ import javax.persistence.*;
 public class Transaction {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "TransId", unique = true, nullable = false)
 	private int TransId;
 	
@@ -38,10 +38,9 @@ public class Transaction {
 	private String state;
 	
 	/* Each transaction belongs to one Xartofulakio */ 
-	@ManyToOne(fetch=FetchType.LAZY, 
-            cascade= {CascadeType.PERSIST, CascadeType.MERGE}    
-            ) 
-    @JoinColumn(name="Xartofulakiono")
+	@ManyToOne(cascade = CascadeType.ALL,
+	  		   fetch=FetchType.LAZY)
+    @JoinColumn(name="XartofulakioNo")
     Xartofulakio Xartofulakio;
 	
     public Xartofulakio getXartofulakio() {
@@ -49,7 +48,14 @@ public class Transaction {
     }
     
     public void setXartofulakio(Xartofulakio x) {
-    	this.Xartofulakio = x;
+        if (this.Xartofulakio != null) {
+            this.Xartofulakio.friendTransactions().remove(this);
+        }
+        //this.Xartofulakio = x;
+        if (this.Xartofulakio != null) {
+            this.Xartofulakio.friendTransactions().add(this);
+        }
+    	Xartofulakio = x;
     }
     
     public void addXartofulakio(Xartofulakio x) {
@@ -63,7 +69,6 @@ public class Transaction {
     		x.removeTransaction(this);
     	}
     }
-    
     
 	public int getTransId() {
 		return TransId;
@@ -132,7 +137,7 @@ public class Transaction {
 		this.Units = units;
 		this.price = price;
 		this.date = date;
-		this.state="pending";
+		this.state= state;
 	}
 	
     public boolean isPending() {

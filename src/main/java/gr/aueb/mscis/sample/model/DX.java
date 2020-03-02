@@ -11,7 +11,7 @@ import gr.aueb.mscis.sample.model.Metoxh;
 public class DX extends User { 
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "DXId", unique = true, nullable = false)
 	private int DXId;
 	
@@ -37,7 +37,7 @@ public class DX extends User {
 	private String BirthDate;
 	
 	/*1 DX EXEI POLLA XARTOFYLAKIA*/
-	@OneToMany(cascade={CascadeType.PERSIST, CascadeType.MERGE}, 
+	@OneToMany(cascade={CascadeType.ALL}, 
             mappedBy="dx", fetch=FetchType.LAZY)
     private Set<Xartofulakio> xartofulakia = new HashSet<Xartofulakio>();
 	
@@ -49,23 +49,15 @@ public class DX extends User {
     	this.xartofulakia = x;
     }
     
-    public void addXartofulakio(Xartofulakio x) {
-        if (x != null) {
-            x.addDX(this);
-        }
-    }
-    
-    public void removeXartofulakio(Xartofulakio x) {
-    	if (x != null) {
-    		x.removeDX(this);
-    	}
-    }
-    
 	// * DX EPILEGEI POLLES METOXES 
 	@ManyToMany(mappedBy="dxs",fetch=FetchType.LAZY, 
             cascade = { CascadeType.PERSIST, CascadeType.MERGE })
     private Set<Metoxh> metoxes = new HashSet<Metoxh>();
 	
+    public Set<Metoxh> getMetoxh() {
+    	return this.metoxes;
+    }
+    
 	public DX() {
 	}
 	
@@ -204,12 +196,6 @@ public class DX extends User {
 		if (DXId != other.DXId)
 			return false;
 		return true;
-	}
-
-	@Override
-	public String toString() {
-		return "Customer [id=" + DXId + ", ADT=" + ADT + ", AFM=" + AFM + ", Name=" + Name + ", Surname=" + Surname
-				+ ", Tel=" + Tel + ", email=" + email + ", BirthDate=" + BirthDate + "]";
 	}
 
 }

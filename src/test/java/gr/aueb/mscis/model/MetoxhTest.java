@@ -2,7 +2,10 @@ package gr.aueb.mscis.model;
 
 import static org.junit.Assert.*;
 import org.junit.*;
+import java.util.HashSet;
+import java.util.Set;
 
+import gr.aueb.mscis.sample.model.DX;
 import gr.aueb.mscis.sample.model.Deiktes;
 import gr.aueb.mscis.sample.model.Metoxh;
 
@@ -80,10 +83,27 @@ public class MetoxhTest {
 	}
 	
 	@Test
-	public void test_Deiktes() {
-		Deiktes exp_deiktes = new Deiktes(12.33, 12.33, 12.33, 12.33);
-		m.setDeiktes(new Deiktes(12.33, 12.33, 12.33, 12.33));
-		Deiktes deiktes = m.getDeiktes();
+	public void test_deikths() {
+		Metoxh test = new Metoxh("ACC", "20/02/2020", 12.33, 12.33, 12.33, 12.33, 500);
+		Deiktes exp_d = new Deiktes("20/02/2020", 12.33, 12.33, 12.33, 12.33);
+		test.setDeikth(new Deiktes("20/02/2020", 12.33, 12.33, 12.33, 12.33));
+		Deiktes d = test.getDeikth();
+		assertEquals(exp_d, d);
+	}
+	
+	@Test
+	public void test_DX() {
+		Metoxh test = new Metoxh("ACC", "20/02/2020", 12.33, 12.33, 12.33, 12.33, 500);
+		DX dx = new DX("AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26/05/1990");
+		test.addDX(dx);
+		Set<DX> dxs = test.getDXs();
+		Set<DX> exp_dxs = new HashSet<DX>();
+		exp_dxs.add(dx);
+		assertEquals(exp_dxs, dxs);
+		
+		test.removeDX(dx);
+		dxs = test.getDXs();
+		exp_dxs.remove(dx);
 	}
 	
 	@Test
@@ -104,5 +124,48 @@ public class MetoxhTest {
 		double Beta = test.getBeta();
 		int volume = test.getVolume();
 		assertEquals(exp_name, name);
+	}
+	
+	@Test
+	public void test_equals() {
+		Metoxh test = new Metoxh("ACC", "12.02.2020", 12.33, 12.33, 12.33, 12.33, 500);
+		Metoxh exp = new Metoxh("ACC", "12.02.2020", 12.33, 12.33, 12.33, 12.33, 500);
+		assertTrue(test.equals(exp));
+		assertFalse(test.equals(null));
+		assertFalse(test.equals(new Deiktes("20/02/2020", 12.33, 12.33, 12.33, 12.33)));
+		
+		test = new Metoxh(null, "12.02.2020", 12.33, 12.33, 12.33, 12.33, 500);
+		assertFalse(test.equals(exp));
+		test = new Metoxh("ACC1", "12.02.2020", 12.33, 12.33, 12.33, 12.33, 500);
+		assertFalse(test.equals(exp));
+		
+		test = new Metoxh("ACC", null, 12.33, 12.33, 12.33, 12.33, 500);
+		assertFalse(test.equals(exp));
+		test = new Metoxh("ACC", "13.02.2020", 12.33, 12.33, 12.33, 12.33, 500);
+		assertFalse(test.equals(exp));
+		
+		test = new Metoxh("ACC", "12.02.2020", null, 12.33, 12.33, 12.33, 500);
+		assertFalse(test.equals(exp));
+		test = new Metoxh("ACC", "12.02.2020", 12.34, 12.33, 12.33, 12.33, 500);
+		assertFalse(test.equals(exp));
+		
+		test = new Metoxh("ACC", "12.02.2020", 12.33, null, 12.33, 12.33, 500);
+		assertFalse(test.equals(exp));
+		test = new Metoxh("ACC", "12.02.2020", 12.33, 12.34, 12.33, 12.33, 500);
+		assertFalse(test.equals(exp));
+		
+		test = new Metoxh("ACC", "12.02.2020", 12.33, 12.33, null, 12.33, 500);
+		assertFalse(test.equals(exp));
+		test = new Metoxh("ACC", "12.02.2020", 12.33, 12.33, 12.34, 12.33, 500);
+		assertFalse(test.equals(exp));
+		
+		test = new Metoxh("ACC", "12.02.2020", 12.33, 12.33, 12.33, null, 500);
+		assertFalse(test.equals(exp));
+		test = new Metoxh("ACC", "12.02.2020", 12.33, 12.33, 12.33, 12.34, 500);
+		assertFalse(test.equals(exp));
+		
+		test = new Metoxh("ACC", "12.02.2020", 12.33, 12.33, 12.33, 12.33, 501);
+		assertFalse(test.equals(exp));
+		
 	}
 }

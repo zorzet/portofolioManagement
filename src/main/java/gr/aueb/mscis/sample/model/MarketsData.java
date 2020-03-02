@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class MarketsData{
  
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "MDId", unique = true, nullable = false)
 	private int MDId;
 	

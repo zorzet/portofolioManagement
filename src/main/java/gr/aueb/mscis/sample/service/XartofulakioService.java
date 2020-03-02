@@ -45,15 +45,17 @@ public class XartofulakioService {
 	 * @param DXId
 	 */
 	public void ShowCustomers(int DXId) {
+		String message = "";
 		List<Xartofulakio> results = null;
 		results = findXartofulakiaById(DXId);
 		for (Xartofulakio Xartofulakio : results) {
-			System.out.println("CID " + Xartofulakio.getCus().getCustomerId() + " XID " + Xartofulakio.getXid()
+			message = message + "CID " + Xartofulakio.getCus().getCustomerId() + " XID " + Xartofulakio.getXid()
 					+ " NAME  " + Xartofulakio.getCus().getName() + " SURNAME " + Xartofulakio.getCus().getSurname()
 					+ " ADT " + Xartofulakio.getCus().getADT() + " AFM " + Xartofulakio.getCus().getAFM() + " EMAIL "
-					+ Xartofulakio.getCus().getEmail() + " INVESTED AMOUNT " + Xartofulakio.getCus().getInvestAmount());
+					+ Xartofulakio.getCus().getEmail() + " INVESTED AMOUNT " + Xartofulakio.getCus().getInvestAmount();
 		}
 		
+		System.out.println(message);
 	}
 ///////////////////////////////////////////////////////////////////////////////////////////////	
 //                  Το σύστημα εμφανίζει το επιλεγμένο χαρτοφυλάκιο του πελάτη (τρέχουσες θέσεις, beta, ιστορικό).	
@@ -145,7 +147,7 @@ public class XartofulakioService {
 	 * @param Cusid
 	 * @return string
 	 */
-	public String ShowXarofulakioPelath(int DXId, int Cusid) {
+	public String ShowXartofulakioPelath(int DXId, int Cusid) {
 		String eikonaXartofulakiou = null;
 		List<Xartofulakio> results=findXartofulakiaById(DXId);
 		for(int i=0; i<results.size(); i++) {
@@ -154,7 +156,7 @@ public class XartofulakioService {
 				+ results.get(i).getCus().getADT() + " AFM " + results.get(i).getCus().getAFM() + " Birthday " + results.get(i).getCus().getBirthDate()
 				+ " email " + results.get(i).getCus().getEmail());
 		}
-		if(eikonaXartofulakiou.isEmpty())
+		if(eikonaXartofulakiou == null)
 			throw new java.lang.RuntimeException("Xartofulakio for this customer could not be retrieved");
 		return eikonaXartofulakiou;
 	}
@@ -206,7 +208,7 @@ public class XartofulakioService {
 		}else {
 			xarakthrismos_xartofulakiou="OUDETERO XARTOFULAKIO";
 		}
-		CImage= String.join("-", t.toString())+" "+ShowXarofulakioPelath(xid,cusid)+" "+xarakthrismos_xartofulakiou;
+		CImage= String.join("-", t.toString())+" "+ShowXartofulakioPelath(xid,cusid)+" "+xarakthrismos_xartofulakiou;
 		return CImage;
 		
 	}
@@ -277,7 +279,7 @@ public class XartofulakioService {
 						em.merge(x);
 			   		}else {
 			   			//an oxi ftiaxe transaction kai kane update balance
-			   			tran=createTransaction(TransId, cmdType, stock, units, price, date,"open");
+			   			tran=createTransaction(cmdType, stock, units, price, date);
 			   			x.getCus().setInvestAmount((x.getCus().getInvestAmount()-(units*price)));
 			   		    em.persist(tran);
 			   		    em.merge(x);
@@ -331,7 +333,6 @@ public class XartofulakioService {
 	 * Δημιουργεί ένα Instance Transaction
 	 * και το γυρνάει στην συνάρτηση που θα το κάνει commit
 	 * στον Manager
-	 * @param TransId
 	 * @param cmdType
 	 * @param stock
 	 * @param units
@@ -340,20 +341,8 @@ public class XartofulakioService {
 	 * @param state
 	 * @return
 	 */
-	public Transaction createTransaction(int TransId, String cmdType, String stock, int units, double price, String date, String state) {
-		Transaction tran=new Transaction();
-		try {
-			tran.setCmdType(cmdType);
-			tran.setDate(date);
-			tran.setPrice(price);
-			tran.setState("open");
-			tran.setStock(stock);
-			tran.setTransId(TransId);
-			tran.setUnits(units);
-
-		} catch (Exception e) {
-			return null;
-		}
+	public Transaction createTransaction(String cmdType, String stock, int units, double price, String date) {
+		Transaction tran=new Transaction(cmdType, stock, units, price, date, "open");
 		return tran;
 	}
 }

@@ -8,7 +8,6 @@ import javax.persistence.*;
         @UniqueConstraint(columnNames = "CustomerId")})
 public class Customer extends User{ 
 	
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "CustomerId", unique = true, nullable = false)
 	private int CustomerId;
 	
@@ -118,6 +117,32 @@ public class Customer extends User{
 		BankAccountNo = bankAccountNo;
 	}
 
+	@Override
+	public String toString() {
+		return "Customer [CustomerId=" + CustomerId + ", ADT=" + ADT + ", AFM=" + AFM + ", Name=" + Name + ", Surname=" + Surname
+				+ ", Tel=" + Tel + ", email=" + email + ", BirthDate=" + BirthDate + ", InvestAmount=" + InvestAmount
+				+ ", BankAccountNo=" + BankAccountNo + "]";
+	}
+
+	public Customer(int CustomerId, String aDT, String aFM, String name, String surname, String tel, String email, String birthDate,
+			int investAmount, String bankAccountNo) {
+		super();
+		
+		this.CustomerId = CustomerId;
+		this.ADT = aDT;
+		this.AFM = aFM;
+		this.Name = name;
+		this.Surname = surname;
+		this.Tel = tel;
+		this.email = email;
+		this.BirthDate = birthDate;
+		this.InvestAmount = investAmount;
+		this.BankAccountNo = bankAccountNo;
+	}
+	
+	public Customer() {
+		super();
+	}
 
 	@Override
 	public boolean equals(Object obj) {
@@ -148,8 +173,6 @@ public class Customer extends User{
 				return false;
 		} else if (!BirthDate.equals(other.BirthDate))
 			return false;
-		if (CustomerId != other.CustomerId)
-			return false;
 		if (InvestAmount != other.InvestAmount)
 			return false;
 		if (Name == null) {
@@ -175,31 +198,5 @@ public class Customer extends User{
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return "Customer [CustomerId=" + CustomerId + ", ADT=" + ADT + ", AFM=" + AFM + ", Name=" + Name + ", Surname=" + Surname
-				+ ", Tel=" + Tel + ", email=" + email + ", BirthDate=" + BirthDate + ", InvestAmount=" + InvestAmount
-				+ ", BankAccountNo=" + BankAccountNo + "]";
-	}
-
-	public Customer(int CustomerId, String aDT, String aFM, String name, String surname, String tel, String email, String birthDate,
-			int investAmount, String bankAccountNo) {
-		super();
-		
-		this.CustomerId = CustomerId;
-		this.ADT = aDT;
-		this.AFM = aFM;
-		this.Name = name;
-		this.Surname = surname;
-		this.Tel = tel;
-		this.email = email;
-		this.BirthDate = birthDate;
-		this.InvestAmount = investAmount;
-		this.BankAccountNo = bankAccountNo;
-	}
 	
-	public Customer() {
-		super();
-	}
-
 }
