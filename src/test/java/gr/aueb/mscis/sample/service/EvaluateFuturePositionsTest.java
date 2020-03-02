@@ -45,12 +45,12 @@ public class EvaluateFuturePositionsTest {
 	public void test_informationOfStock() {
 		EvaluateFuturePositionsService e = new EvaluateFuturePositionsService(em);
 		Metoxh exp_m = new Metoxh("INTRK", "22/02/2020", 0.0, 0.80, 0.88, 0.0, 69000);
-		Metoxh m = e.InformationOfStock("INTRK", "22/02/2020");
+		Metoxh m = e.findInformationOfStock("INTRK", "22/02/2020");
 		assertEquals(exp_m, m);
 		
 		String exp_message = "NO STOCK FOUND";
 		try {
-			e.InformationOfStock("OPAP", "01/02/2020");
+			e.findInformationOfStock("OPAP", "01/02/2020");
 		} catch (java.lang.RuntimeException msg) {
 			assertEquals(exp_message, msg.getMessage());
 		}
@@ -113,7 +113,10 @@ public class EvaluateFuturePositionsTest {
 	
 	@Test
 	public void test_printing() {
-		String exp_results = "";
+		String exp_results = "UNITS OF STOCK IN PORTOFOLIO 100\r\n" + 
+				"Percentage of Units of Stock In Portofolio 0.07039287160793843\r\n" + 
+				"1\r\n" + 
+				"BETA of Portofolio 0.6\r\n";
 		java.io.ByteArrayOutputStream out = new java.io.ByteArrayOutputStream();    
 		System.setOut(new java.io.PrintStream(out));    
 		

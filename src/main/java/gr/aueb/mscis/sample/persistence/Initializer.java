@@ -104,8 +104,9 @@ public class Initializer {
         Metoxh st4=new Metoxh("AEGN", "23/02/2020", 8.41, 8.20, 8.36, 0.75, 123000);
         Metoxh st5=new Metoxh("OPAP", "22/02/2020", 11.46, 11.39, 0.0, 1.71, 654000);
         Metoxh st6=new Metoxh("ELPE", "22/02/2020", 22.00, 21.00, 20.00, 2.00, 4000);
-        Metoxh st7=new Metoxh("AEGN", "24/02/2020", 8.41, 8.20, 8.36, 1.05, 123000);
-        Metoxh st8=new Metoxh("AEGN", "25/02/2020", 8.41, 8.20, 8.36, 1.00, 123000);
+        Metoxh st7=new Metoxh("OPAP", "24/02/2020", 11.49, 11.28, 8.36, 0.95, 124000);
+        Metoxh st8=new Metoxh("OPAP", "25/02/2020", 11.32, 11.43, 8.36, 1.00, 123000);
+        Metoxh st9=new Metoxh("OPAP", "23/02/2020", 11.46, 11.39, 0.7, 1.71, 654000);
                
         Customer c1 = new Customer(1, "AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",
     			12345, "GE075 1234 1234 1234 1234");
@@ -115,6 +116,7 @@ public class Initializer {
         Xartofulakio x2 = new Xartofulakio("created", c2);
         
         Transaction t1 = new Transaction("Buy", "AEGN", 100, 30.6, "20/02/2020", "open");
+        Transaction t2 = new Transaction("Buy", "OPAP", 100, 11.4, "20/02/2020", "open");
         
         DX dx1 = new DX("AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26/05/1990");
         x1.setDX(dx1);
@@ -162,13 +164,15 @@ public class Initializer {
         em.persist(st6);
         em.persist(st7);
         em.persist(st8);
+        em.persist(st9);
         
         em.persist(x1);
         //em.persist(t1);
         em.persist(x2);
         t1.addXartofulakio(x1);
         em.persist(t1);
-        em.persist(dx2);
+        t2.addXartofulakio(x2);
+        em.persist(t2);
         
         Deiktes d1 = new Deiktes("22/02/2020", 8.98, 8.72, 8.20, 8.40);
         d1.setMetoxh(st1);

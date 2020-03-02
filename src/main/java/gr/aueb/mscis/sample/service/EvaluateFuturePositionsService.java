@@ -8,6 +8,7 @@ import gr.aueb.mscis.sample.model.Metoxh;
 import gr.aueb.mscis.sample.model.Transaction;
 import gr.aueb.mscis.sample.model.Deiktes;
 import gr.aueb.mscis.sample.model.Xartofulakio;
+import gr.aueb.mscis.sample.service.XartofulakioService;
 
 
 public class EvaluateFuturePositionsService {
@@ -184,8 +185,9 @@ public class EvaluateFuturePositionsService {
 	}
 	
 	public void printing(String Stockn, int XId,int CusId,String date) {
+		XartofulakioService x = new XartofulakioService(em);
 		System.out.println("UNITS OF STOCK IN PORTOFOLIO "+showUnitsofStocksperPortofolio(Stockn,XId,CusId));
 		System.out.println("Percentage of Units of Stock In Portofolio "+showPosostoofStocksperPortofolio(Stockn,XId,CusId,date));
-		System.out.println("BETA of Portofolio "+gr.aueb.mscis.sample.service.XartofulakioService.CalculateBeta( XId,CusId,date));
+		System.out.println("BETA of Portofolio "+x.CalculateBeta( XId,CusId,date));
 	}
 }

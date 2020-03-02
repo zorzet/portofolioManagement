@@ -32,7 +32,7 @@ public class XartofulakioService {
 	@SuppressWarnings("unchecked")
 	public static List<Xartofulakio> findXartofulakiaById(int DXId) {
 		List<Xartofulakio> results = null;
-		results = em.createQuery("select x from Xartofulakio x where x.XId like :DXId ").setParameter("DXId", DXId)
+		results = em.createQuery("select x from Xartofulakio x where x.dx.DXId like :DXId ").setParameter("DXId", DXId)
 				.getResultList();
 
 		return results;

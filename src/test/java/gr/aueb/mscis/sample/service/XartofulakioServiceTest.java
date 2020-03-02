@@ -117,7 +117,7 @@ public class XartofulakioServiceTest {
 	@Test
 	public void test_ShowTransactionsPerPortofolio() {
 		Set<Transaction> exp_t = new HashSet<Transaction>();
-		exp_t.add(new Transaction("Buy", "AEGN", 100, 30.6, "20/02/2020", "Open"));
+		exp_t.add(new Transaction("Buy", "AEGN", 0, 30.6, "25/02/2020", "closed"));
 		XartofulakioService xs = new XartofulakioService(em);
 		Set<Transaction> t = xs.ShowTransactionsPerPortofolio(1, 1);
 		assertEquals(exp_t, t);
@@ -136,20 +136,20 @@ public class XartofulakioServiceTest {
 	
 	@Test
 	public void test_returnCustomerImage() {
-		String exp_msg = "[Transaction [TransId=1, CmdType=Buy, Stock=AEGN, Units=100, price=30.6, date=20/02/2020, state=open]] "
-				+ "name Maria surname Papadopoulos ADT AS12345 AFM 12345678 Birthday 06/07/1980 email mp@gmail.com AMUNTIKO XARTOFULAKIO";
+		String exp_msg = "[Transaction [TransId=2, CmdType=Buy, Stock=OPAP, Units=100, price=11.4, date=20/02/2020, state=open]] "
+				+ "name Marios surname Papas ADT AE12345 AFM 123456789 Birthday 16/07/1980 email msp@gmail.com EPI8ETIKO XARTOFULAKIO";
 		XartofulakioService xs = new XartofulakioService(em);
-		String msg = xs.ReturnCustomerImage(1, 1, "23/02/2020");
+		String msg = xs.ReturnCustomerImage(2, 2, "23/02/2020");
 		assertEquals(exp_msg, msg);
 
-		exp_msg = "[Transaction [TransId=1, CmdType=Buy, Stock=AEGN, Units=100, price=30.6, date=20/02/2020, state=open]] "
-				+ "name Maria surname Papadopoulos ADT AS12345 AFM 12345678 Birthday 06/07/1980 email mp@gmail.com EPI8ETIKO XARTOFULAKIO";
-		msg = xs.ReturnCustomerImage(1, 1, "24/02/2020");
+		exp_msg = "[Transaction [TransId=2, CmdType=Buy, Stock=OPAP, Units=100, price=11.4, date=20/02/2020, state=open]] "
+				+ "name Marios surname Papas ADT AE12345 AFM 123456789 Birthday 16/07/1980 email msp@gmail.com AMUNTIKO XARTOFULAKIO";
+		msg = xs.ReturnCustomerImage(2, 2, "24/02/2020");
 		assertEquals(exp_msg, msg);
 		
-		exp_msg = "[Transaction [TransId=1, CmdType=Buy, Stock=AEGN, Units=100, price=30.6, date=20/02/2020, state=open]] "
-				+ "name Maria surname Papadopoulos ADT AS12345 AFM 12345678 Birthday 06/07/1980 email mp@gmail.com OUDETERO XARTOFULAKIO";
-		msg = xs.ReturnCustomerImage(1, 1, "25/02/2020");
+		exp_msg = "[Transaction [TransId=2, CmdType=Buy, Stock=OPAP, Units=100, price=11.4, date=20/02/2020, state=open]] "
+				+ "name Marios surname Papas ADT AE12345 AFM 123456789 Birthday 16/07/1980 email msp@gmail.com OUDETERO XARTOFULAKIO";
+		msg = xs.ReturnCustomerImage(2, 2, "25/02/2020");
 		assertEquals(exp_msg, msg);
 	}
 	
@@ -178,7 +178,7 @@ public class XartofulakioServiceTest {
 	public void test_transact() {
 		XartofulakioService xs = new XartofulakioService(em);
 		String exp_msg = "Action not valid. Unavailable units in stock";
-		Xartofulakio x = (Xartofulakio) em.createQuery("select x from Xartofulakio x where XId = 1").getSingleResult();
+		Xartofulakio x = (Xartofulakio) em.createQuery("select x from Xartofulakio x where dx.DXId = 1").getSingleResult();
 		
 		try {
 			xs.transact("sell", "OPAP", 100, 3.54, "23/02/2020", "open", x);
@@ -194,8 +194,9 @@ public class XartofulakioServiceTest {
 		t = xs.transact("sell", "AEGN", 80, 3.54, "25/02/2020", "open", x);
 		assertEquals(exp_t, t);
 		
-		exp_t = new Transaction("Buy", "AEGN", 100, 30.6, "25/02/2020", "open");
-		t = xs.transact("Buy", "AEGN", 100, 30.6, "25/02/2020", "open", x);
+		x = (Xartofulakio) em.createQuery("select x from Xartofulakio x where dx.DXId = 2").getSingleResult();
+		exp_t = new Transaction("Buy", "ACC", 100, 10.7, "25/02/2020", "open");
+		t = xs.transact("Buy", "ACC", 100, 10.7, "25/02/2020", "open", x);
 		assertEquals(exp_t, t);
 	}
 }
