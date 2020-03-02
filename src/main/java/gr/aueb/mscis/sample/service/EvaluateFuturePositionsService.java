@@ -18,9 +18,15 @@ public class EvaluateFuturePositionsService {
 		this.em = em;
 	}
 	
-/////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
 //Το σύστημα εμφανίζει για τη μετοχή τους δείκτες (ΜΚΟ15, ΜΚΟ80, yk20, xk20, beta)
-/////////////////////////////////////////////////////////////////	
+//////////////////////////////////////////////////////////////////////////////////	
+	public void EvaLuateFuturePositionPerStock(String Stockn, int XId,int CusId,String date, String name){
+		 System.out.println(StockImage(name,date));
+		 printing(Stockn,XId,CusId,date);
+		 System.out.println("Desicion "+BuyOrSellPerStock(name, date));
+	}
+	
 	
 	/**
 	 *Επιστρέφει όλες τις μετοχές που παρακολουθούμε στη βάση μας 
@@ -42,11 +48,10 @@ public class EvaluateFuturePositionsService {
 	 * Για μια μετοχή, επιστρέφει την εικόνα της για μια συγκεκριμένη ημερομηνία
 	 * @param name
 	 * @param date
-	 * @return
+	 * @return Metoxh
 	 */
 	@SuppressWarnings("unchecked")
-	public Metoxh InformationOfStock(String name, String date) {
-		String InformationOfStock=null;
+	public Metoxh findInformationOfStock(String name, String date) {
 		List<Metoxh> ml=null;
 		ml=findAllMetoxes();
 	    for (int i = 0; i < ml.size(); i++) {
@@ -70,7 +75,7 @@ public class EvaluateFuturePositionsService {
 	public Deiktes findDeiktesPerStock(String name, String date){
 		List <Deiktes>  dlist=null;
 		Deiktes d=null;
-		Metoxh m=InformationOfStock(name,date);
+		Metoxh m=findInformationOfStock(name,date);
 		dlist=em.createQuery("select d from Deiktes d")
 				.getResultList();
 		for(int i=0; i<dlist.size(); i++)
@@ -89,7 +94,7 @@ public class EvaluateFuturePositionsService {
 	String InformationOfStock; 
 	Metoxh m=null;
 	Deiktes d=null;
-	m=InformationOfStock(name,date);
+	m=findInformationOfStock(name,date);
 	d=findDeiktesPerStock(name,date);
 	InformationOfStock="Name "+m.getName()+" Date "+m.getDate()+" Beta "+m.getBeta()+m.getClosing()
 						+ " MKO15 "+d.getMKO15()+" MKO80: "+d.getMKO80()+" XK20 "+d.getXk20()+" YK2O "+d.getYk20();
@@ -110,7 +115,7 @@ public class EvaluateFuturePositionsService {
 		String decision=null;
 		Deiktes d=null;
 		Metoxh m=null;
-		m=InformationOfStock(sname,date);
+		m=findInformationOfStock(sname,date);
 		d=findDeiktesPerStock(sname,date);
 		if(((d.getMKO15()>d.getMKO80())&(m.getClosing()>d.getYk20()))){
 			decision="buy";
@@ -174,7 +179,7 @@ public class EvaluateFuturePositionsService {
 				pososto=xlist.get(i).getCus().getInvestAmount();
 			}
 		}
-		pososto=(showUnitsofStocksperPortofolio(Stockn,XId,CusId)*InformationOfStock(Stockn,date).getClosing() )/pososto;
+		pososto=(showUnitsofStocksperPortofolio(Stockn,XId,CusId)*findInformationOfStock(Stockn,date).getClosing() )/pososto;
 		return pososto;
 	}
 	
