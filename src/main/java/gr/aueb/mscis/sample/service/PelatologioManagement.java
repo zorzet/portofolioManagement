@@ -80,7 +80,63 @@ public class PelatologioManagement {
 		}
 		return results;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Customer> findCustomerByTel(String Tel) {
+		List<Customer> results = new ArrayList<>();
+		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class)
+				.getResultList();
+		for(Xartofulakio x : xs) {
+			if (x.getCus().getTel() == Tel) results.add(x.getCus());
+		}
+		if(results.isEmpty()) {
+			throw new java.lang.RuntimeException("NO CUSTOMER FOUND");
+		}
+		return results;
+	}
 
+	@SuppressWarnings("unchecked")
+	public List<Customer> findCustomerByEmail(String Email) {
+		List<Customer> results = new ArrayList<>();
+		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class)
+				.getResultList();
+		for(Xartofulakio x : xs) {
+			if (x.getCus().getEmail() == Email) results.add(x.getCus());
+		}
+		if(results.isEmpty()) {
+			throw new java.lang.RuntimeException("NO CUSTOMER FOUND");
+		}
+		return results;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Customer> findCustomerByInvestAmount(double InvestAmount) {
+		List<Customer> results = new ArrayList<>();
+		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class)
+				.getResultList();
+		for(Xartofulakio x : xs) {
+			if (x.getCus().getInvestAmount() == InvestAmount) results.add(x.getCus());
+		}
+		if(results.isEmpty()) {
+			throw new java.lang.RuntimeException("NO CUSTOMER FOUND");
+		}
+		return results;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Customer> findCustomerByBankAccountNo(String Bank) {
+		List<Customer> results = new ArrayList<>();
+		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class)
+				.getResultList();
+		for(Xartofulakio x : xs) {
+			if (x.getCus().getBankAccountNo() == Bank) results.add(x.getCus());
+		}
+		if(results.isEmpty()) {
+			throw new java.lang.RuntimeException("NO CUSTOMER FOUND");
+		}
+		return results;
+	}
+	
 	// PROVOLI PELATOLWN
 	public void ShowCustomers() {
 		List<Customer> result = findAllCustomer();

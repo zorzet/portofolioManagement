@@ -139,6 +139,94 @@ public class PelatologioManagementTest {
 	}
 	
 	@Test
+	public void test_findCustomersbyTelNull() {
+		String exp_message = "NO CUSTOMER FOUND";
+		PelatologioManagement p = new PelatologioManagement(em);
+		try {
+			p.findCustomerByTel("SASDKLSA");
+		} catch(java.lang.RuntimeException message) {
+			assertEquals(exp_message, message.getMessage());
+		}
+	}
+	
+	@Test
+	public void test_findCustomersbyTel() {
+		List<Customer> exp_result = new ArrayList<>();
+		List<Customer> result = new ArrayList<>();
+		exp_result.add(new Customer(1, "AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",
+    			12345, "GE075 1234 1234 1234 1234"));
+		PelatologioManagement p = new PelatologioManagement(em);
+		result = p.findCustomerByTel("2121212121");
+		assertEquals(exp_result, result);
+	}
+	
+	@Test
+	public void test_findCustomersbyEmailNull() {
+		String exp_message = "NO CUSTOMER FOUND";
+		PelatologioManagement p = new PelatologioManagement(em);
+		try {
+			p.findCustomerByEmail("SASDKLSA");
+		} catch(java.lang.RuntimeException message) {
+			assertEquals(exp_message, message.getMessage());
+		}
+	}
+	
+	@Test
+	public void test_findCustomersbyEmail() {
+		List<Customer> exp_result = new ArrayList<>();
+		List<Customer> result = new ArrayList<>();
+		exp_result.add(new Customer(1, "AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",
+    			12345, "GE075 1234 1234 1234 1234"));
+		PelatologioManagement p = new PelatologioManagement(em);
+		result = p.findCustomerByEmail("mp@gmail.com");
+		assertEquals(exp_result, result);
+	}
+	
+	@Test
+	public void test_findCustomersbyInvestAmountNull() {
+		String exp_message = "NO CUSTOMER FOUND";
+		PelatologioManagement p = new PelatologioManagement(em);
+		try {
+			p.findCustomerByInvestAmount(1000);
+		} catch(java.lang.RuntimeException message) {
+			assertEquals(exp_message, message.getMessage());
+		}
+	}
+	
+	@Test
+	public void test_findCustomersbyInvestAmount() {
+		List<Customer> exp_result = new ArrayList<>();
+		List<Customer> result = new ArrayList<>();
+		exp_result.add(new Customer(1, "AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",
+    			12345, "GE075 1234 1234 1234 1234"));
+		PelatologioManagement p = new PelatologioManagement(em);
+		result = p.findCustomerByInvestAmount(12345);
+		assertEquals(exp_result, result);
+	}
+	
+	@Test
+	public void test_findCustomersbyBankAccountNoNull() {
+		String exp_message = "NO CUSTOMER FOUND";
+		PelatologioManagement p = new PelatologioManagement(em);
+		try {
+			p.findCustomerByBankAccountNo("SASDKLSA");
+		} catch(java.lang.RuntimeException message) {
+			assertEquals(exp_message, message.getMessage());
+		}
+	}
+	
+	@Test
+	public void test_findCustomersbyBankAccountNo() {
+		List<Customer> exp_result = new ArrayList<>();
+		List<Customer> result = new ArrayList<>();
+		exp_result.add(new Customer(1, "AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",
+    			12345, "GE075 1234 1234 1234 1234"));
+		PelatologioManagement p = new PelatologioManagement(em);
+		result = p.findCustomerByBankAccountNo("GE075 1234 1234 1234 1234");
+		assertEquals(exp_result, result);
+	}
+	
+	@Test
 	public void test_findAllCustomer() {
 		List<Customer> exp_result = new ArrayList<>();
 		exp_result.add(new Customer(1, "AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",

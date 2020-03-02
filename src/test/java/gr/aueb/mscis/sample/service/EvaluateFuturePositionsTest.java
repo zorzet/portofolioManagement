@@ -42,31 +42,16 @@ public class EvaluateFuturePositionsTest {
 	}
 	
 	@Test
-	public void test_informationOfStockNull() {
-		String exp_message = "NO STOCK FOUND";
-		EvaluateFuturePositionsService e = new EvaluateFuturePositionsService(em);
-		try {
-			e.InformationOfStock("OPAP", "01/02/2020");
-		} catch (java.lang.RuntimeException msg) {
-			assertEquals(exp_message, msg.getMessage());
-		}
-	}
-	
-	@Test
 	public void test_informationOfStock() {
 		EvaluateFuturePositionsService e = new EvaluateFuturePositionsService(em);
 		Metoxh exp_m = new Metoxh("INTRK", "22/02/2020", 0.0, 0.80, 0.88, 0.0, 69000);
-		Metoxh m = e.InformationOfStock("INTRK", "22/02/2020");
+		Metoxh m = e.findInformationOfStock("INTRK", "22/02/2020");
 		assertEquals(exp_m, m);
-	}
-	
-	@Test
-	public void test_deiktesPerStockNull() {
-		String exp_message = "NO DEIKTES RECORD FOUND";
-		EvaluateFuturePositionsService e = new EvaluateFuturePositionsService(em);
+		
+		String exp_message = "NO STOCK FOUND";
 		try {
-			e.findDeiktesPerStock("AEGN", "23/02/2020");
-		} catch(java.lang.RuntimeException msg) {
+			e.findInformationOfStock("OPAP", "01/02/2020");
+		} catch (java.lang.RuntimeException msg) {
 			assertEquals(exp_message, msg.getMessage());
 		}
 	}
@@ -77,6 +62,13 @@ public class EvaluateFuturePositionsTest {
 		EvaluateFuturePositionsService e = new EvaluateFuturePositionsService(em);
 		Deiktes deikths = e.findDeiktesPerStock("AEGN", "22/02/2020");
 		assertEquals(exp_deikths, deikths);
+		
+		String exp_message = "NO DEIKTES RECORD FOUND";
+		try {
+			e.findDeiktesPerStock("AEGN", "23/02/2020");
+		} catch(java.lang.RuntimeException msg) {
+			assertEquals(exp_message, msg.getMessage());
+		}
 	}
 	
 	@Test
@@ -88,26 +80,18 @@ public class EvaluateFuturePositionsTest {
 	}
 	
 	@Test
-	public void test_BuyOrSellBuy() {
+	public void test_BuyOrSell() {
 		String exp_msg = "buy";
 		EvaluateFuturePositionsService e = new EvaluateFuturePositionsService(em);
 		String msg = e.BuyOrSellPerStock("AEGN", "22/02/2020");
 		assertEquals(exp_msg, msg);
-	}
-	
-	@Test
-	public void test_BuyOrSellSell() {
-		String exp_msg = "sell";
-		EvaluateFuturePositionsService e = new EvaluateFuturePositionsService(em);
-		String msg = e.BuyOrSellPerStock("INTRK", "22/02/2020");
+		
+		exp_msg = "sell";
+		msg = e.BuyOrSellPerStock("INTRK", "22/02/2020");
 		assertEquals(exp_msg, msg);
-	}
-	
-	@Test
-	public void test_BuyOrSellNone() {
-		String exp_msg = "none";
-		EvaluateFuturePositionsService e = new EvaluateFuturePositionsService(em);
-		String msg = e.BuyOrSellPerStock("MOH", "22/02/2020");
+		
+		exp_msg = "none";
+		msg = e.BuyOrSellPerStock("MOH", "22/02/2020");
 		assertEquals(exp_msg, msg);
 	}
 	
@@ -115,7 +99,7 @@ public class EvaluateFuturePositionsTest {
 	public void test_showUnitsofStocksperPortofolio() {
 		int exp_units = 100;
 		EvaluateFuturePositionsService e = new EvaluateFuturePositionsService(em);
-		int units = e.showUnitsofStocksperPortofolio("AEGN", 1, 1);
+		int units = e.showUnitsofStocksperPortofolio("AEGN", 13, 1);
 		assertEquals(exp_units, units);
 	}
 	
@@ -123,13 +107,23 @@ public class EvaluateFuturePositionsTest {
 	public void test_showPosostoofStocksperPortofolio() {
 		double exp_pososto = 0.07;
 		EvaluateFuturePositionsService e = new EvaluateFuturePositionsService(em);
-		double pososto = e.showPosostoofStocksperPortofolio("AEGN", 1, 1, "22/02/2020");
+		double pososto = e.showPosostoofStocksperPortofolio("AEGN", 13, 1, "22/02/2020");
 		assertEquals(exp_pososto, pososto, 0.01);
 	}
 	
 	@Test
 	public void test_printing() {
+		String exp_results = "UNITS OF STOCK IN PORTOFOLIO 100\r\n" + 
+				"Percentage of Units of Stock In Portofolio 0.07039287160793843\r\n" + 
+				"1\r\n" + 
+				"BETA of Portofolio 0.6\r\n";
+		java.io.ByteArrayOutputStream out = new java.io.ByteArrayOutputStream();    
+		System.setOut(new java.io.PrintStream(out));    
 		
+		EvaluateFuturePositionsService e = new EvaluateFuturePositionsService(em);
+		e.printing("AEGN", 15, 1, "22/02/2020");
+		String results = out.toString();
+		assertEquals(exp_results, results);
 	}
 	
 	@Test
