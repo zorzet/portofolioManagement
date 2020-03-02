@@ -22,9 +22,9 @@ public class EvaluateFuturePositionsService {
 //Το σύστημα εμφανίζει για τη μετοχή τους δείκτες (ΜΚΟ15, ΜΚΟ80, yk20, xk20, beta)
 //////////////////////////////////////////////////////////////////////////////////	
 	public void EvaLuateFuturePositionPerStock(String Stockn, int XId,int CusId,String date, String name){
+		 System.out.println("Desicion "+BuyOrSellPerStock(name, date));
 		 System.out.println(StockImage(name,date));
 		 printing(Stockn,XId,CusId,date);
-		 System.out.println("Desicion "+BuyOrSellPerStock(name, date));
 	}
 	
 	
