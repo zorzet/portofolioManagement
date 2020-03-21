@@ -1,12 +1,16 @@
 package gr.aueb.mscis.sample.resource;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.ws.rs.core.Application;
 
 import org.junit.*;
+import static org.junit.Assert.*;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
-import org.glassfish.jersey.test.spi.TestContainerFactory;
+
+import java.text.*;
+import java.util.Date;
 
 import gr.aueb.mscis.sample.persistence.Initializer;
 import gr.aueb.mscis.sample.persistence.JPAUtil;
@@ -36,6 +40,13 @@ public class EvaluateFuturePositionsResourceTest extends JerseyTest {
 	
 	@Test
 	public void test_findInfoOfStock() {
-		MetoxhInfo metoxhinfo = target("/EvaluatePositions/" + m.getName()).request().get(MetoxhInfo.class);
+		EntityManager em = JPAUtil.getCurrentEntityManager();
+		EntityTransaction tx = em.getTransaction();
+		tx.begin();
+		Metoxh m = em.find(Metoxh.class, 1);
+		tx.commit();
+
+		MetoxhInfo metoxhinfo = target("/EvaluatePositions/" + m.getName() + "/" + m.getDate()).request().get(MetoxhInfo.class);
+		assertEquals(m, metoxhinfo.getMetoxh(em));
 	}
 }

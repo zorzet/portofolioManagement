@@ -101,7 +101,7 @@ public class Initializer {
         Metoxh st1=new Metoxh("AEGN", "22/02/2020", 8.70, 8.60, 8.69, 0.6, 132000);
         Metoxh st2=new Metoxh("INTRK", "22/02/2020", 0.0, 0.80, 0.88, 0.0, 69000);
         Metoxh st3=new Metoxh("MOH", "22/02/2020", 20.6, 0.0, 20.52,1.3, 80200);
-        Metoxh st4=new Metoxh("AEGN", "23/02/2020", 8.41, 8.20, 8.36, 0.75, 123000);
+        Metoxh st4=new Metoxh("AEGN", "23-02-2020", 8.41, 8.20, 8.36, 0.75, 123000);
         Metoxh st5=new Metoxh("OPAP", "22/02/2020", 11.46, 11.39, 0.0, 1.71, 654000);
         Metoxh st6=new Metoxh("ELPE", "22/02/2020", 22.00, 21.00, 20.00, 2.00, 4000);
         Metoxh st7=new Metoxh("OPAP", "24/02/2020", 11.49, 11.28, 8.36, 0.95, 124000);

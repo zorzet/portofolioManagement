@@ -40,15 +40,17 @@ public class EvaluateFuturePositionsResource {
 //Το σύστημα εμφανίζει για μια μετοχή, τη συγκεκριμένη μέρα, τη τιμή της
 //////////////////////////////////////////////////////////////////////////////////
 	@GET
-	@Path("{name}")
+	@Path("{name: [A-Za-z]*}/{date}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public MetoxhInfo findInfoOfStock(@PathParam("name")String name) {
-		EntityManager em=getEntityManager();
-		Metoxh metoxh=new Metoxh();
-	    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
-	    Date date = new Date(); 
-	    EvaluateFuturePositionsService e=new EvaluateFuturePositionsService(em);
-	    metoxh=e.findInformationOfStock(name,formatter.format(date));
+	public MetoxhInfo findInfoOfStock(@PathParam("name")String name, @PathParam("date")String date) {
+		EntityManager em = getEntityManager();
+//	    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+//	    Date date = new Date(); 
+		
+	    EvaluateFuturePositionsService e = new EvaluateFuturePositionsService(em);
+	    Metoxh metoxh = e.findInformationOfStock(name, date);
+	    System.out.println(metoxh.getName());
+	    
 		MetoxhInfo mi;
 		mi=MetoxhInfo.wrap(metoxh);
 		return mi;
@@ -56,83 +58,83 @@ public class EvaluateFuturePositionsResource {
 ///////////////////////////////////////////////////////////////////////////////////
 //Το σύστημα εμφανίζει για τη μετοχή τους δείκτες (ΜΚΟ15, ΜΚΟ80, yk20, xk20, beta)
 //////////////////////////////////////////////////////////////////////////////////	
-	@GET
-	@Path("{name}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public String StockImage(@PathParam("name")String name) {
-	String InformationOfStock=null;
-	SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
-    Date date = new Date(); 
-	EntityManager em=getEntityManager();
-	EvaluateFuturePositionsService e=new EvaluateFuturePositionsService(em);
-	InformationOfStock=e.StockImage(name,formatter.format(date));
-	return InformationOfStock;
-	}
+//	@GET
+//	@Path("{name}")
+//	@Produces(MediaType.APPLICATION_JSON)
+//	public String StockImage(@PathParam("name")String name) {
+//	String InformationOfStock=null;
+//	SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+//    Date date = new Date(); 
+//	EntityManager em=getEntityManager();
+//	EvaluateFuturePositionsService e=new EvaluateFuturePositionsService(em);
+//	InformationOfStock=e.StockImage(name,formatter.format(date));
+//	return InformationOfStock;
+//	}
 
 ///////////////////////////////////////////////////////////////////////////////////
 //Το σύστημα εμφανίζει όλες τις μετοχές που παρακολουθούμε στη βάση μας 
 //////////////////////////////////////////////////////////////////////////////////
-	@GET
-	@Path("getAllStocks")
-	@Produces(MediaType.APPLICATION_JSON)
-public List<MetoxhInfo> findAllMetoxes(){
-		List<Metoxh> list=null;
-		List<MetoxhInfo> ml=null;
-		EntityManager em=getEntityManager();
-		EvaluateFuturePositionsService e=new EvaluateFuturePositionsService(em);
-		list=e.findAllMetoxes();
-		for (Metoxh m:list) {
-			ml.add(MetoxhInfo.wrap(m));
-		}
-		return ml;		
-}
+//	@GET
+//	@Path("getAllStocks")
+//	@Produces(MediaType.APPLICATION_JSON)
+//public List<MetoxhInfo> findAllMetoxes(){
+//		List<Metoxh> list=null;
+//		List<MetoxhInfo> ml=null;
+//		EntityManager em=getEntityManager();
+//		EvaluateFuturePositionsService e=new EvaluateFuturePositionsService(em);
+//		list=e.findAllMetoxes();
+//		for (Metoxh m:list) {
+//			ml.add(MetoxhInfo.wrap(m));
+//		}
+//		return ml;		
+//}
 /////////////////////////////////////////////////////////////////////
 //Το σύστημα εμφανίζει πρόταση με βάση τον αλγόριθμο PPO για μια συγκεκριμενη μετοχή.
 /////////////////////////////////////////////////////////////////	
-	@GET
-	@Path("{name}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public String BuyOrSellPerStock(@PathParam("name")String name) {
-		String BuyOrSellPerStock=null;
-		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
-	    Date date = new Date(); 
-		EntityManager em=getEntityManager();
-		EvaluateFuturePositionsService e=new EvaluateFuturePositionsService(em);
-		BuyOrSellPerStock=e.BuyOrSellPerStock(name,formatter.format(date));
-		return BuyOrSellPerStock;
-	}
+//	@GET
+//	@Path("{name}")
+//	@Produces(MediaType.APPLICATION_JSON)
+//	public String BuyOrSellPerStock(@PathParam("name")String name) {
+//		String BuyOrSellPerStock=null;
+//		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+//	    Date date = new Date(); 
+//		EntityManager em=getEntityManager();
+//		EvaluateFuturePositionsService e=new EvaluateFuturePositionsService(em);
+//		BuyOrSellPerStock=e.BuyOrSellPerStock(name,formatter.format(date));
+//		return BuyOrSellPerStock;
+//	}
 ///////////////////////////////////////////////////////////////////////////////
 //Το σύστημα εμφανίζει για τη συγκεκριμένη μετοχή τα τεμάχια που έχει ο χρήστης
 ///////////////////////////////////////////////////////////////////////////////	
-	@GET
-	@Path("{Stock}/{DXId}/{CusId}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public int showUnitsofStocksperPortofolio(
-			@PathParam("Stock")String Stock,
-			@PathParam("DXId") int DXId,
-			@PathParam("CusId") int CusId) {
-		int showUnitsofStocksperPortofolio;
-		EntityManager em=getEntityManager();
-		EvaluateFuturePositionsService e=new EvaluateFuturePositionsService(em);
-		showUnitsofStocksperPortofolio=e.showUnitsofStocksperPortofolio(Stock, DXId, CusId);
-		return showUnitsofStocksperPortofolio;
-	}
+//	@GET
+//	@Path("{Stock}/{DXId}/{CusId}")
+//	@Produces(MediaType.APPLICATION_JSON)
+//	public int showUnitsofStocksperPortofolio(
+//			@PathParam("Stock")String Stock,
+//			@PathParam("DXId") int DXId,
+//			@PathParam("CusId") int CusId) {
+//		int showUnitsofStocksperPortofolio;
+//		EntityManager em=getEntityManager();
+//		EvaluateFuturePositionsService e=new EvaluateFuturePositionsService(em);
+//		showUnitsofStocksperPortofolio=e.showUnitsofStocksperPortofolio(Stock, DXId, CusId);
+//		return showUnitsofStocksperPortofolio;
+//	}
 ///////////////////////////////////////////////////////////////////////////////
 ///το ποσοστό του κεφαλαίου που καταλαμβάνουν και το beta του χαρτολακίου
 ///////////////////////////////////////////////////////////////////////////////	
-	@GET
-	@Path("{Stock}/{DXId}/{CusId}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public double showPosostoofStocksperPortofolio(
-			@PathParam("Stock")String Stock,
-			@PathParam("DXId") int DXId,
-			@PathParam("CusId") int CusId) { 
-		double showPosostoofStocksperPortofolio;
-		EntityManager em=getEntityManager();
-		EvaluateFuturePositionsService e=new EvaluateFuturePositionsService(em);
-		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
-	    Date date = new Date(); 
-	    showPosostoofStocksperPortofolio=e.showPosostoofStocksperPortofolio(Stock,DXId,CusId,formatter.format(date));
-	    return showPosostoofStocksperPortofolio;
-	}
+//	@GET
+//	@Path("{Stock}/{DXId}/{CusId}")
+//	@Produces(MediaType.APPLICATION_JSON)
+//	public double showPosostoofStocksperPortofolio(
+//			@PathParam("Stock")String Stock,
+//			@PathParam("DXId") int DXId,
+//			@PathParam("CusId") int CusId) { 
+//		double showPosostoofStocksperPortofolio;
+//		EntityManager em=getEntityManager();
+//		EvaluateFuturePositionsService e=new EvaluateFuturePositionsService(em);
+//		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+//	    Date date = new Date(); 
+//	    showPosostoofStocksperPortofolio=e.showPosostoofStocksperPortofolio(Stock,DXId,CusId,formatter.format(date));
+//	    return showPosostoofStocksperPortofolio;
+//	}
 }
