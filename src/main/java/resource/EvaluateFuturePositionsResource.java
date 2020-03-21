@@ -50,7 +50,7 @@ public class EvaluateFuturePositionsResource {
 	    EvaluateFuturePositionsService e=new EvaluateFuturePositionsService(em);
 	    metoxh=e.findInformationOfStock(name,formatter.format(date));
 		return metoxh;
-	}
+	} 
 ///////////////////////////////////////////////////////////////////////////////////
 //Το σύστημα εμφανίζει για τη μετοχή τους δείκτες (ΜΚΟ15, ΜΚΟ80, yk20, xk20, beta)
 //////////////////////////////////////////////////////////////////////////////////	
