@@ -42,14 +42,16 @@ public class EvaluateFuturePositionsResource {
 	@GET
 	@Path("{name}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Metoxh findInfoOfStock(@PathParam("name")String name) {
+	public MetoxhInfo findInfoOfStock(@PathParam("name")String name) {
 		EntityManager em=getEntityManager();
 		Metoxh metoxh=new Metoxh();
 	    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
 	    Date date = new Date(); 
 	    EvaluateFuturePositionsService e=new EvaluateFuturePositionsService(em);
 	    metoxh=e.findInformationOfStock(name,formatter.format(date));
-		return metoxh;
+		MetoxhInfo mi;
+		mi=MetoxhInfo.wrap(metoxh);
+		return mi;
 	} 
 ///////////////////////////////////////////////////////////////////////////////////
 //Το σύστημα εμφανίζει για τη μετοχή τους δείκτες (ΜΚΟ15, ΜΚΟ80, yk20, xk20, beta)
@@ -73,12 +75,16 @@ public class EvaluateFuturePositionsResource {
 	@GET
 	@Path("getAllStocks")
 	@Produces(MediaType.APPLICATION_JSON)
-public List<Metoxh> findAllMetoxes(){
+public List<MetoxhInfo> findAllMetoxes(){
 		List<Metoxh> list=null;
+		List<MetoxhInfo> ml=null;
 		EntityManager em=getEntityManager();
 		EvaluateFuturePositionsService e=new EvaluateFuturePositionsService(em);
 		list=e.findAllMetoxes();
-		return list;		
+		for (Metoxh m:list) {
+			ml.add(MetoxhInfo.wrap(m));
+		}
+		return ml;		
 }
 /////////////////////////////////////////////////////////////////////
 //Το σύστημα εμφανίζει πρόταση με βάση τον αλγόριθμο PPO για μια συγκεκριμενη μετοχή.
