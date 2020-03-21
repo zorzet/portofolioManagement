@@ -43,7 +43,7 @@ public class EvaluateFuturePositionsResourceTest extends JerseyTest {
 		EntityManager em = JPAUtil.getCurrentEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
-		Metoxh m = em.find(Metoxh.class, 1);
+		Metoxh m = em.createQuery("select m from Metoxh m", Metoxh.class).setMaxResults(1).getSingleResult();
 		tx.commit();
 
 		MetoxhInfo metoxhinfo = target("/EvaluatePositions/" + m.getName() + "/" + m.getDate()).request().get(MetoxhInfo.class);
