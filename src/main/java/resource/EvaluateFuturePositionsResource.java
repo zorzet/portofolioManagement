@@ -24,7 +24,7 @@ import java.util.Date;
 
 @Path("EvaluatePositions")
 public class EvaluateFuturePositionsResource {
-	EntityManager em;
+	
 	@Context
 	UriInfo uriInfo;
 	
@@ -44,6 +44,7 @@ public class EvaluateFuturePositionsResource {
 	@Path("{name}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Metoxh findInfoOfStock(@PathParam("name")String name) {
+		EntityManager em=getEntityManager();
 		Metoxh metoxh=new Metoxh();
 	    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
 	    Date date = new Date(); 
