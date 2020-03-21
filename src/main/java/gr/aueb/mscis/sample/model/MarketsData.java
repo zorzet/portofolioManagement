@@ -76,6 +76,12 @@ public class MarketsData{
 		this.Min = Min;
 	}
 	
+	public int getMDId() {
+		return MDId;
+	}
+	public void setMDId(int mDId) {
+		MDId = mDId;
+	}
 	@Override
 	public String toString() {
 		return "MarketsData [Date=" + date + ", Opening=" + Opening + ", Closing=" + Closing
