@@ -52,10 +52,14 @@ public class EvaluateFuturePositionsResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	public InformationOfStockInfo StockImage(@PathParam("stockname")String stockname,@PathParam("date")String date) {
 	InformationOfStockInfo info=null;
-	EntityManager em=getEntityManager();
-	EvaluateFuturePositionsService e=new EvaluateFuturePositionsService(em);
-	info=InformationOfStockInfo.wrap(e.StockImage(stockname,date));
-	return info;
+	try {
+		EntityManager em=getEntityManager();
+		EvaluateFuturePositionsService e=new EvaluateFuturePositionsService(em);
+		info=InformationOfStockInfo.wrap(e.StockImage(stockname,date));
+		return info;
+	}catch (Exception e){
+		return null;
+	}
 	}
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -65,15 +69,20 @@ public class EvaluateFuturePositionsResource {
 	@Path("getAllStocks")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<MetoxhInfo> findAllMetoxes(){
-		List<Metoxh> list=null;
 		List<MetoxhInfo> ml=null;
-		EntityManager em=getEntityManager();
-    	EvaluateFuturePositionsService e=new EvaluateFuturePositionsService(em);
-		list=e.findAllMetoxes();
-		for (Metoxh m:list) {
-			ml.add(MetoxhInfo.wrap(m));
+		try {
+				List<Metoxh> list=null;
+				
+				EntityManager em=getEntityManager();
+				EvaluateFuturePositionsService e=new EvaluateFuturePositionsService(em);
+				list=e.findAllMetoxes();
+				for (Metoxh m:list) {
+					ml.add(MetoxhInfo.wrap(m));
 		}
-		return ml;		
+				return ml;
+		}catch (Exception e) {
+			return ml;
+		}
   }
 /////////////////////////////////////////////////////////////////////
 //Το σύστημα εμφανίζει πρόταση με βάση τον αλγόριθμο PPO για μια συγκεκριμενη μετοχή.
@@ -83,10 +92,14 @@ public class EvaluateFuturePositionsResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	public BuyOrSellPerStockInfo BuyOrSellPerStock(@PathParam("pponame")String pponame,@PathParam("date")String date) {
 		BuyOrSellPerStockInfo info=null;
-		EntityManager em=getEntityManager();
-		EvaluateFuturePositionsService e=new EvaluateFuturePositionsService(em);	
-		info=BuyOrSellPerStockInfo.wrap(e.BuyOrSellPerStock(pponame,date));
-		return info;
+		try {
+			EntityManager em=getEntityManager();
+			EvaluateFuturePositionsService e=new EvaluateFuturePositionsService(em);	
+			info=BuyOrSellPerStockInfo.wrap(e.BuyOrSellPerStock(pponame,date));
+			return info;
+		}catch(Exception e) {
+			return info;
+		}
 	}
 ///////////////////////////////////////////////////////////////////////////////
 //Το σύστημα εμφανίζει για τη συγκεκριμένη μετοχή τα τεμάχια που έχει ο χρήστης
