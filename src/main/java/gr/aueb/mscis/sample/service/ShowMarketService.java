@@ -55,7 +55,7 @@ public class ShowMarketService {
 	 * @param days
 	 * @return List
 	 */
-	public List<MarketsData> ShowMarketHistory(int days){
+	public List<MarketsData> ShowMarketHistory(int days)  throws RuntimeException{
 		EntityTransaction tx = em.getTransaction();
 	    tx.begin();
 	    List<MarketsData> results = null;

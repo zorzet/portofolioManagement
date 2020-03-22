@@ -60,13 +60,17 @@ public class ShowMarketResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<MarketsDataInfo> ShowMarketHistory(@PathParam("daysno") int daysno){
 		EntityManager em = getEntityManager();
-		List<MarketsData> list=null;
 		List<MarketsDataInfo> outputlist=new ArrayList<MarketsDataInfo>();
-		ShowMarketService s = new ShowMarketService(em);
-		list=s.ShowMarketHistory(daysno);
-		for(MarketsData mdi:list ) {
-			outputlist.add(MarketsDataInfo.wrap(mdi));
+		List<MarketsData> list=null;
+		try {
+			ShowMarketService s = new ShowMarketService(em);
+			list=s.ShowMarketHistory(daysno);
+			for(MarketsData mdi:list ) {
+				outputlist.add(MarketsDataInfo.wrap(mdi));
+			}
+			return outputlist;
+		}catch(Exception e) {
+			return null;
 		}
-		return outputlist;
 	}
 }
