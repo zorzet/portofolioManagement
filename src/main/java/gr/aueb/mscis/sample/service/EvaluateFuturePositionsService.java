@@ -33,7 +33,7 @@ public class EvaluateFuturePositionsService {
 	 *Επιστρέφει όλες τις μετοχές που παρακολουθούμε στη βάση μας 
 	 * @return List
 	 */
-	public List<Metoxh> findAllMetoxes() {
+	public List<Metoxh> findAllMetoxes()  throws RuntimeException {
 		List<Metoxh> results = null;
 
 		results = em.createQuery("select m from Metoxh m", Metoxh.class)
@@ -52,7 +52,7 @@ public class EvaluateFuturePositionsService {
 	 * @return Metoxh
 	 */
 	@SuppressWarnings("unchecked")
-	public Metoxh findInformationOfStock(String name, String date) {
+	public Metoxh findInformationOfStock(String name, String date) throws RuntimeException {
 		List<Metoxh> ml=null;
 		ml=findAllMetoxes();
 	    for (int i = 0; i < ml.size(); i++) {
@@ -73,7 +73,7 @@ public class EvaluateFuturePositionsService {
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	public Deiktes findDeiktesPerStock(String name, String date){
+	public Deiktes findDeiktesPerStock(String name, String date) throws RuntimeException{
 		List <Deiktes>  dlist=null;
 		Deiktes d=null;
 		Metoxh m=findInformationOfStock(name,date);
@@ -91,7 +91,7 @@ public class EvaluateFuturePositionsService {
 		return d;
 	}
 	
-	public String StockImage(String name, String date) {
+	public String StockImage(String name, String date) throws RuntimeException {
 	String InformationOfStock; 
 	Metoxh m=null;
 	Deiktes d=null;
@@ -112,7 +112,7 @@ public class EvaluateFuturePositionsService {
 	 * @param date
 	 * @return
 	 */
-	public String BuyOrSellPerStock(String sname, String date) {
+	public String BuyOrSellPerStock(String sname, String date) throws RuntimeException {
 		String decision=null;
 		Deiktes d=null;
 		Metoxh m=null;
