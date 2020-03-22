@@ -81,12 +81,12 @@ public class EvaluateFuturePositionsResource {
 	@GET
 	@Path("{pponame: [A-Za-z]*}/{date}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public String BuyOrSellPerStock(@PathParam("pponame")String pponame,@PathParam("date")String date) {
-		String BuyOrSellPerStock=null;
+	public BuyOrSellPerStockInfo BuyOrSellPerStock(@PathParam("pponame")String pponame,@PathParam("date")String date) {
+		BuyOrSellPerStockInfo info=null;
 		EntityManager em=getEntityManager();
 		EvaluateFuturePositionsService e=new EvaluateFuturePositionsService(em);	
-		BuyOrSellPerStock=e.BuyOrSellPerStock(pponame,date);
-		return BuyOrSellPerStock;
+		info=BuyOrSellPerStockInfo.wrap(e.BuyOrSellPerStock(pponame,date));
+		return info;
 	}
 ///////////////////////////////////////////////////////////////////////////////
 //Το σύστημα εμφανίζει για τη συγκεκριμένη μετοχή τα τεμάχια που έχει ο χρήστης
@@ -94,15 +94,17 @@ public class EvaluateFuturePositionsResource {
 	@GET
 	@Path("{Stock}/{DXId}/{CusId}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public int showUnitsofStocksperPortofolio(
+	public showUnitsofStocksInfo showUnitsofStocksperPortofolio(
 			@PathParam("Stock")String Stock,
 			@PathParam("DXId") int DXId,
 			@PathParam("CusId") int CusId) {
+		showUnitsofStocksInfo info=null;
 		int showUnitsofStocksperPortofolio;
 		EntityManager em=getEntityManager();
 		EvaluateFuturePositionsService e=new EvaluateFuturePositionsService(em);
 		showUnitsofStocksperPortofolio=e.showUnitsofStocksperPortofolio(Stock, DXId, CusId);
-		return showUnitsofStocksperPortofolio;
+		info=showUnitsofStocksInfo.wrap(showUnitsofStocksperPortofolio);
+		return info;
 	}
 ///////////////////////////////////////////////////////////////////////////////
 ///το ποσοστό του κεφαλαίου που καταλαμβάνουν και το beta του χαρτολακίου
@@ -110,15 +112,17 @@ public class EvaluateFuturePositionsResource {
 	@GET
 	@Path("{Stock}/{DXId}/{CusId}/{date}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public double showPosostoofStocksperPortofolio(
+	public PosostoofStocksInfo showPosostoofStocksperPortofolio(
 			@PathParam("Stock")String Stock,
 			@PathParam("DXId") int DXId,
 			@PathParam("CusId") int CusId,
 			@PathParam("date")String date) { 
 		double showPosostoofStocksperPortofolio;
+		PosostoofStocksInfo info=null;
 		EntityManager em=getEntityManager();
 		EvaluateFuturePositionsService e=new EvaluateFuturePositionsService(em);
 	    showPosostoofStocksperPortofolio=e.showPosostoofStocksperPortofolio(Stock,DXId,CusId,date);
-	    return showPosostoofStocksperPortofolio;
+	    info=PosostoofStocksInfo.wrap(showPosostoofStocksperPortofolio);
+	    return info;
 	}
 }

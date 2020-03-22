@@ -1,7 +1,10 @@
 package resource;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 import gr.aueb.mscis.sample.model.Metoxh;
 
+@XmlRootElement
 public class InformationOfStockInfo {
  private String InformationOfStock;
 
