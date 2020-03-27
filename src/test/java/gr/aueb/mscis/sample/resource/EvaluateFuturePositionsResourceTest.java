@@ -15,8 +15,6 @@ import java.util.Date;
 import gr.aueb.mscis.sample.persistence.Initializer;
 import gr.aueb.mscis.sample.persistence.JPAUtil;
 import gr.aueb.mscis.sample.model.Metoxh;
-import resource.EvaluateFuturePositionsResource;
-import resource.MetoxhInfo;
 
 public class EvaluateFuturePositionsResourceTest extends JerseyTest {
 	

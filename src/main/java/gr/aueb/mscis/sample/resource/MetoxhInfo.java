@@ -1,4 +1,4 @@
-package resource;
+package gr.aueb.mscis.sample.resource;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
