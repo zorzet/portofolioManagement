@@ -42,7 +42,7 @@ public class ShowMarketService {
         Query query = em.createQuery("select m from MarketsData m order by m.date desc", MarketsData.class).setMaxResults(1);
         MarketImage=(String) query.getSingleResult().toString();
         tx.commit();
-        System.out.println("Stock Market is closed");
+//        System.out.println("Stock Market is closed");
         return MarketImage;
 	}
 	

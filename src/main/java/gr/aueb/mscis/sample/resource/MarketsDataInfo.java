@@ -21,8 +21,7 @@ public class MarketsDataInfo {
 	
 	public MarketsDataInfo(String date,double Opening,double Closing,double Max,double Min) {
 		super();
-		this.MDId=MDId;
-		//this.date=date;
+		this.date=date;
 		this.Opening=Opening;
 		this.Closing=Closing;
 		this.Max=Max;

@@ -16,7 +16,7 @@ import gr.aueb.mscis.sample.model.MarketsData;
 import gr.aueb.mscis.sample.persistence.JPAUtil;
 import gr.aueb.mscis.sample.service.EvaluateFuturePositionsService;
 
-@Path("EvaluatePositions")
+@Path("ShowMarket")
 public class ShowMarketResource {
 
 	@Context
@@ -31,26 +31,23 @@ public class ShowMarketResource {
 /////////////////////////////////////////////////////////////////	
 	@GET
 	@Path("getOnlineMarket")
-	@Produces(MediaType.APPLICATION_JSON)
-	public MarketInfo  getOnlineMarketImage() {
+	@Produces(MediaType.TEXT_PLAIN)
+	public String getOnlineMarketImage() {
 		EntityManager em = getEntityManager();
-		MarketInfo marketsnow=null;
 		ShowMarketService s = new ShowMarketService(em);
-		return MarketInfo.wrap(s.getOnlineMarketImage());
+		return s.getOnlineMarketImage();
 	}
 /////////////////////////////////////////////////////////////////////
 //Εμφανίζεται κατάλληλο μήνυμα ενημέρωσης
 //Εμφανίζεται η εικόνα του FTSE για όλη την προηγούμενη εργάσιμη και η τιμή κλεισίματος.
 ////////////////////////////////////////////////////////////////////	
 	@GET
-	@Path("getOffineMarket")
-	@Produces(MediaType.APPLICATION_JSON)
-	public MarketInfo getOfflineMarketImage() {
-		MarketInfo info;
+	@Path("getOfflineMarket")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String getOfflineMarketImage() {
 		EntityManager em = getEntityManager();
 		ShowMarketService s = new ShowMarketService(em);
-		info=MarketInfo.wrap(s.getOfflineMarketImage());
-		return info;
+		return s.getOfflineMarketImage();
 	}
 /////////////////////////////////////////////////////////////////////
 //Το σύστημα εμφανίζει τα κλεισίματα του FTSE για το επιλεγμένο διάστηματος.
