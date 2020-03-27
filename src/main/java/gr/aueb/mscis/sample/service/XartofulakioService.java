@@ -157,7 +157,7 @@ public class XartofulakioService {
 	 * @param Cusid
 	 * @return string
 	 */
-	public String ShowXartofulakioPelath(int DXId, int Cusid) {
+	public String ShowXartofulakioPelath(int DXId, int Cusid) throws RuntimeException  {
 		String eikonaXartofulakiou = null;
 		List<Xartofulakio> results = findXartofulakiaById(DXId);
 		for (int i = 0; i < results.size(); i++) {
@@ -249,7 +249,7 @@ public class XartofulakioService {
 	 * @param x
 	 * @return
 	 */
-	public Transaction transact(String cmdType, String stock, int units, double price, String date, String state,
+	public int transact(String cmdType, String stock, int units, double price, String date, String state,
 			Xartofulakio x) {
 		Transaction tran = new Transaction();
 		EntityTransaction tx = em.getTransaction();
@@ -273,6 +273,7 @@ public class XartofulakioService {
 					em.merge(tran);
 					em.merge(x);
 					tx.commit();
+					return 1;
 				} else {
 					tran.setUnits(tran.getUnits() - units);
 					tran.setDate(date);
@@ -280,6 +281,7 @@ public class XartofulakioService {
 					em.merge(tran);
 					em.merge(x);
 					tx.commit();
+					return 2;
 				}
 			}
 		} else {
@@ -295,6 +297,7 @@ public class XartofulakioService {
 					em.merge(tran);
 					em.merge(x);
 					tx.commit();
+					return 3;
 				} else {
 					// an oxi ftiaxe transaction kai kane update balance
 					tran = createTransaction(cmdType, stock, units, price, date);
@@ -302,13 +305,14 @@ public class XartofulakioService {
 					em.persist(tran);
 					em.merge(x);
 					tx.commit();
+					return 4;
 				}
 			} else {
 				tx.rollback();
 				throw new java.lang.RuntimeException("Action not valid, low balance");
 			}
 		}
-		return tran;
+		return -1;
 	}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////	
