@@ -95,9 +95,25 @@ public class XartofulakioResource {
     @POST
     @Path("/transact/{cmdType: [A-Za-z]*}/{stock: [A-Za-z]*}/{units}/{price}/{date}/{state: [A-Za-z]*}/{x}")
 	@Consumes({"text/plain"})
-	public void transact(@PathParam("cmdType") String cmdType,@PathParam("stock") String stock,@PathParam("units") int units
+	public String transact(@PathParam("cmdType") String cmdType,@PathParam("stock") String stock,@PathParam("units") int units
 			,@PathParam("price") double price,@PathParam("date") String date,@PathParam("state") String state,
-			@PathParam("x") Xartofulakio x) {	
-    		
+			@PathParam("x") Xartofulakio x) {
+    	String response;
+    	int move;
+    	EntityManager em = getEntityManager();
+		XartofulakioService xartofulakio = new XartofulakioService(em);
+    	move=xartofulakio.transact(cmdType, stock, units, price, date, state, x);
+    	if(move==1) {
+    		response="Transaction Completed. Position closed";
+    	}else if(move==2) {
+    		response="Sell! Transaction Completed";
+    	}else if(move==3) {
+    		response="Buy! Transaction Completed";
+    	}else if(move==4) {
+    		response="Out of balance.Transaction Completed";
+    	}else {
+    		response="Not valid Transaction";
+    	}
+    	return response;
     }
   }
