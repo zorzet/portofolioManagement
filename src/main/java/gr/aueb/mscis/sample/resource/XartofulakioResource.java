@@ -12,7 +12,10 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
+import javax.ws.rs.core.Response.Status;
+
 import gr.aueb.mscis.sample.service.XartofulakioService;
 import gr.aueb.mscis.sample.model.Transaction;
 import gr.aueb.mscis.sample.model.Xartofulakio;
@@ -95,7 +98,7 @@ public class XartofulakioResource {
     @POST
     @Path("/transact/{cmdType: [A-Za-z]*}/{stock: [A-Za-z]*}/{units}/{price}/{date}/{state: [A-Za-z]*}/{x}")
 	@Consumes({"text/plain"})
-	public String transact(@PathParam("cmdType") String cmdType,@PathParam("stock") String stock,@PathParam("units") int units
+	public Response transact(@PathParam("cmdType") String cmdType,@PathParam("stock") String stock,@PathParam("units") int units
 			,@PathParam("price") double price,@PathParam("date") String date,@PathParam("state") String state,
 			@PathParam("x") Xartofulakio x) {
     	String response;
@@ -105,6 +108,7 @@ public class XartofulakioResource {
     	move=xartofulakio.transact(cmdType, stock, units, price, date, state, x);
     	if(move==1) {
     		response="Transaction Completed. Position closed";
+    		
     	}else if(move==2) {
     		response="Sell! Transaction Completed";
     	}else if(move==3) {
@@ -113,7 +117,8 @@ public class XartofulakioResource {
     		response="Out of balance.Transaction Completed";
     	}else {
     		response="Not valid Transaction";
+    		return Response.status(Status.NOT_FOUND).build();
     	}
-    	return response;
+    	return Response.status(Status.ACCEPTED).build();
     }
   }
