@@ -1,4 +1,4 @@
-package gr.aueb.mscis.sample.resource;
+	package gr.aueb.mscis.sample.resource;
 
 import java.util.ArrayList;
 import java.util.List;
