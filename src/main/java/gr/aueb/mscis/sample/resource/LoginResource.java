@@ -17,7 +17,7 @@ public class LoginResource {
 
 	@Context
 	UriInfo uriInfo;
-	
+	 
 	protected EntityManager getEntityManager() {
 
 		return JPAUtil.getCurrentEntityManager();
