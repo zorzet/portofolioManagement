@@ -14,7 +14,7 @@ import javax.ws.rs.core.UriInfo;
 import gr.aueb.mscis.sample.service.ShowMarketService;
 import gr.aueb.mscis.sample.model.MarketsData;
 import gr.aueb.mscis.sample.persistence.JPAUtil;
-
+import gr.aueb.mscis.sample.service.EvaluateFuturePositionsService;
 
 @Path("ShowMarket")
 public class ShowMarketResource {

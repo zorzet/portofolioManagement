@@ -24,7 +24,7 @@ import javax.ws.rs.core.Response.Status;
 public class UpdateIndicatorsResource {
 
 	@Context
-	UriInfo uriInfo;  
+	UriInfo uriInfo;
 	
 	protected EntityManager getEntityManager() {
 

@@ -14,7 +14,7 @@ import gr.aueb.mscis.sample.service.LoginService;
 
 @Path("Login")
 public class LoginResource {
-  
+
 	@Context
 	UriInfo uriInfo;
 	 

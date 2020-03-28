@@ -167,7 +167,7 @@ public class UpdateIndicatorsService {
 		return (Highs19);
 	}	
 	
-	/**  
+	/**
 	 * 
      *Παίνρει τα τελευταία 19 Χαμηλά της μετοχής, με σκοπό να πάρει και το σημερινό
 	 *και να υποκλογίσει τον ΧΚ20. Χρησιμοποιείται απο την Deiktes createDeikth
