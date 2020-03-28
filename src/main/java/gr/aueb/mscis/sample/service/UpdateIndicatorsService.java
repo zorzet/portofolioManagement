@@ -67,17 +67,20 @@ public class UpdateIndicatorsService {
 	 * @param date
 	 * @return
 	 */
-	public Deiktes UpdateDeiktesAndStock(String name, String date, Double high, Double low, Double closing, Double beta, int Volume) {
+	public int UpdateDeiktesAndStock(String name, String date, Double high, Double low, Double closing, Double beta, int Volume) {
 		Metoxh m = createMetoxh( name, date,  high,  low, closing, beta, Volume);
 		Deiktes d = createDeikth(date,m.getName(), m.getHigh(), m.getLow(), m.getClosing());
 		d.setMetoxh(m);
-		
+		try {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
 		em.persist(d);
 		tx.commit();
-		
-		return d;
+		return 0;
+		}catch(Exception e) {
+			return -1;
+		}
+		//return d;
 	}
 
 /////////////////////////////////////////////////////////////////////
