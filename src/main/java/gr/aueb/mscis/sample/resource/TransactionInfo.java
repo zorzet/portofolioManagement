@@ -21,14 +21,14 @@ public class TransactionInfo {
 		
 	}
 	
-	public TransactionInfo(int TransId,String cmdType, String stock, int units, double price, String date, String state) {	
-		this(cmdType, stock, units, price, date, state);
+	public TransactionInfo(int TransId, String CmdType, String Stock, int Units, double price, String date, String state) {	
+		this(CmdType, Stock, Units, price, date, state);
 		this.TransId = TransId;
 	}
 	
-	public TransactionInfo(String stock, int units, double price, String date, String state) {
+	public TransactionInfo(String CmdType, String stock, int units, double price, String date, String state) {
 		super();	
-		
+		this.CmdType = CmdType;
 		this.Stock = stock;
 		this.Units = units;
 		this.price = price;

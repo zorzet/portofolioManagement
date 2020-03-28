@@ -1,14 +1,23 @@
 package gr.aueb.mscis.sample.resource;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.ws.rs.core.Application;
+import javax.ws.rs.core.GenericType;
 
 import org.junit.*;
 import static org.junit.Assert.*;
+
+import java.util.*;
+
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
 
+import gr.aueb.mscis.sample.model.MarketsData;
 import gr.aueb.mscis.sample.persistence.Initializer;
+import gr.aueb.mscis.sample.persistence.JPAUtil;
 import gr.aueb.mscis.sample.resource.ShowMarketResource;
+import gr.aueb.mscis.sample.service.ShowMarketService;
 
 public class ShowMarketResourceTest extends JerseyTest {
 	
@@ -31,5 +40,40 @@ public class ShowMarketResourceTest extends JerseyTest {
 	}
 	
 	@Test
+	public void getOnlineMarketImageTest() {
+		String exp_output = "something";
+		String output = target("/ShowMarket/getOnlineMarket").request().get(String.class);
+		assertEquals(exp_output, output);
+	}
+	
+	@Test
+	public void getOfflineMarketImageTest() {
+		EntityManager em = JPAUtil.getCurrentEntityManager();
+		ShowMarketService s = new ShowMarketService(em);
+		String exp_output = s.getOfflineMarketImage();
+		String output = target("/ShowMarket/getOfflineMarket").request().get(String.class);
+		assertEquals(exp_output, output);
+	}
+	
+	@Test
+	public void showMarketHistoryTest() {
+		EntityManager em = JPAUtil.getCurrentEntityManager();
+		ShowMarketService s = new ShowMarketService(em);
+		List<MarketsData> exp_output = s.ShowMarketHistory(2);
+		List<MarketsData> output = new ArrayList<MarketsData>();
+
+		List<MarketsDataInfo> outputinfo = target("/ShowMarket/ShowMarketHistory/2").request().get(new GenericType<List<MarketsDataInfo>>() {});
+		for(MarketsDataInfo m : outputinfo) {
+			output.add(m.getMarketsData(em));
+		}
+		
+		assertEquals(exp_output,output);
+		
+		try {
+			target("/ShowMarket/ShowMarketHistory/2").request().get(new GenericType<List<MarketsDataInfo>>() {});
+		} catch(java.lang.RuntimeException msg) {
+			assertNull(msg);
+		}
+	}
 	
 }

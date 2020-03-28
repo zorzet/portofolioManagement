@@ -98,15 +98,15 @@ public class Initializer {
         MarketsData temp30 = new MarketsData("1/11/2017",1770.94,1781.5,1767.13,1780.84);
         MarketsData temp31 = new MarketsData("1/12/2017",1783.33,1797.3,1774.43,1782.88);
         
-        Metoxh st1=new Metoxh("AEGN", "22/02/2020", 8.70, 8.60, 8.69, 0.6, 132000);
-        Metoxh st2=new Metoxh("INTRK", "22/02/2020", 0.0, 0.80, 0.88, 0.0, 69000);
-        Metoxh st3=new Metoxh("MOH", "22/02/2020", 20.6, 0.0, 20.52,1.3, 80200);
+        Metoxh st1=new Metoxh("AEGN", "22-02-2020", 8.70, 8.60, 8.69, 0.6, 132000);
+        Metoxh st2=new Metoxh("INTRK", "22-02-2020", 0.0, 0.80, 0.88, 0.0, 69000);
+        Metoxh st3=new Metoxh("MOH", "22-02-2020", 20.6, 0.0, 20.52,1.3, 80200);
         Metoxh st4=new Metoxh("AEGN", "23-02-2020", 8.41, 8.20, 8.36, 0.75, 123000);
-        Metoxh st5=new Metoxh("OPAP", "22/02/2020", 11.46, 11.39, 0.0, 1.71, 654000);
-        Metoxh st6=new Metoxh("ELPE", "22/02/2020", 22.00, 21.00, 20.00, 2.00, 4000);
-        Metoxh st7=new Metoxh("OPAP", "24/02/2020", 11.49, 11.28, 8.36, 0.95, 124000);
-        Metoxh st8=new Metoxh("OPAP", "25/02/2020", 11.32, 11.43, 8.36, 1.00, 123000);
-        Metoxh st9=new Metoxh("OPAP", "23/02/2020", 11.46, 11.39, 0.7, 1.71, 654000);
+        Metoxh st5=new Metoxh("OPAP", "22-02-2020", 11.46, 11.39, 0.0, 1.71, 654000);
+        Metoxh st6=new Metoxh("ELPE", "22-02-2020", 22.00, 21.00, 20.00, 2.00, 4000);
+        Metoxh st7=new Metoxh("OPAP", "24-02-2020", 11.49, 11.28, 8.36, 0.95, 124000);
+        Metoxh st8=new Metoxh("OPAP", "25-02-2020", 11.32, 11.43, 8.36, 1.00, 123000);
+        Metoxh st9=new Metoxh("OPAP", "23-02-2020", 11.46, 11.39, 0.7, 1.71, 654000);
                
         Customer c1 = new Customer(1, "AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",
     			12345, "GE075 1234 1234 1234 1234");
@@ -174,11 +174,11 @@ public class Initializer {
         t2.addXartofulakio(x2);
         em.persist(t2);
         
-        Deiktes d1 = new Deiktes("22/02/2020", 8.98, 8.72, 8.20, 8.40);
+        Deiktes d1 = new Deiktes("22-02-2020", 8.98, 8.72, 8.20, 8.40);
         d1.setMetoxh(st1);
-        Deiktes d2 = new Deiktes("22/02/2020", 0.83, 0.97, 0.80, 1.02);
+        Deiktes d2 = new Deiktes("22-02-2020", 0.83, 0.97, 0.80, 1.02);
         d2.setMetoxh(st2);
-        Deiktes d3 = new Deiktes("22/02/2020", 20.6, 20.2, 20.6, 20.4);
+        Deiktes d3 = new Deiktes("22-02-2020", 20.6, 20.2, 20.6, 20.4);
         d3.setMetoxh(st3);
         em.persist(d1);
         em.persist(d2);
