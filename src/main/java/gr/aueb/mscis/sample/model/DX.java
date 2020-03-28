@@ -23,7 +23,7 @@ public class DX extends User {
 	
 	@Column(name="Name", nullable = false)
 	private String Name;
-	
+	  
 	@Column(name="Surname", nullable = false)
 	private String Surname;
 	
