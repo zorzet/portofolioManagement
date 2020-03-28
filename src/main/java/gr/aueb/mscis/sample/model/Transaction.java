@@ -182,7 +182,7 @@ public class Transaction {
 
 	@Override
 	public String toString() {
-		return "Transaction [TransId=" + TransId + ", CmdType=" + CmdType + ", Stock=" + Stock + ", Units=" + Units
+		return "Transaction [CmdType=" + CmdType + ", Stock=" + Stock + ", Units=" + Units
 				+ ", price=" + price + ", date=" + date + ", state=" + state + "]";
 	}
     

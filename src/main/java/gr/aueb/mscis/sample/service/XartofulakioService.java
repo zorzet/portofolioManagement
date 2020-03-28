@@ -84,7 +84,6 @@ public class XartofulakioService {
 		for (int i = 0; i < xlist.size(); i++) {
 			if ((xlist.get(i).getCus().getCustomerId()) == cusid) {
 				translist = xlist.get(i).getTransactions();
-				System.out.println(translist.size());
 			}
 		}
 
@@ -187,7 +186,7 @@ public class XartofulakioService {
 		List<Xartofulakio> xlist = null;
 
 		xlist = findXartofulakiaById(xid);
-		if (xlist == null) {
+		if (xlist.isEmpty()) {
 			throw new java.lang.RuntimeException("Transactions for this customer could not be retrieved");
 		}
 
@@ -196,7 +195,7 @@ public class XartofulakioService {
 				transet = xlist.get(i).getTransactions();
 			}
 		}
-		if (transet == null)
+		if (transet.isEmpty())
 			throw new java.lang.RuntimeException("Transactions for this customer could not be retrieved");
 		return transet;
 	}

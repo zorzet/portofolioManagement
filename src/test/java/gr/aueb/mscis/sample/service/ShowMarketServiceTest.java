@@ -13,18 +13,18 @@ import gr.aueb.mscis.sample.persistence.Initializer;
 import gr.aueb.mscis.sample.persistence.JPAUtil;
 
 public class ShowMarketServiceTest {
-
-	protected EntityManager em;
 	
-	@Before
-	public void setup(){
+	protected static EntityManager em;
+	
+	@BeforeClass
+	public static void setup(){
 		Initializer dataHelper = new Initializer();
 		dataHelper.prepareData();
 		em = JPAUtil.getCurrentEntityManager();
 	}
 	
-	@After
-	public void tearDown(){
+	@AfterClass
+	public static void tearDown(){
 		em.close();
 	}
 	
@@ -38,7 +38,7 @@ public class ShowMarketServiceTest {
 	
 	@Test
 	public void test_getOfflineMarketImage() {
-		String exp_MarketImage = new MarketsData("30/11/2019",1629.27,1657.17,1608.11,1657.17).toString();
+		String exp_MarketImage = new MarketsData("30-11-2019",1629.27,1657.17,1608.11,1657.17).toString();
         
         ShowMarketService s = new ShowMarketService(em);
         String MarketImage = s.getOfflineMarketImage();
@@ -53,33 +53,14 @@ public class ShowMarketServiceTest {
 		List<MarketsData> m = s.ShowMarketHistory(2);
 		exp_m = m;
 		exp_m.clear();
-		exp_m.add(new MarketsData("30/11/2019",1629.27,1657.17,1608.11,1657.17));
-		exp_m.add(new MarketsData("29/11/2019",1603.1,1636.48,1603.1,1633.34));		
+		exp_m.add(new MarketsData("30-11-2019",1629.27,1657.17,1608.11,1657.17));
+		exp_m.add(new MarketsData("29-11-2019",1603.1,1636.48,1603.1,1633.34));		
 		assertEquals(exp_m, m);
 	}
 	
 	@Test
-	public void test_ShowMarketHistoryNull() {
-		String exp_message = "NO RECORDS FOUND";
-		EntityTransaction tx = em.getTransaction();
-		ShowMarketService s = new ShowMarketService(em);
-        try {
-        	tx.begin();
-        	Query query = em.createNativeQuery("delete from MarketsData");
-	        query.executeUpdate();
-	        tx.commit();
-        } catch(RuntimeException exc) {}
-        
-        try {
-        	s.ShowMarketHistory(2);
-        } catch(java.lang.RuntimeException msg) {
-        	assertEquals(exp_message, msg.getMessage());
-        }
-	}
-	
-	@Test
 	public void test_showResults() {
-		String exp_message = "STOCK MARKETS IMAGE AT 30/11/2019 OPENING 1629.27 CLOSING 1657.17 HIGH 1608.11 LOW 1657.17'\n'";
+		String exp_message = "STOCK MARKETS IMAGE AT 30-11-2019 OPENING 1629.27 CLOSING 1657.17 HIGH 1608.11 LOW 1657.17'\n'";
 		java.io.ByteArrayOutputStream out = new java.io.ByteArrayOutputStream();    
 		System.setOut(new java.io.PrintStream(out));    
 		

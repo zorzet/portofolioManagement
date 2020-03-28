@@ -58,7 +58,7 @@ public class EvaluateFuturePositionsResource {
 	@Path("getAllStocks")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<MetoxhInfo> findAllMetoxes() {
-		List<MetoxhInfo> ml = null;
+		List<MetoxhInfo> ml = new ArrayList<MetoxhInfo>();
 		try {
 			List<Metoxh> list = null;
 

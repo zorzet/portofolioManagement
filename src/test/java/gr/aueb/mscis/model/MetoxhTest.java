@@ -94,7 +94,7 @@ public class MetoxhTest {
 	@Test
 	public void test_DX() {
 		Metoxh test = new Metoxh("ACC", "20/02/2020", 12.33, 12.33, 12.33, 12.33, 500);
-		DX dx = new DX("AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26/05/1990");
+		DX dx = new DX("AH252687", "12345678", "Maria", "Papadopoulou", "6999999999", "mpapadopoulou@gmail.com", "26/05/1990", "mpapa", "123456");
 		test.addDX(dx);
 		Set<DX> dxs = test.getDXs();
 		Set<DX> exp_dxs = new HashSet<DX>();

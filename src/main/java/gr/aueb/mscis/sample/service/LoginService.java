@@ -1,5 +1,6 @@
 package gr.aueb.mscis.sample.service;
 
+/* Περίπτωση Χρήσης 1 */
 
 import java.util.*;
 import javax.persistence.*;
@@ -13,24 +14,22 @@ public class LoginService {
 
 	public LoginService(EntityManager em) {
 		this.em = em;
-	}  
-	
+	}
+
 //////////////////////////////////////////////////	
 ///	O χρήστης εισάγει το username και το password.
 ///	Το σύστημα επιβεβαιώνει την ορθότητα των credentials.
 /////////////////////////////////////////////////
-
-
 	public int LoginUser(String username, String password) {
-		DX dx=null;
-	    Query query = em.createQuery("select dx from DX dx ", DX.class).setMaxResults(1);
-	    dx=(DX)query.getSingleResult();		
-	    if(dx.getPassword().equalsIgnoreCase(password)) {
-	    	return 0;
-	    }else {
-	    	return -1;
-	    }
-	
+		DX dx = null;
+		dx = em.createQuery("select dx from DX dx where dx.username like :username", DX.class)
+				.setParameter("username", username).setMaxResults(1).getSingleResult();
+		if (dx.getPassword().equalsIgnoreCase(password)) {
+			return 0;
+		} else {
+			return -1;
+		}
+
 	}
 
 }

@@ -147,7 +147,7 @@ public class DX extends User {
 		this.password = password;
 	}
 
-	public DX(String aDT, String aFM, String name, String surname, String tel, String email, String birthDate) {	
+	public DX(String aDT, String aFM, String name, String surname, String tel, String email, String birthDate, String username, String password) {	
 		this.ADT = aDT;
 		this.AFM = aFM;
 		this.Name = name;
@@ -155,23 +155,11 @@ public class DX extends User {
 		this.Tel = tel;
 		this.email = email;
 		this.BirthDate = birthDate;
-	}
-	
-	public DX(int dXId, String aDT, String aFM, String name, String surname, String tel, String email, String birthDate,
-			String username, String password) {
-		super();
-		DXId = dXId;
-		ADT = aDT;
-		AFM = aFM;
-		Name = name;
-		Surname = surname;
-		Tel = tel;
-		this.email = email;
-		BirthDate = birthDate;
 		this.username = username;
 		this.password = password;
+		
 	}
-
+	
 	//ADD METOXH ME VASH TOUS DXs
 	public void addMetoxh(Metoxh metoxh) {
 		if (metoxh != null) {
@@ -230,6 +218,16 @@ public class DX extends User {
 			if (other.email != null)
 				return false;
 		} else if (!email.equals(other.email))
+			return false;
+		if (username == null) {
+			if (other.username != null)
+				return false;
+		} else if (!username.equals(other.username))
+			return false;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
 			return false;
 		if (DXId != other.DXId)
 			return false;

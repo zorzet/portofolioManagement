@@ -47,10 +47,10 @@ public class UpdateIndicatorsTest {
 	
 	@Test
 	public void test_updateDeiktesAndStock() {
-		Deiktes exp_d = new Deiktes("24/02/2020", 0.8, 0.3, 2.0, 2.0);
+		int exp_output = 0;
 		UpdateIndicatorsService update = new UpdateIndicatorsService(em);
-		Deiktes d = update.UpdateDeiktesAndStock("ELPE", "24/02/2020", 18.00, 19.00, 4.00, 1.32, 5000);
-		assertEquals(exp_d, d);
+		int output = update.UpdateDeiktesAndStock("ELPE", "24/02/2020", 18.00, 19.00, 4.00, 1.32, 5000);
+		assertEquals(exp_output, output);
 	}
 	
 	@Test
@@ -69,7 +69,7 @@ public class UpdateIndicatorsTest {
 		String exp_message = "MKO30 COULD NOT BE CALCULATED";
 		UpdateIndicatorsService update = new UpdateIndicatorsService(em);
 		try {
-			update.GetLast14ClosingsOfStock("OPAP");
+			update.GetLast14ClosingsOfStock("PMI");
 		} catch(java.lang.RuntimeException message) {
 			assertEquals(exp_message, message.getMessage());
 		}
@@ -99,7 +99,7 @@ public class UpdateIndicatorsTest {
 		String exp_message = "MKO30 COULD NOT BE CALCULATED";
 		UpdateIndicatorsService update = new UpdateIndicatorsService(em);
 		try {
-			update.GetLast79ClosingsOfStock("OPAP");
+			update.GetLast79ClosingsOfStock("PMI");
 		} catch(java.lang.RuntimeException message) {
 			assertEquals(exp_message, message.getMessage());
 		}

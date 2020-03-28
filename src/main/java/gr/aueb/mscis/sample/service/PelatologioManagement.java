@@ -10,133 +10,134 @@ import gr.aueb.mscis.sample.model.Xartofulakio;
 public class PelatologioManagement {
 
 	private EntityManager em;
-	
+
 	public PelatologioManagement(EntityManager em) {
 		this.em = em;
 	}
 
 	@SuppressWarnings("unchecked")
-	public Customer findCustomersById(int id) {
-		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class)
-				.getResultList();
-		for(Xartofulakio x : xs) {
-			if (x.getCus().getCustomerId() == id) return x.getCus();
+	public Customer findCustomersById(int id) throws RuntimeException {
+		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).getResultList();
+		for (Xartofulakio x : xs) {
+			if (x.getCus().getCustomerId() == id)
+				return x.getCus();
 		}
 		throw new java.lang.RuntimeException("NO CUSTOMER FOUND");
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Customer> findCustomerByLastName(String lastName) {
+	public List<Customer> findCustomerByLastName(String lastName) throws RuntimeException {
 		List<Customer> results = new ArrayList<>();
-		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class)
-				.getResultList();
-		for(Xartofulakio x : xs) {
-			if (x.getCus().getSurname() == lastName) results.add(x.getCus());
+		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).getResultList();
+		for (Xartofulakio x : xs) {
+			if (x.getCus().getSurname().equals(lastName))
+				results.add(x.getCus());
 		}
-		if(results.isEmpty()) {
+		if (results.isEmpty()) {
+
 			throw new java.lang.RuntimeException("NO CUSTOMER FOUND");
 		}
 		return results;
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Customer> findCustomerByFirstName(String firstName) {
+	public List<Customer> findCustomerByFirstName(String firstName) throws RuntimeException {
 		List<Customer> results = new ArrayList<>();
-		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class)
-				.getResultList();
-		for(Xartofulakio x : xs) {
-			if (x.getCus().getName() == firstName) results.add(x.getCus());
+		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).getResultList();
+		for (Xartofulakio x : xs) {
+			if (x.getCus().getName() == firstName)
+				results.add(x.getCus());
 		}
-		if(results.isEmpty()) {
+		if (results.isEmpty()) {
 			throw new java.lang.RuntimeException("NO CUSTOMER FOUND");
 		}
 		return results;
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Customer> findCustomerByAFM(String AFM) {
+	public List<Customer> findCustomerByAFM(String AFM) throws RuntimeException {
 		List<Customer> results = new ArrayList<>();
-		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class)
-				.getResultList();
-		for(Xartofulakio x : xs) {
-			if (x.getCus().getAFM() == AFM) results.add(x.getCus());
+		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).getResultList();
+		for (Xartofulakio x : xs) {
+			if (x.getCus().getAFM() == AFM)
+				results.add(x.getCus());
 		}
-		if(results.isEmpty()) {
+		if (results.isEmpty()) {
 			throw new java.lang.RuntimeException("NO CUSTOMER FOUND");
 		}
 		return results;
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Customer> findCustomerByADT(String ADT) {
+	public List<Customer> findCustomerByADT(String ADT) throws RuntimeException {
 		List<Customer> results = new ArrayList<>();
-		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class)
-				.getResultList();
-		for(Xartofulakio x : xs) {
-			if (x.getCus().getADT() == ADT) results.add(x.getCus());
+		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).getResultList();
+		for (Xartofulakio x : xs) {
+			if (x.getCus().getADT() == ADT)
+				results.add(x.getCus());
 		}
-		if(results.isEmpty()) {
-			throw new java.lang.RuntimeException("NO CUSTOMER FOUND");
-		}
-		return results;
-	}
-	
-	@SuppressWarnings("unchecked")
-	public List<Customer> findCustomerByTel(String Tel) {
-		List<Customer> results = new ArrayList<>();
-		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class)
-				.getResultList();
-		for(Xartofulakio x : xs) {
-			if (x.getCus().getTel() == Tel) results.add(x.getCus());
-		}
-		if(results.isEmpty()) {
+		if (results.isEmpty()) {
 			throw new java.lang.RuntimeException("NO CUSTOMER FOUND");
 		}
 		return results;
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Customer> findCustomerByEmail(String Email) {
+	public List<Customer> findCustomerByTel(String Tel) throws RuntimeException {
 		List<Customer> results = new ArrayList<>();
-		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class)
-				.getResultList();
-		for(Xartofulakio x : xs) {
-			if (x.getCus().getEmail() == Email) results.add(x.getCus());
+		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).getResultList();
+		for (Xartofulakio x : xs) {
+			if (x.getCus().getTel() == Tel)
+				results.add(x.getCus());
 		}
-		if(results.isEmpty()) {
+		if (results.isEmpty()) {
 			throw new java.lang.RuntimeException("NO CUSTOMER FOUND");
 		}
 		return results;
 	}
-	
+
 	@SuppressWarnings("unchecked")
-	public List<Customer> findCustomerByInvestAmount(double InvestAmount) {
+	public List<Customer> findCustomerByEmail(String Email) throws RuntimeException {
 		List<Customer> results = new ArrayList<>();
-		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class)
-				.getResultList();
-		for(Xartofulakio x : xs) {
-			if (x.getCus().getInvestAmount() == InvestAmount) results.add(x.getCus());
+		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).getResultList();
+		for (Xartofulakio x : xs) {
+			if (x.getCus().getEmail() == Email)
+				results.add(x.getCus());
 		}
-		if(results.isEmpty()) {
+		if (results.isEmpty()) {
 			throw new java.lang.RuntimeException("NO CUSTOMER FOUND");
 		}
 		return results;
 	}
-	
+
 	@SuppressWarnings("unchecked")
-	public List<Customer> findCustomerByBankAccountNo(String Bank) {
+	public List<Customer> findCustomerByInvestAmount(double InvestAmount) throws RuntimeException {
 		List<Customer> results = new ArrayList<>();
-		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class)
-				.getResultList();
-		for(Xartofulakio x : xs) {
-			if (x.getCus().getBankAccountNo() == Bank) results.add(x.getCus());
+		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).getResultList();
+		for (Xartofulakio x : xs) {
+			if (x.getCus().getInvestAmount() == InvestAmount)
+				results.add(x.getCus());
 		}
-		if(results.isEmpty()) {
+		if (results.isEmpty()) {
 			throw new java.lang.RuntimeException("NO CUSTOMER FOUND");
 		}
 		return results;
 	}
-	
+
+	@SuppressWarnings("unchecked")
+	public List<Customer> findCustomerByBankAccountNo(String Bank) throws RuntimeException {
+		List<Customer> results = new ArrayList<>();
+		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).getResultList();
+		for (Xartofulakio x : xs) {
+			if (x.getCus().getBankAccountNo() == Bank)
+				results.add(x.getCus());
+		}
+		if (results.isEmpty()) {
+			throw new java.lang.RuntimeException("NO CUSTOMER FOUND");
+		}
+		return results;
+	}
+
 	// PROVOLI PELATOLWN
 	public void ShowCustomers() {
 		List<Customer> result = findAllCustomer();
@@ -150,26 +151,10 @@ public class PelatologioManagement {
 	}
 
 	// KATAXORISE H ENHMERWSE
-	public boolean saveOrUpdateCustomer(Customer c) {
+	public boolean saveOrUpdateCustomer(Xartofulakio x, Customer c) {
 
 		if (c != null) {
-			em.merge(c);
-			return true;
-		}
-		return false;
-	}
-
-	public boolean createCustomer(Customer c) {
-		if (c != null) {
-			em.persist(c);
-			return true;
-		}
-		return false;
-	}
-
-	public boolean deleteCustomer(Customer c) {
-		if (c != null) {
-			em.remove(c);
+			em.merge(x);
 			return true;
 		}
 		return false;
@@ -179,7 +164,8 @@ public class PelatologioManagement {
 		List<Customer> results = new ArrayList<>();
 
 		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).getResultList();
-		for(Xartofulakio x : xs) results.add(x.getCus());
+		for (Xartofulakio x : xs)
+			results.add(x.getCus());
 		return results;
 	}
 

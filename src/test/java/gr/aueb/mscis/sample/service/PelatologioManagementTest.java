@@ -7,6 +7,8 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 import gr.aueb.mscis.sample.model.Customer;
+import gr.aueb.mscis.sample.model.DX;
+import gr.aueb.mscis.sample.model.Xartofulakio;
 import gr.aueb.mscis.sample.persistence.Initializer;
 import gr.aueb.mscis.sample.persistence.JPAUtil;
 import gr.aueb.mscis.sample.service.PelatologioManagement;
@@ -31,7 +33,7 @@ public class PelatologioManagementTest {
 		String exp_message = "NO CUSTOMER FOUND";
 		PelatologioManagement p = new PelatologioManagement(em);
 		try {
-			Customer results = p.findCustomersById(3);
+			Customer results = p.findCustomersById(40000);
 		} catch(java.lang.RuntimeException message) {
 			assertEquals(exp_message, message.getMessage());
 		}
@@ -39,11 +41,10 @@ public class PelatologioManagementTest {
 	
 	@Test
 	public void test_findCustomersbyId() {
-		Customer exp_result = new Customer(1, "AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",
-    			12345, "GE075 1234 1234 1234 1234");
+		Customer exp_result = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).setMaxResults(1).getSingleResult().getCus();
 		PelatologioManagement p = new PelatologioManagement(em);
 		try {
-			Customer result = p.findCustomersById(1);
+			Customer result = p.findCustomersById(exp_result.getCustomerId());
 			assertEquals(exp_result, result);
 		} catch(java.lang.RuntimeException message) {
 
@@ -63,12 +64,12 @@ public class PelatologioManagementTest {
 	
 	@Test
 	public void test_findCustomersbyLast() {
+		Customer c = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).setMaxResults(1).getSingleResult().getCus();
 		List<Customer> exp_result = new ArrayList<>();
 		List<Customer> result = new ArrayList<>();
-		exp_result.add(new Customer(1, "AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",
-    			12345, "GE075 1234 1234 1234 1234"));
+		exp_result.add(c);
 		PelatologioManagement p = new PelatologioManagement(em);
-		result = p.findCustomerByLastName("Papadopoulos");
+		result = p.findCustomerByLastName(c.getSurname());
 		assertEquals(exp_result, result);
 	}
 	
@@ -85,12 +86,12 @@ public class PelatologioManagementTest {
 	
 	@Test
 	public void test_findCustomersbyFirst() {
+		Customer c = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).setMaxResults(1).getSingleResult().getCus();
 		List<Customer> exp_result = new ArrayList<>();
 		List<Customer> result = new ArrayList<>();
-		exp_result.add(new Customer(1, "AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",
-    			12345, "GE075 1234 1234 1234 1234"));
+		exp_result.add(c);
 		PelatologioManagement p = new PelatologioManagement(em);
-		result = p.findCustomerByFirstName("Maria");
+		result = p.findCustomerByFirstName(c.getName());
 		assertEquals(exp_result, result);
 	}
 	
@@ -107,12 +108,12 @@ public class PelatologioManagementTest {
 	
 	@Test
 	public void test_findCustomersbyAFM() {
+		Customer c = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).setMaxResults(1).getSingleResult().getCus();
 		List<Customer> exp_result = new ArrayList<>();
 		List<Customer> result = new ArrayList<>();
-		exp_result.add(new Customer(1, "AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",
-    			12345, "GE075 1234 1234 1234 1234"));
+		exp_result.add(c);
 		PelatologioManagement p = new PelatologioManagement(em);
-		result = p.findCustomerByAFM("12345678");
+		result = p.findCustomerByAFM(c.getAFM());
 		assertEquals(exp_result, result);
 	}
 	
@@ -129,12 +130,12 @@ public class PelatologioManagementTest {
 	
 	@Test
 	public void test_findCustomersbyADT() {
+		Customer c = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).setMaxResults(1).getSingleResult().getCus();
 		List<Customer> exp_result = new ArrayList<>();
 		List<Customer> result = new ArrayList<>();
-		exp_result.add(new Customer(1, "AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",
-    			12345, "GE075 1234 1234 1234 1234"));
+		exp_result.add(c);
 		PelatologioManagement p = new PelatologioManagement(em);
-		result = p.findCustomerByADT("AS12345");
+		result = p.findCustomerByADT(c.getADT());
 		assertEquals(exp_result, result);
 	}
 	
@@ -151,14 +152,15 @@ public class PelatologioManagementTest {
 	
 	@Test
 	public void test_findCustomersbyTel() {
+		Customer c = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).setMaxResults(1).getSingleResult().getCus();
 		List<Customer> exp_result = new ArrayList<>();
 		List<Customer> result = new ArrayList<>();
-		exp_result.add(new Customer(1, "AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",
-    			12345, "GE075 1234 1234 1234 1234"));
+		exp_result.add(c);
 		PelatologioManagement p = new PelatologioManagement(em);
-		result = p.findCustomerByTel("2121212121");
+		result = p.findCustomerByTel(c.getTel());
 		assertEquals(exp_result, result);
 	}
+	
 	
 	@Test
 	public void test_findCustomersbyEmailNull() {
@@ -173,12 +175,12 @@ public class PelatologioManagementTest {
 	
 	@Test
 	public void test_findCustomersbyEmail() {
+		Customer c = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).setMaxResults(1).getSingleResult().getCus();
 		List<Customer> exp_result = new ArrayList<>();
 		List<Customer> result = new ArrayList<>();
-		exp_result.add(new Customer(1, "AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",
-    			12345, "GE075 1234 1234 1234 1234"));
+		exp_result.add(c);
 		PelatologioManagement p = new PelatologioManagement(em);
-		result = p.findCustomerByEmail("mp@gmail.com");
+		result = p.findCustomerByEmail(c.getEmail());
 		assertEquals(exp_result, result);
 	}
 	
@@ -195,12 +197,12 @@ public class PelatologioManagementTest {
 	
 	@Test
 	public void test_findCustomersbyInvestAmount() {
+		Customer c = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).setMaxResults(1).getSingleResult().getCus();
 		List<Customer> exp_result = new ArrayList<>();
 		List<Customer> result = new ArrayList<>();
-		exp_result.add(new Customer(1, "AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",
-    			12345, "GE075 1234 1234 1234 1234"));
+		exp_result.add(c);
 		PelatologioManagement p = new PelatologioManagement(em);
-		result = p.findCustomerByInvestAmount(12345);
+		result = p.findCustomerByInvestAmount(c.getInvestAmount());
 		assertEquals(exp_result, result);
 	}
 	
@@ -217,22 +219,23 @@ public class PelatologioManagementTest {
 	
 	@Test
 	public void test_findCustomersbyBankAccountNo() {
+		Customer c = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).setMaxResults(1).getSingleResult().getCus();
 		List<Customer> exp_result = new ArrayList<>();
 		List<Customer> result = new ArrayList<>();
-		exp_result.add(new Customer(1, "AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",
-    			12345, "GE075 1234 1234 1234 1234"));
+		exp_result.add(c);
 		PelatologioManagement p = new PelatologioManagement(em);
-		result = p.findCustomerByBankAccountNo("GE075 1234 1234 1234 1234");
+		result = p.findCustomerByBankAccountNo(c.getBankAccountNo());
 		assertEquals(exp_result, result);
 	}
 	
 	@Test
 	public void test_findAllCustomer() {
+		List<Xartofulakio> xlist = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).getResultList();
 		List<Customer> exp_result = new ArrayList<>();
-		exp_result.add(new Customer(1, "AS12345", "12345678", "Maria","Papadopoulos", "2121212121", "mp@gmail.com", "06/07/1980",
-    			12345, "GE075 1234 1234 1234 1234"));
-		exp_result.add(new Customer(2, "AE12345", "123456789", "Marios","Papas", "2121212121", "msp@gmail.com", "16/07/1980",
-    			12000, "GE075 5678 5678 5678 5678"));
+		for (Xartofulakio x : xlist ) {
+			exp_result.add(x.getCus());
+		}
+
 		List<Customer> result = new ArrayList<>();
 		PelatologioManagement p = new PelatologioManagement(em);
 		result = p.findAllCustomer();
@@ -241,8 +244,8 @@ public class PelatologioManagementTest {
 	
 	@Test
 	public void test_ShowCustomers() {
-		String exp_results = "Id 1 FirstName  Maria LastName Papadopoulos ADT AS12345 AFM 12345678 EMAIL mp@gmail.com Telephone 2121212121BirthDate06/07/1980investAmoun12345.0bankAccountNoGE075 1234 1234 1234 1234\r\n" + 
-				"Id 2 FirstName  Marios LastName Papas ADT AE12345 AFM 123456789 EMAIL msp@gmail.com Telephone 2121212121BirthDate16/07/1980investAmoun12000.0bankAccountNoGE075 5678 5678 5678 5678\r\n";
+		String exp_results = "Id 1 FirstName  Maria LastName Papadopoulos ADT AS12345 AFM 12345678 EMAIL mp@gmail.com Telephone 2121212121BirthDate06-07-1980investAmoun12345.0bankAccountNoGE075 1234 1234 1234 1234\r\n" + 
+				"Id 2 FirstName  Marios LastName Papas ADT AE12345 AFM 123456789 EMAIL msp@gmail.com Telephone 2121212120BirthDate16-07-1980investAmoun12000.0bankAccountNoGE075 5678 5678 5678 5678\r\n";
 		java.io.ByteArrayOutputStream out = new java.io.ByteArrayOutputStream();    
 		System.setOut(new java.io.PrintStream(out)); 
 		PelatologioManagement p = new PelatologioManagement(em);
@@ -250,5 +253,22 @@ public class PelatologioManagementTest {
 		
 		String results = out.toString();
 		assertEquals(exp_results, results);
+	}
+	
+	@Test
+	public void test_updates() {
+		PelatologioManagement p = new PelatologioManagement(em);
+		Xartofulakio x = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).setMaxResults(1).getSingleResult();
+		Customer c = x.getCus();
+		assertTrue(p.saveOrUpdateCustomer(x, c));
+		assertFalse(p.saveOrUpdateCustomer(x, null));
+	}
+	
+	@Test
+	public void test_login() {
+		DX dx = em.createQuery("select dx from DX dx", DX.class).setMaxResults(1).getSingleResult();
+		LoginService l = new LoginService(em);
+		assertEquals(0, l.LoginUser(dx.getUsername(), dx.getPassword()));
+		assertEquals(-1, l.LoginUser("mpapa", "asdasd"));
 	}
 }
