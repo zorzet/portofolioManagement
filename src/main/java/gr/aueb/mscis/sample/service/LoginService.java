@@ -13,7 +13,7 @@ public class LoginService {
 
 	public LoginService(EntityManager em) {
 		this.em = em;
-	}
+	}  
 	
 //////////////////////////////////////////////////	
 ///	O χρήστης εισάγει το username και το password.
