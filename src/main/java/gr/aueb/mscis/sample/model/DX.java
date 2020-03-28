@@ -36,6 +36,12 @@ public class DX extends User {
 	@Column(name="BirthDate", nullable = false)
 	private String BirthDate;
 	
+	@Column(name="Username", nullable = false)
+	private String username;
+	
+	@Column(name="Password", nullable = false)
+	private String password;
+	
 	/*1 DX EXEI POLLA XARTOFYLAKIA*/
 	@OneToMany(cascade={CascadeType.ALL}, 
             mappedBy="dx", fetch=FetchType.LAZY)
@@ -124,6 +130,23 @@ public class DX extends User {
 		BirthDate = birthDate;
 	}
 
+	
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	public DX(String aDT, String aFM, String name, String surname, String tel, String email, String birthDate) {	
 		this.ADT = aDT;
 		this.AFM = aFM;
@@ -134,6 +157,21 @@ public class DX extends User {
 		this.BirthDate = birthDate;
 	}
 	
+	public DX(int dXId, String aDT, String aFM, String name, String surname, String tel, String email, String birthDate,
+			String username, String password) {
+		super();
+		DXId = dXId;
+		ADT = aDT;
+		AFM = aFM;
+		Name = name;
+		Surname = surname;
+		Tel = tel;
+		this.email = email;
+		BirthDate = birthDate;
+		this.username = username;
+		this.password = password;
+	}
+
 	//ADD METOXH ME VASH TOUS DXs
 	public void addMetoxh(Metoxh metoxh) {
 		if (metoxh != null) {
