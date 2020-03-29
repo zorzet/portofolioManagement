@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="14.1.0">
+<diagram program="umlet" version="14.3.0">
   <help_text>// Uncomment the following line to change the fontsize and font:
  fontsize=16
 // fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced
@@ -28,8 +28,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>288</x>
-      <y>486</y>
+      <x>204</x>
+      <y>396</y>
       <w>138</w>
       <h>114</h>
     </coordinates>
@@ -50,8 +50,8 @@ eimail: String
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>126</x>
-      <y>354</y>
+      <x>42</x>
+      <y>264</y>
       <w>150</w>
       <h>108</h>
     </coordinates>
@@ -71,8 +71,8 @@ eimail: String
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>186</x>
-      <y>456</y>
+      <x>102</x>
+      <y>366</y>
       <w>114</w>
       <h>78</h>
     </coordinates>
@@ -84,8 +84,8 @@ eimail: String
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>156</x>
-      <y>594</y>
+      <x>72</x>
+      <y>504</y>
       <w>126</w>
       <h>78</h>
     </coordinates>
@@ -102,8 +102,8 @@ eimail: String
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>612</x>
-      <y>522</y>
+      <x>528</x>
+      <y>432</y>
       <w>126</w>
       <h>84</h>
     </coordinates>
@@ -121,8 +121,8 @@ eimail: String
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>432</x>
-      <y>354</y>
+      <x>348</x>
+      <y>264</y>
       <w>126</w>
       <h>138</h>
     </coordinates>
@@ -146,8 +146,8 @@ Beta: int
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>270</x>
-      <y>372</y>
+      <x>186</x>
+      <y>282</y>
       <w>174</w>
       <h>24</h>
     </coordinates>
@@ -158,8 +158,8 @@ Beta: int
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>138</x>
-      <y>150</y>
+      <x>54</x>
+      <y>60</y>
       <w>126</w>
       <h>48</h>
     </coordinates>
@@ -173,8 +173,8 @@ Beta: int
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>420</x>
-      <y>528</y>
+      <x>336</x>
+      <y>438</y>
       <w>204</w>
       <h>24</h>
     </coordinates>
@@ -185,8 +185,8 @@ Beta: int
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>432</x>
-      <y>144</y>
+      <x>348</x>
+      <y>54</y>
       <w>126</w>
       <h>90</h>
     </coordinates>
@@ -204,8 +204,8 @@ beta: long
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>258</x>
-      <y>156</y>
+      <x>174</x>
+      <y>66</y>
       <w>186</w>
       <h>24</h>
     </coordinates>
@@ -216,8 +216,8 @@ beta: long
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>144</x>
-      <y>192</y>
+      <x>60</x>
+      <y>102</y>
       <w>84</w>
       <h>174</h>
     </coordinates>
@@ -228,9 +228,9 @@ beta: long
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>504</x>
-      <y>228</y>
-      <w>84</w>
+      <x>420</x>
+      <y>138</y>
+      <w>90</w>
       <h>138</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
@@ -240,8 +240,8 @@ beta: long
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>240</x>
-      <y>90</y>
+      <x>156</x>
+      <y>0</y>
       <w>408</w>
       <h>300</h>
     </coordinates>
@@ -252,8 +252,8 @@ beta: long
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>132</x>
-      <y>456</y>
+      <x>48</x>
+      <y>366</y>
       <w>552</w>
       <h>246</h>
     </coordinates>
@@ -265,8 +265,8 @@ beta: long
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>552</x>
-      <y>456</y>
+      <x>468</x>
+      <y>366</y>
       <w>84</w>
       <h>78</h>
     </coordinates>
@@ -277,8 +277,8 @@ beta: long
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>156</x>
-      <y>450</y>
+      <x>72</x>
+      <y>360</y>
       <w>90</w>
       <h>156</h>
     </coordinates>
