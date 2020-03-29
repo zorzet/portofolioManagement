@@ -29,7 +29,7 @@
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>252</x>
-      <y>204</y>
+      <y>192</y>
       <w>144</w>
       <h>42</h>
     </coordinates>
@@ -41,7 +41,7 @@ getCus().getCustomerId()</panel_attributes>
     <type>com.baselet.element.old.element.Class</type>
     <coordinates>
       <x>234</x>
-      <y>18</y>
+      <y>6</y>
       <w>78</w>
       <h>18</h>
     </coordinates>
@@ -49,32 +49,10 @@ getCus().getCustomerId()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <type>com.baselet.element.old.element.Class</type>
-    <coordinates>
-      <x>114</x>
-      <y>18</y>
-      <w>54</w>
-      <h>18</h>
-    </coordinates>
-    <panel_attributes>:Database</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>246</x>
-      <y>18</y>
-      <w>30</w>
-      <h>2250</h>
-    </coordinates>
-    <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>18;18;18;2238</additional_attributes>
-  </element>
-  <element>
-    <type>com.baselet.element.old.element.Relation</type>
-    <coordinates>
-      <x>132</x>
-      <y>18</y>
+      <y>6</y>
       <w>30</w>
       <h>2250</h>
     </coordinates>
@@ -85,7 +63,7 @@ getCus().getCustomerId()</panel_attributes>
     <type>com.baselet.element.old.element.Class</type>
     <coordinates>
       <x>462</x>
-      <y>18</y>
+      <y>6</y>
       <w>78</w>
       <h>18</h>
     </coordinates>
@@ -95,19 +73,8 @@ getCus().getCustomerId()</panel_attributes>
   <element>
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
-      <x>144</x>
-      <y>102</y>
-      <w>12</w>
-      <h>2148</h>
-    </coordinates>
-    <panel_attributes>bg=gray</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.baselet.element.old.element.SeqObjectActive</type>
-    <coordinates>
       <x>258</x>
-      <y>84</y>
+      <y>72</y>
       <w>12</w>
       <h>78</h>
     </coordinates>
@@ -118,7 +85,7 @@ getCus().getCustomerId()</panel_attributes>
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
       <x>258</x>
-      <y>324</y>
+      <y>312</y>
       <w>12</w>
       <h>210</h>
     </coordinates>
@@ -129,7 +96,7 @@ getCus().getCustomerId()</panel_attributes>
     <type>com.baselet.element.old.element.Class</type>
     <coordinates>
       <x>354</x>
-      <y>18</y>
+      <y>6</y>
       <w>60</w>
       <h>18</h>
     </coordinates>
@@ -140,7 +107,7 @@ getCus().getCustomerId()</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>360</x>
-      <y>18</y>
+      <y>6</y>
       <w>42</w>
       <h>2250</h>
     </coordinates>
@@ -151,7 +118,7 @@ getCus().getCustomerId()</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>138</x>
-      <y>102</y>
+      <y>90</y>
       <w>132</w>
       <h>56</h>
     </coordinates>
@@ -164,7 +131,7 @@ getResultList()</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>474</x>
-      <y>18</y>
+      <y>6</y>
       <w>42</w>
       <h>2250</h>
     </coordinates>
@@ -172,23 +139,10 @@ getResultList()</panel_attributes>
     <additional_attributes>30;18;18;2238</additional_attributes>
   </element>
   <element>
-    <type>com.baselet.element.old.element.Relation</type>
-    <coordinates>
-      <x>138</x>
-      <y>84</y>
-      <w>132</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-Query
-(findXartofulakiaById)</panel_attributes>
-    <additional_attributes>18;30;120;30</additional_attributes>
-  </element>
-  <element>
     <id>UMLNote</id>
     <coordinates>
       <x>168</x>
-      <y>198</y>
+      <y>186</y>
       <w>246</w>
       <h>102</h>
     </coordinates>
@@ -200,7 +154,7 @@ bg=blue</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>24</x>
-      <y>498</y>
+      <y>486</y>
       <w>246</w>
       <h>42</h>
     </coordinates>
@@ -212,7 +166,7 @@ return eikonaXartofulakiou</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>24</x>
-      <y>132</y>
+      <y>120</y>
       <w>246</w>
       <h>42</h>
     </coordinates>
@@ -224,7 +178,7 @@ return results</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>252</x>
-      <y>228</y>
+      <y>216</y>
       <w>144</w>
       <h>42</h>
     </coordinates>
@@ -237,7 +191,7 @@ getCus().getSurname()
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>252</x>
-      <y>252</y>
+      <y>240</y>
       <w>144</w>
       <h>42</h>
     </coordinates>
@@ -249,7 +203,7 @@ getCus().getInvestAmount())</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>252</x>
-      <y>240</y>
+      <y>228</y>
       <w>144</w>
       <h>42</h>
     </coordinates>
@@ -261,7 +215,7 @@ getCus().getADT()</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>252</x>
-      <y>264</y>
+      <y>252</y>
       <w>144</w>
       <h>42</h>
     </coordinates>
@@ -273,7 +227,7 @@ getCus().getEmail()</panel_attributes>
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
       <x>258</x>
-      <y>192</y>
+      <y>180</y>
       <w>12</w>
       <h>108</h>
     </coordinates>
@@ -284,7 +238,7 @@ getCus().getEmail()</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>252</x>
-      <y>216</y>
+      <y>204</y>
       <w>144</w>
       <h>42</h>
     </coordinates>
@@ -296,7 +250,7 @@ getCus().getName()</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>168</x>
-      <y>354</y>
+      <y>342</y>
       <w>122</w>
       <h>56</h>
     </coordinates>
@@ -309,7 +263,7 @@ ShowXarofulakioPelath
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>168</x>
-      <y>198</y>
+      <y>186</y>
       <w>132</w>
       <h>42</h>
     </coordinates>
@@ -321,7 +275,7 @@ ShowCustomers(int DXId)</panel_attributes>
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
       <x>384</x>
-      <y>222</y>
+      <y>210</y>
       <w>12</w>
       <h>102</h>
     </coordinates>
@@ -332,7 +286,7 @@ ShowCustomers(int DXId)</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>24</x>
-      <y>282</y>
+      <y>270</y>
       <w>372</w>
       <h>42</h>
     </coordinates>
@@ -344,7 +298,7 @@ return message</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>162</x>
-      <y>342</y>
+      <y>330</y>
       <w>258</w>
       <h>132</h>
     </coordinates>
@@ -356,7 +310,7 @@ bg=blue</panel_attributes>
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
       <x>384</x>
-      <y>366</y>
+      <y>354</y>
       <w>12</w>
       <h>168</h>
     </coordinates>
@@ -367,7 +321,7 @@ bg=blue</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>252</x>
-      <y>366</y>
+      <y>354</y>
       <w>144</w>
       <h>42</h>
     </coordinates>
@@ -379,7 +333,7 @@ get(i).getCus().getSurname()</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>252</x>
-      <y>378</y>
+      <y>366</y>
       <w>144</w>
       <h>42</h>
     </coordinates>
@@ -391,7 +345,7 @@ get(i).getCus().getADT()</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>252</x>
-      <y>354</y>
+      <y>342</y>
       <w>144</w>
       <h>42</h>
     </coordinates>
@@ -403,7 +357,7 @@ get(i).getCus().getName()</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>252</x>
-      <y>402</y>
+      <y>390</y>
       <w>144</w>
       <h>42</h>
     </coordinates>
@@ -415,7 +369,7 @@ get(i).getCus().getBirthDate()</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>252</x>
-      <y>390</y>
+      <y>378</y>
       <w>144</w>
       <h>42</h>
     </coordinates>
@@ -427,7 +381,7 @@ get(i).getCus().getAFM()</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>252</x>
-      <y>414</y>
+      <y>402</y>
       <w>144</w>
       <h>42</h>
     </coordinates>
@@ -439,7 +393,7 @@ get(i).getCus().getEmail()</panel_attributes>
     <id>UMLPackage</id>
     <coordinates>
       <x>162</x>
-      <y>480</y>
+      <y>468</y>
       <w>156</w>
       <h>36</h>
     </coordinates>
@@ -452,7 +406,7 @@ bg=orange</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>114</x>
-      <y>300</y>
+      <y>288</y>
       <w>114</w>
       <h>42</h>
     </coordinates>
@@ -464,7 +418,7 @@ bg=orange</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>132</x>
-      <y>540</y>
+      <y>528</y>
       <w>152</w>
       <h>56</h>
     </coordinates>
@@ -477,7 +431,7 @@ ShowTransactionsPerPortofolio
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
       <x>492</x>
-      <y>774</y>
+      <y>762</y>
       <w>12</w>
       <h>60</h>
     </coordinates>
@@ -488,7 +442,7 @@ ShowTransactionsPerPortofolio
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
       <x>258</x>
-      <y>564</y>
+      <y>552</y>
       <w>12</w>
       <h>12</h>
     </coordinates>
@@ -499,7 +453,7 @@ ShowTransactionsPerPortofolio
     <id>UMLPackage</id>
     <coordinates>
       <x>174</x>
-      <y>600</y>
+      <y>588</y>
       <w>348</w>
       <h>132</h>
     </coordinates>
@@ -512,7 +466,7 @@ bg=pink</panel_attributes>
     <id>UMLPackage</id>
     <coordinates>
       <x>402</x>
-      <y>756</y>
+      <y>744</y>
       <w>84</w>
       <h>60</h>
     </coordinates>
@@ -525,8 +479,8 @@ bg=yellow</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>384</x>
-      <y>762</y>
-      <w>114</w>
+      <y>750</y>
+      <w>120</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
@@ -537,7 +491,7 @@ bg=yellow</panel_attributes>
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
       <x>492</x>
-      <y>714</y>
+      <y>702</y>
       <w>12</w>
       <h>30</h>
     </coordinates>
@@ -548,8 +502,8 @@ bg=yellow</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>24</x>
-      <y>798</y>
-      <w>474</w>
+      <y>786</y>
+      <w>480</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
@@ -560,7 +514,7 @@ return transet</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>270</x>
-      <y>924</y>
+      <y>912</y>
       <w>438</w>
       <h>366</h>
     </coordinates>
@@ -587,7 +541,7 @@ bg=pink
     <id>UMLPackage</id>
     <coordinates>
       <x>294</x>
-      <y>966</y>
+      <y>954</y>
       <w>408</w>
       <h>306</h>
     </coordinates>
@@ -600,7 +554,7 @@ bg=yellow</panel_attributes>
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
       <x>492</x>
-      <y>882</y>
+      <y>870</y>
       <w>12</w>
       <h>432</h>
     </coordinates>
@@ -611,8 +565,8 @@ bg=yellow</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>384</x>
-      <y>864</y>
-      <w>114</w>
+      <y>852</y>
+      <w>120</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
@@ -623,8 +577,8 @@ Transaction transact()</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>390</x>
-      <y>1020</y>
-      <w>108</w>
+      <y>1008</y>
+      <w>114</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
@@ -635,8 +589,8 @@ setUnits()</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>372</x>
-      <y>960</y>
-      <w>138</w>
+      <y>948</y>
+      <w>142</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
@@ -647,7 +601,7 @@ CheckForOpenTransaction()</panel_attributes>
     <id>UMLPackage</id>
     <coordinates>
       <x>312</x>
-      <y>996</y>
+      <y>984</y>
       <w>336</w>
       <h>252</h>
     </coordinates>
@@ -660,8 +614,8 @@ bg=yellow</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>390</x>
-      <y>1032</y>
-      <w>108</w>
+      <y>1020</y>
+      <w>114</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
@@ -672,8 +626,8 @@ setDate()</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>288</x>
-      <y>1062</y>
-      <w>306</w>
+      <y>1050</y>
+      <w>308</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
@@ -683,33 +637,33 @@ x.getCus().setInvestAmount((x.getCus().getInvestAmount()+(units*price)))</panel_
   <element>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
-      <x>138</x>
-      <y>1248</y>
-      <w>360</w>
+      <x>24</x>
+      <y>1236</y>
+      <w>480</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 return null</panel_attributes>
-    <additional_attributes>18;30;354;30</additional_attributes>
+    <additional_attributes>18;30;468;30</additional_attributes>
   </element>
   <element>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>24</x>
-      <y>60</y>
-      <w>186</w>
+      <y>48</y>
+      <w>246</w>
       <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 findXartofulakiaById
 (int DXId)</panel_attributes>
-    <additional_attributes>174;30;18;30</additional_attributes>
+    <additional_attributes>234;30;18;30</additional_attributes>
   </element>
   <element>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>24</x>
-      <y>54</y>
+      <y>42</y>
       <w>30</w>
       <h>2214</h>
     </coordinates>
@@ -720,7 +674,7 @@ findXartofulakiaById
     <type>com.baselet.element.old.element.Actor</type>
     <coordinates>
       <x>12</x>
-      <y>12</y>
+      <y>0</y>
       <w>60</w>
       <h>72</h>
     </coordinates>
@@ -754,7 +708,7 @@ DX
     <type>com.baselet.element.old.element.Class</type>
     <coordinates>
       <x>174</x>
-      <y>18</y>
+      <y>6</y>
       <w>54</w>
       <h>18</h>
     </coordinates>
@@ -765,7 +719,7 @@ DX
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>180</x>
-      <y>18</y>
+      <y>6</y>
       <w>30</w>
       <h>2250</h>
     </coordinates>
@@ -776,7 +730,7 @@ DX
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
       <x>192</x>
-      <y>318</y>
+      <y>306</y>
       <w>12</w>
       <h>24</h>
     </coordinates>
@@ -787,18 +741,7 @@ DX
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
       <x>192</x>
-      <y>78</y>
-      <w>12</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.baselet.element.old.element.SeqObjectActive</type>
-    <coordinates>
-      <x>192</x>
-      <y>216</y>
+      <y>204</y>
       <w>12</w>
       <h>30</h>
     </coordinates>
@@ -809,7 +752,7 @@ DX
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>30</x>
-      <y>192</y>
+      <y>180</y>
       <w>174</w>
       <h>56</h>
     </coordinates>
@@ -822,7 +765,7 @@ findXartofulakiaById
     <id>UMLPackage</id>
     <coordinates>
       <x>168</x>
-      <y>360</y>
+      <y>348</y>
       <w>234</w>
       <h>108</h>
     </coordinates>
@@ -834,7 +777,7 @@ bg=orange</panel_attributes>
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
       <x>192</x>
-      <y>618</y>
+      <y>606</y>
       <w>12</w>
       <h>30</h>
     </coordinates>
@@ -845,7 +788,7 @@ bg=orange</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>186</x>
-      <y>594</y>
+      <y>582</y>
       <w>80</w>
       <h>66</h>
     </coordinates>
@@ -857,7 +800,7 @@ xlist</panel_attributes>
     <id>UMLPackage</id>
     <coordinates>
       <x>282</x>
-      <y>642</y>
+      <y>630</y>
       <w>204</w>
       <h>66</h>
     </coordinates>
@@ -870,8 +813,8 @@ bg=yellow</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>384</x>
-      <y>696</y>
-      <w>114</w>
+      <y>684</y>
+      <w>120</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
@@ -882,8 +825,8 @@ transet</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>24</x>
-      <y>708</y>
-      <w>474</w>
+      <y>696</y>
+      <w>480</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
@@ -894,7 +837,7 @@ return transet</panel_attributes>
     <id>UMLPackage</id>
     <coordinates>
       <x>324</x>
-      <y>1014</y>
+      <y>1002</y>
       <w>252</w>
       <h>180</h>
     </coordinates>
@@ -907,7 +850,7 @@ bg=yellow</panel_attributes>
     <id>UMLPackage</id>
     <coordinates>
       <x>336</x>
-      <y>1032</y>
+      <y>1020</y>
       <w>204</w>
       <h>96</h>
     </coordinates>
@@ -920,8 +863,8 @@ bg=yellow</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>390</x>
-      <y>1044</y>
-      <w>108</w>
+      <y>1032</y>
+      <w>114</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
@@ -932,8 +875,8 @@ setState()</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>414</x>
-      <y>1080</y>
-      <w>84</w>
+      <y>1068</y>
+      <w>90</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;
@@ -944,8 +887,8 @@ else</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>408</x>
-      <y>1176</y>
-      <w>84</w>
+      <y>1164</y>
+      <w>90</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;
@@ -956,8 +899,8 @@ else</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>414</x>
-      <y>1230</y>
-      <w>84</w>
+      <y>1218</y>
+      <w>90</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;
@@ -968,8 +911,8 @@ else</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>414</x>
-      <y>1110</y>
-      <w>84</w>
+      <y>1098</y>
+      <w>90</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;
@@ -979,21 +922,21 @@ else</panel_attributes>
   <element>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
-      <x>138</x>
-      <y>1272</y>
-      <w>360</w>
+      <x>24</x>
+      <y>1260</y>
+      <w>480</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 return trans</panel_attributes>
-    <additional_attributes>18;30;354;30</additional_attributes>
+    <additional_attributes>18;30;468;30</additional_attributes>
   </element>
   <element>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>378</x>
-      <y>1302</y>
-      <w>132</w>
+      <y>1290</y>
+      <w>136</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
@@ -1004,7 +947,7 @@ CheckForOpenTransaction</panel_attributes>
     <id>UMLPackage</id>
     <coordinates>
       <x>258</x>
-      <y>1338</y>
+      <y>1326</y>
       <w>402</w>
       <h>132</h>
     </coordinates>
@@ -1017,7 +960,7 @@ bg=pink</panel_attributes>
     <id>UMLPackage</id>
     <coordinates>
       <x>396</x>
-      <y>1362</y>
+      <y>1350</y>
       <w>246</w>
       <h>60</h>
     </coordinates>
@@ -1029,66 +972,31 @@ bg=orange</panel_attributes>
   <element>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
-      <x>138</x>
-      <y>1368</y>
-      <w>360</w>
+      <x>24</x>
+      <y>1356</y>
+      <w>480</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 return trans</panel_attributes>
-    <additional_attributes>18;30;354;30</additional_attributes>
+    <additional_attributes>18;30;468;30</additional_attributes>
   </element>
   <element>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
-      <x>138</x>
-      <y>1416</y>
-      <w>360</w>
+      <x>24</x>
+      <y>1404</y>
+      <w>480</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 return existing</panel_attributes>
-    <additional_attributes>18;30;354;30</additional_attributes>
+    <additional_attributes>18;30;468;30</additional_attributes>
   </element>
   <element>
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
       <x>258</x>
-      <y>1560</y>
-      <w>12</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.baselet.element.old.element.Relation</type>
-    <coordinates>
-      <x>252</x>
-      <y>1542</y>
-      <w>66</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-xlist</panel_attributes>
-    <additional_attributes>18;42;48;42;48;18;18;18</additional_attributes>
-  </element>
-  <element>
-    <type>com.baselet.element.old.element.Relation</type>
-    <coordinates>
-      <x>486</x>
-      <y>1536</y>
-      <w>72</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-translist</panel_attributes>
-    <additional_attributes>18;42;48;42;48;18;18;18</additional_attributes>
-  </element>
-  <element>
-    <type>com.baselet.element.old.element.SeqObjectActive</type>
-    <coordinates>
-      <x>492</x>
       <y>1548</y>
       <w>12</w>
       <h>30</h>
@@ -1099,9 +1007,44 @@ translist</panel_attributes>
   <element>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
+      <x>252</x>
+      <y>1530</y>
+      <w>68</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+xlist</panel_attributes>
+    <additional_attributes>18;42;48;42;48;18;18;18</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>486</x>
+      <y>1524</y>
+      <w>76</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+translist</panel_attributes>
+    <additional_attributes>18;42;48;42;48;18;18;18</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.SeqObjectActive</type>
+    <coordinates>
+      <x>492</x>
+      <y>1536</y>
+      <w>12</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
       <x>504</x>
-      <y>1476</y>
-      <w>96</w>
+      <y>1464</y>
+      <w>102</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
@@ -1112,7 +1055,7 @@ CalculateBeta</panel_attributes>
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
       <x>594</x>
-      <y>1494</y>
+      <y>1482</y>
       <w>12</w>
       <h>30</h>
     </coordinates>
@@ -1123,7 +1066,7 @@ CalculateBeta</panel_attributes>
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
       <x>492</x>
-      <y>1356</y>
+      <y>1344</y>
       <w>12</w>
       <h>102</h>
     </coordinates>
@@ -1134,7 +1077,7 @@ CalculateBeta</panel_attributes>
     <id>UMLPackage</id>
     <coordinates>
       <x>228</x>
-      <y>1530</y>
+      <y>1518</y>
       <w>456</w>
       <h>114</h>
     </coordinates>
@@ -1147,7 +1090,7 @@ bg=pink</panel_attributes>
     <id>UMLPackage</id>
     <coordinates>
       <x>306</x>
-      <y>1584</y>
+      <y>1572</y>
       <w>246</w>
       <h>48</h>
     </coordinates>
@@ -1160,7 +1103,7 @@ bg=orange</panel_attributes>
     <id>UMLPackage</id>
     <coordinates>
       <x>246</x>
-      <y>1650</y>
+      <y>1638</y>
       <w>438</w>
       <h>192</h>
     </coordinates>
@@ -1173,7 +1116,7 @@ bg=pink</panel_attributes>
     <id>UMLPackage</id>
     <coordinates>
       <x>276</x>
-      <y>1686</y>
+      <y>1674</y>
       <w>246</w>
       <h>48</h>
     </coordinates>
@@ -1186,7 +1129,7 @@ bg=orange</panel_attributes>
     <id>UMLPackage</id>
     <coordinates>
       <x>282</x>
-      <y>1746</y>
+      <y>1734</y>
       <w>246</w>
       <h>72</h>
     </coordinates>
@@ -1198,8 +1141,8 @@ bg=orange</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>24</x>
-      <y>1758</y>
-      <w>354</w>
+      <y>1746</y>
+      <w>360</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
@@ -1210,8 +1153,8 @@ return</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>300</x>
-      <y>1800</y>
-      <w>90</w>
+      <y>1788</y>
+      <w>92</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;
@@ -1222,7 +1165,7 @@ else(Exception)</panel_attributes>
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
       <x>378</x>
-      <y>1776</y>
+      <y>1764</y>
       <w>12</w>
       <h>60</h>
     </coordinates>
@@ -1233,7 +1176,7 @@ else(Exception)</panel_attributes>
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
       <x>588</x>
-      <y>1902</y>
+      <y>1890</y>
       <w>12</w>
       <h>42</h>
     </coordinates>
@@ -1244,7 +1187,7 @@ else(Exception)</panel_attributes>
     <type>com.baselet.element.old.element.Class</type>
     <coordinates>
       <x>570</x>
-      <y>18</y>
+      <y>6</y>
       <w>78</w>
       <h>18</h>
     </coordinates>
@@ -1255,7 +1198,7 @@ else(Exception)</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>576</x>
-      <y>18</y>
+      <y>6</y>
       <w>42</w>
       <h>2250</h>
     </coordinates>
@@ -1266,8 +1209,8 @@ else(Exception)</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>498</x>
-      <y>1836</y>
-      <w>96</w>
+      <y>1824</y>
+      <w>102</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
@@ -1278,31 +1221,19 @@ betaOfStock</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>582</x>
-      <y>1890</y>
+      <y>1878</y>
       <w>78</w>
-      <h>48</h>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 listMetoxh</panel_attributes>
     <additional_attributes>18;42;48;42;48;18;18;18</additional_attributes>
   </element>
   <element>
-    <type>com.baselet.element.old.element.Relation</type>
-    <coordinates>
-      <x>138</x>
-      <y>1878</y>
-      <w>126</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-Query</panel_attributes>
-    <additional_attributes>18;30;120;30</additional_attributes>
-  </element>
-  <element>
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
       <x>258</x>
-      <y>1902</y>
+      <y>1890</y>
       <w>12</w>
       <h>78</h>
     </coordinates>
@@ -1313,7 +1244,7 @@ Query</panel_attributes>
     <id>UMLPackage</id>
     <coordinates>
       <x>204</x>
-      <y>1872</y>
+      <y>1860</y>
       <w>462</w>
       <h>168</h>
     </coordinates>
@@ -1325,7 +1256,7 @@ bg=pink</panel_attributes>
     <id>UMLPackage</id>
     <coordinates>
       <x>240</x>
-      <y>1890</y>
+      <y>1878</y>
       <w>408</w>
       <h>114</h>
     </coordinates>
@@ -1337,8 +1268,8 @@ bg=orange</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>288</x>
-      <y>1986</y>
-      <w>90</w>
+      <y>1974</y>
+      <w>96</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;
@@ -1349,7 +1280,7 @@ else</panel_attributes>
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
       <x>372</x>
-      <y>1962</y>
+      <y>1950</y>
       <w>12</w>
       <h>36</h>
     </coordinates>
@@ -1359,21 +1290,21 @@ else</panel_attributes>
   <element>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
-      <x>30</x>
-      <y>1962</y>
-      <w>348</w>
+      <x>24</x>
+      <y>1950</y>
+      <w>360</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 return betaOfStock</panel_attributes>
-    <additional_attributes>18;30;342;30</additional_attributes>
+    <additional_attributes>18;30;348;30</additional_attributes>
   </element>
   <element>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>24</x>
-      <y>1998</y>
-      <w>360</w>
+      <y>1986</y>
+      <w>366</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
@@ -1384,7 +1315,7 @@ return betaOfStock=0.0</panel_attributes>
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
       <x>588</x>
-      <y>1848</y>
+      <y>1836</y>
       <w>12</w>
       <h>24</h>
     </coordinates>
@@ -1395,9 +1326,9 @@ return betaOfStock=0.0</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>138</x>
-      <y>1908</y>
-      <w>126</w>
-      <h>54</h>
+      <y>1896</y>
+      <w>132</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 ......
@@ -1408,7 +1339,7 @@ getResultList()</panel_attributes>
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
       <x>372</x>
-      <y>2010</y>
+      <y>1998</y>
       <w>12</w>
       <h>18</h>
     </coordinates>
@@ -1419,7 +1350,7 @@ getResultList()</panel_attributes>
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
       <x>588</x>
-      <y>2058</y>
+      <y>2046</y>
       <w>12</w>
       <h>24</h>
     </coordinates>
@@ -1430,8 +1361,8 @@ getResultList()</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>498</x>
-      <y>2034</y>
-      <w>96</w>
+      <y>2022</y>
+      <w>102</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
@@ -1442,7 +1373,7 @@ priceOfStock</panel_attributes>
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
       <x>588</x>
-      <y>2118</y>
+      <y>2106</y>
       <w>12</w>
       <h>24</h>
     </coordinates>
@@ -1453,9 +1384,9 @@ priceOfStock</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>582</x>
-      <y>2100</y>
+      <y>2088</y>
       <w>78</w>
-      <h>48</h>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 listMetoxh</panel_attributes>
@@ -1465,7 +1396,7 @@ listMetoxh</panel_attributes>
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
       <x>258</x>
-      <y>2106</y>
+      <y>2094</y>
       <w>12</w>
       <h>78</h>
     </coordinates>
@@ -1475,22 +1406,10 @@ listMetoxh</panel_attributes>
   <element>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
-      <x>138</x>
-      <y>2082</y>
-      <w>126</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-Query</panel_attributes>
-    <additional_attributes>18;30;120;30</additional_attributes>
-  </element>
-  <element>
-    <type>com.baselet.element.old.element.Relation</type>
-    <coordinates>
       <x>144</x>
-      <y>2112</y>
-      <w>126</w>
-      <h>54</h>
+      <y>2100</y>
+      <w>132</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 ......
@@ -1501,7 +1420,7 @@ getResultList()</panel_attributes>
     <id>UMLPackage</id>
     <coordinates>
       <x>210</x>
-      <y>2076</y>
+      <y>2064</y>
       <w>462</w>
       <h>168</h>
     </coordinates>
@@ -1513,7 +1432,7 @@ bg=pink</panel_attributes>
     <id>UMLPackage</id>
     <coordinates>
       <x>252</x>
-      <y>2094</y>
+      <y>2082</y>
       <w>408</w>
       <h>114</h>
     </coordinates>
@@ -1525,8 +1444,8 @@ bg=orange</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>30</x>
-      <y>2202</y>
-      <w>348</w>
+      <y>2190</y>
+      <w>354</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
@@ -1537,8 +1456,8 @@ return betaOfStock</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>30</x>
-      <y>2154</y>
-      <w>348</w>
+      <y>2142</y>
+      <w>354</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
@@ -1549,7 +1468,7 @@ return betaOfStock</panel_attributes>
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
       <x>372</x>
-      <y>2166</y>
+      <y>2154</y>
       <w>12</w>
       <h>24</h>
     </coordinates>
@@ -1560,7 +1479,7 @@ return betaOfStock</panel_attributes>
     <type>com.baselet.element.old.element.SeqObjectActive</type>
     <coordinates>
       <x>372</x>
-      <y>2214</y>
+      <y>2202</y>
       <w>12</w>
       <h>24</h>
     </coordinates>
@@ -1571,8 +1490,8 @@ return betaOfStock</panel_attributes>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
       <x>288</x>
-      <y>2190</y>
-      <w>90</w>
+      <y>2178</y>
+      <w>96</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;
@@ -1583,7 +1502,7 @@ else</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>162</x>
-      <y>582</y>
+      <y>570</y>
       <w>438</w>
       <h>264</h>
     </coordinates>
