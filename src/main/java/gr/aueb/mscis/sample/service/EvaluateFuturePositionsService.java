@@ -90,8 +90,8 @@ public class EvaluateFuturePositionsService {
 		return d;
 	}
 
-	public String StockImage(String name, String date) throws RuntimeException {
-		String InformationOfStock;
+	public String StockImage(String name, String date) {
+		String InformationOfStock = null;
 		Metoxh m = null;
 		Deiktes d = null;
 		m = findInformationOfStock(name, date);
@@ -99,7 +99,6 @@ public class EvaluateFuturePositionsService {
 		InformationOfStock = "Name " + m.getName() + " Date " + m.getDate() + " Beta " + m.getBeta() + m.getClosing()
 				+ " MKO15 " + d.getMKO15() + " MKO80: " + d.getMKO80() + " XK20 " + d.getXk20() + " YK2O "
 				+ d.getYk20();
-
 		return InformationOfStock;
 	}
 

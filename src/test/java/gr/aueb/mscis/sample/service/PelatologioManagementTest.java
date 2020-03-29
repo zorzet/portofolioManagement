@@ -245,7 +245,8 @@ public class PelatologioManagementTest {
 	@Test
 	public void test_ShowCustomers() {
 		String exp_results = "Id 1 FirstName  Maria LastName Papadopoulos ADT AS12345 AFM 12345678 EMAIL mp@gmail.com Telephone 2121212121BirthDate06-07-1980investAmoun12345.0bankAccountNoGE075 1234 1234 1234 1234\r\n" + 
-				"Id 2 FirstName  Marios LastName Papas ADT AE12345 AFM 123456789 EMAIL msp@gmail.com Telephone 2121212120BirthDate16-07-1980investAmoun12000.0bankAccountNoGE075 5678 5678 5678 5678\r\n";
+				"Id 2 FirstName  Marios LastName Papas ADT AE12345 AFM 123456789 EMAIL msp@gmail.com Telephone 2121212120BirthDate16-07-1980investAmoun12000.0bankAccountNoGE075 5678 5678 5678 5678\r\n" +
+				"Id 3 FirstName  Giannis LastName Pappas ADT AE12346 AFM 123456780 EMAIL gsp@gmail.com Telephone 2121212122BirthDate16-07-1982investAmoun12050.0bankAccountNoGE075 5678 5678 5678 5679\r\n";
 		java.io.ByteArrayOutputStream out = new java.io.ByteArrayOutputStream();    
 		System.setOut(new java.io.PrintStream(out)); 
 		PelatologioManagement p = new PelatologioManagement(em);

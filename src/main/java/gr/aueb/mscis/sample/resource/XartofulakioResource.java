@@ -38,7 +38,7 @@ public class XartofulakioResource {
 //////////////////////////////////////////////////////////	
 	@GET
 	@Path("xartofulakia/{DXId}")
-	@Produces(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.APPLICATION_JSON)
 	public List <XartofulakioInfo> findXartofulakiaById(@PathParam("DXId") int  DXId) {
 		EntityManager em = getEntityManager();
 		List<XartofulakioInfo> outputlist=new ArrayList<XartofulakioInfo>();

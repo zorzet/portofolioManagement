@@ -18491,3 +18491,690 @@ delete from Transaction [42102-192]
 2020-03-29 00:05:40 jdbc[16]: exception
 org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
 delete from Transaction [42102-192]
+2020-03-29 00:10:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:10:48 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:10:48 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:10:49 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:10:50 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:10:50 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:10:51 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:10:51 jdbc[10]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:10:51 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:10:51 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:10:51 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:10:51 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:10:51 jdbc[15]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:10:51 jdbc[16]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:18:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:18:58 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:18:58 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:19:00 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:19:01 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:19:01 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:19:01 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:19:01 jdbc[10]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:19:01 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:19:01 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:19:01 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:19:02 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:19:02 jdbc[15]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:19:02 jdbc[16]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:26:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:26:22 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:26:22 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:27:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:27:15 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:27:15 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:27:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:27:35 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:27:35 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:28:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:28:10 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:28:10 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:28:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:28:47 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:28:47 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:29:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:29:49 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:29:50 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:30:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:30:42 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:30:42 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:31:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:31:50 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:31:50 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:33:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:33:35 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:33:35 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:34:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:34:29 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:34:30 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:35:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:35:34 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:35:34 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:36:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:36:25 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:36:25 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:37:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:37:02 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:37:02 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:37:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:37:32 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:37:32 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:38:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:38:28 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:38:28 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:40:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:40:49 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:40:49 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:43:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:43:01 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:43:01 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:44:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:44:22 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:44:22 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:44:23 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:44:24 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:44:24 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:44:25 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:44:25 jdbc[10]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:44:25 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:44:25 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:44:25 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:44:25 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:44:25 jdbc[15]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:44:25 jdbc[16]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:47:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:47:02 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:47:02 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:47:02 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:47:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:47:57 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:47:57 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:47:57 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:49:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:49:45 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:49:45 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:49:45 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:52:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:52:04 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:52:04 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:52:05 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:52:07 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:52:07 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:52:07 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:52:07 jdbc[10]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:52:07 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:52:07 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:52:07 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:52:07 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:52:08 jdbc[15]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:52:08 jdbc[16]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:52:08 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:53:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:53:38 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:53:38 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:53:39 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:53:41 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:53:41 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:53:41 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:53:41 jdbc[10]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:53:41 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:53:41 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:53:41 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:53:41 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:53:41 jdbc[15]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:53:42 jdbc[16]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 00:53:42 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:05:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:06:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:06:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:06:39 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:06:39 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:06:39 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:06:39 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:06:40 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:06:40 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:06:41 jdbc[10]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:06:41 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:06:41 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:06:41 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:06:41 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:06:41 jdbc[15]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:06:41 jdbc[16]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:06:41 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:06:41 jdbc[18]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:17:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:18:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:18:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:19:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:20:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:28:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:30:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:41:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:45:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:45:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:47:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 01:59:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:01:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:10:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:10:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:10:56 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:10:56 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:10:56 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:10:56 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:10:56 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:10:57 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:10:57 jdbc[10]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:10:58 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:10:58 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:10:58 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:10:58 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:10:58 jdbc[15]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:10:58 jdbc[16]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:10:58 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:10:58 jdbc[18]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:10:59 jdbc[19]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:12:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:12:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:12:03 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:12:03 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:12:03 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:12:03 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:12:04 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:12:04 jdbc[10]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:12:05 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:12:05 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:12:05 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:12:05 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:12:05 jdbc[15]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:12:05 jdbc[16]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:12:05 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:12:05 jdbc[18]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:12:05 jdbc[19]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:39:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:40:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:40:01 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:41:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:41:24 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:41:24 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:42:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:42:24 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:42:25 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:42:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:42:44 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:42:44 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:42:44 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:42:44 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:42:44 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:42:45 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:42:45 jdbc[10]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:42:45 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:42:46 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:42:46 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:42:46 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:42:46 jdbc[15]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:42:46 jdbc[16]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:42:46 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:42:46 jdbc[18]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:42:46 jdbc[19]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]
+2020-03-29 02:42:46 jdbc[20]: exception
+org.h2.jdbc.JdbcSQLException: Table "TRANSACTION" not found; SQL statement:
+delete from Transaction [42102-192]

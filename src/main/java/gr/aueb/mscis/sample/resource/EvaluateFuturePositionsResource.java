@@ -47,7 +47,7 @@ public class EvaluateFuturePositionsResource {
 		try {
 			return eval.StockImage(stockname, date);
 		} catch (Exception e) {
-			return null;
+			return "NO STOCK FOUND";
 		}
 	}
 

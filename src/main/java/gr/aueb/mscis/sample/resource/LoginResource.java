@@ -24,7 +24,7 @@ public class LoginResource {
 	}
 	
 	@GET
-	@Path("login/{username: [A-Za-z]*}/{password: [A-Za-z]*}")
+	@Path("{username: [A-Za-z]*}/{password}")
 	@Produces(MediaType.TEXT_PLAIN)
 	public String LoginUser(@PathParam("username") String username,@PathParam("password") String password) {
 		EntityManager em = getEntityManager();
