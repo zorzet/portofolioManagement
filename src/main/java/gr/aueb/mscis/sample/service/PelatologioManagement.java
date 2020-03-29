@@ -45,7 +45,7 @@ public class PelatologioManagement {
 		List<Customer> results = new ArrayList<>();
 		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).getResultList();
 		for (Xartofulakio x : xs) {
-			if (x.getCus().getName() == firstName)
+			if (x.getCus().getName().equals(firstName))
 				results.add(x.getCus());
 		}
 		if (results.isEmpty()) {
@@ -59,7 +59,7 @@ public class PelatologioManagement {
 		List<Customer> results = new ArrayList<>();
 		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).getResultList();
 		for (Xartofulakio x : xs) {
-			if (x.getCus().getAFM() == AFM)
+			if (x.getCus().getAFM().equals(AFM))
 				results.add(x.getCus());
 		}
 		if (results.isEmpty()) {
@@ -73,7 +73,7 @@ public class PelatologioManagement {
 		List<Customer> results = new ArrayList<>();
 		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).getResultList();
 		for (Xartofulakio x : xs) {
-			if (x.getCus().getADT() == ADT)
+			if (x.getCus().getADT().equals(ADT))
 				results.add(x.getCus());
 		}
 		if (results.isEmpty()) {
@@ -87,7 +87,7 @@ public class PelatologioManagement {
 		List<Customer> results = new ArrayList<>();
 		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).getResultList();
 		for (Xartofulakio x : xs) {
-			if (x.getCus().getTel() == Tel)
+			if (x.getCus().getTel().equals(Tel))
 				results.add(x.getCus());
 		}
 		if (results.isEmpty()) {
@@ -101,7 +101,7 @@ public class PelatologioManagement {
 		List<Customer> results = new ArrayList<>();
 		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).getResultList();
 		for (Xartofulakio x : xs) {
-			if (x.getCus().getEmail() == Email)
+			if (x.getCus().getEmail().equals(Email))
 				results.add(x.getCus());
 		}
 		if (results.isEmpty()) {
@@ -129,7 +129,7 @@ public class PelatologioManagement {
 		List<Customer> results = new ArrayList<>();
 		List<Xartofulakio> xs = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).getResultList();
 		for (Xartofulakio x : xs) {
-			if (x.getCus().getBankAccountNo() == Bank)
+			if (x.getCus().getBankAccountNo().equals(Bank))
 				results.add(x.getCus());
 		}
 		if (results.isEmpty()) {

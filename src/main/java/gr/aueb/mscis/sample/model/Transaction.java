@@ -19,7 +19,7 @@ public class Transaction {
 	private int TransId;
 	
 	
-	@Column(name = "CommandType", length = 512, nullable = false)
+	@Column(name = "CommandType", length = 512, nullable = true)
 	private String CmdType;
 	
 	@Column(name = "Stock", length = 512, nullable = false)

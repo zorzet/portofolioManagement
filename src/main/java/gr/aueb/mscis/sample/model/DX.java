@@ -39,8 +39,8 @@ public class DX extends User {
 	@Column(name="Username", nullable = false)
 	private String username;
 	
-	@Column(name="Password", nullable = false)
-	private String password;
+	@Column(name="Pass", nullable = false)
+	private String pass;
 	
 	/*1 DX EXEI POLLA XARTOFYLAKIA*/
 	@OneToMany(cascade={CascadeType.ALL}, 
@@ -140,14 +140,14 @@ public class DX extends User {
 	}
 
 	public String getPassword() {
-		return password;
+		return pass;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPassword(String pass) {
+		this.pass = pass;
 	}
 
-	public DX(String aDT, String aFM, String name, String surname, String tel, String email, String birthDate, String username, String password) {	
+	public DX(String aDT, String aFM, String name, String surname, String tel, String email, String birthDate, String username, String pass) {	
 		this.ADT = aDT;
 		this.AFM = aFM;
 		this.Name = name;
@@ -156,7 +156,7 @@ public class DX extends User {
 		this.email = email;
 		this.BirthDate = birthDate;
 		this.username = username;
-		this.password = password;
+		this.pass = pass;
 		
 	}
 	
@@ -224,10 +224,10 @@ public class DX extends User {
 				return false;
 		} else if (!username.equals(other.username))
 			return false;
-		if (password == null) {
-			if (other.password != null)
+		if (pass == null) {
+			if (other.pass != null)
 				return false;
-		} else if (!password.equals(other.password))
+		} else if (!pass.equals(other.pass))
 			return false;
 		if (DXId != other.DXId)
 			return false;

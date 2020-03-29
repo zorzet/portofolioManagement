@@ -16,15 +16,20 @@ public class DXInfo {
 	private String Tel;
 	private String email;
 	private String BirthDate;
-	
-	public DXInfo() {}
-	
-	public DXInfo(int DXId,String aDT, String aFM, String name, String surname, String tel, String email, String birthDate) {	
-		this(aDT, aFM, name, surname, tel, email,birthDate);
+	private String username;
+	private String pass;
+
+	public DXInfo() {
+	}
+
+	public DXInfo(int DXId, String aDT, String aFM, String name, String surname, String tel, String email,
+			String birthDate, String username, String pass) {
+		this(aDT, aFM, name, surname, tel, email, birthDate, username, pass);
 		this.DXId = DXId;
 	}
-	
-	public DXInfo(String aDT, String aFM, String name, String surname, String tel, String email, String birthDate) {
+
+	public DXInfo(String aDT, String aFM, String name, String surname, String tel, String email, String birthDate,
+			String username, String pass) {
 		super();
 		this.ADT = aDT;
 		this.AFM = aFM;
@@ -33,40 +38,40 @@ public class DXInfo {
 		this.Tel = tel;
 		this.email = email;
 		this.BirthDate = birthDate;
+		this.username = username;
+		this.pass = pass;
 	}
-	
+
 	public DXInfo(DX dx) {
 		super();
-		
-		this.ADT=dx.getADT();
-		this.AFM=dx.getAFM();
+
+		this.ADT = dx.getADT();
+		this.AFM = dx.getAFM();
 		this.DXId = dx.getDXId();
 		this.Name = dx.getName();
 		this.Surname = dx.getSurname();
 		this.Tel = dx.getTel();
 		this.email = dx.getEmail();
 		this.BirthDate = dx.getBirthDate();
-	
+		this.username = dx.getUsername();
+		this.pass = dx.getPassword();
 	}
-	
-	
-	
+
 	public DX getDX(EntityManager em) {
-		
+
 		DX dx;
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
-		if(this.DXId != 0) {
-			
+		if (this.DXId != 0) {
+
 			dx = em.find(DX.class, this.DXId);
-		}
-		else {
-			
+		} else {
+
 			dx = new DX();
 		}
-		
+
 		tx.commit();
-		
+
 		dx.setName(this.Name);
 		dx.setSurname(this.Surname);
 		dx.setTel(this.Tel);
@@ -74,10 +79,11 @@ public class DXInfo {
 		dx.setBirthDate(this.BirthDate);
 		dx.setADT(this.ADT);
 		dx.setAFM(this.AFM);
-		
+		dx.setUsername(username);
+		dx.setPassword(pass);
 		return dx;
 	}
-	
+
 	public static DXInfo wrap(DX dx) {
 		return new DXInfo(dx);
 	}
@@ -145,7 +151,21 @@ public class DXInfo {
 	public void setBirthDate(String birthDate) {
 		BirthDate = birthDate;
 	}
-	
-	
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPass() {
+		return pass;
+	}
+
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
 
 }

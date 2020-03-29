@@ -56,14 +56,11 @@ public class ShowMarketService {
 	 * @return List
 	 */
 	public List<MarketsData> ShowMarketHistory(int days)  throws RuntimeException{
-		EntityTransaction tx = em.getTransaction();
-	    tx.begin();
 	    List<MarketsData> results = null;
 	    results = em.createQuery("select m from MarketsData m order by m.date desc", MarketsData.class).setMaxResults(days).getResultList();
 	    if(results.isEmpty()) {
 			throw new java.lang.RuntimeException("NO RECORDS FOUND");
 		}
-	    tx.commit();
 	    
 		return results;
 	}

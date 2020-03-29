@@ -1,15 +1,22 @@
 package gr.aueb.mscis.sample.service;
 
-import javax.persistence.*;
-import static org.junit.Assert.*;
-import org.junit.*;
-import java.util.*;
+import static org.junit.Assert.assertEquals;
 
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import gr.aueb.mscis.sample.model.Deiktes;
+import gr.aueb.mscis.sample.model.Metoxh;
+import gr.aueb.mscis.sample.model.Xartofulakio;
 import gr.aueb.mscis.sample.persistence.Initializer;
 import gr.aueb.mscis.sample.persistence.JPAUtil;
-import gr.aueb.mscis.sample.model.*;
 
-public class EvaluateFuturePositionsTest {
+public class EvaluateFuturePositionsServiceTest {
 	protected static EntityManager em;
 
 	@BeforeClass
@@ -23,7 +30,7 @@ public class EvaluateFuturePositionsTest {
 	public static void tearDown() {
 		em.close();
 	}
-
+	
 	@Test
 	public void test_EvaLuateFuturePositionPerStock() {
 		List<Xartofulakio> xlist = em.createQuery("select x from Xartofulakio x", Xartofulakio.class).getResultList();
@@ -37,8 +44,7 @@ public class EvaluateFuturePositionsTest {
 		String exp_results = "Desicion buy\r\n"
 				+ "Name AEGN Date 22-02-2020 Beta 0.68.69 MKO15 8.98 MKO80: 8.72 XK20 8.4 YK2O 8.2\r\n"
 				+ "UNITS OF STOCK IN PORTOFOLIO 100\r\n"
-				+ "Percentage of Units of Stock In Portofolio 0.07039287160793843\r\n"
-				+ "BETA of Portofolio 0.6\r\n";
+				+ "Percentage of Units of Stock In Portofolio 0.07039287160793843\r\n" + "BETA of Portofolio 0.6\r\n";
 
 		java.io.ByteArrayOutputStream out = new java.io.ByteArrayOutputStream();
 		System.setOut(new java.io.PrintStream(out));
@@ -161,8 +167,7 @@ public class EvaluateFuturePositionsTest {
 		}
 
 		String exp_results = "UNITS OF STOCK IN PORTOFOLIO 100\r\n"
-				+ "Percentage of Units of Stock In Portofolio 0.07039287160793843\r\n"
-				+ "BETA of Portofolio 0.6\r\n";
+				+ "Percentage of Units of Stock In Portofolio 0.07039287160793843\r\n" + "BETA of Portofolio 0.6\r\n";
 		java.io.ByteArrayOutputStream out = new java.io.ByteArrayOutputStream();
 		System.setOut(new java.io.PrintStream(out));
 
@@ -171,5 +176,4 @@ public class EvaluateFuturePositionsTest {
 		String results = out.toString();
 		assertEquals(exp_results, results);
 	}
-
 }

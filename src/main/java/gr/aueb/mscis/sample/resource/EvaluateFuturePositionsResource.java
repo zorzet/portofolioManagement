@@ -43,10 +43,10 @@ public class EvaluateFuturePositionsResource {
 	@Produces(MediaType.TEXT_PLAIN)
 	public String StockImage(@PathParam("stockname") String stockname, @PathParam("date") String date) {
 		EntityManager em = getEntityManager();
-		EvaluateFuturePositionsService eval = new EvaluateFuturePositionsService(em);
+		EvaluateFuturePositionsService e = new EvaluateFuturePositionsService(em);
 		try {
-			return eval.StockImage(stockname, date);
-		} catch (Exception e) {
+			return e.StockImage(stockname, date);
+		} catch (Exception msg) {
 			return "NO STOCK FOUND";
 		}
 	}

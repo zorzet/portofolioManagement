@@ -191,9 +191,12 @@ public class Initializer {
         d2.setMetoxh(st2);
         Deiktes d3 = new Deiktes("22-02-2020", 20.6, 20.2, 20.6, 20.4);
         d3.setMetoxh(st3);
+        Deiktes d4 = new Deiktes("23-02-2020", 20.6, 20.2, 20.6, 20.4);
+        d4.setMetoxh(st4);
         em.persist(d1);
         em.persist(d2);
         em.persist(d3);
+        em.persist(d4);
 
         tx.commit();
 	}

@@ -156,7 +156,7 @@ public class XartofulakioService {
 	 * @param Cusid
 	 * @return string
 	 */
-	public String ShowXartofulakioPelath(int DXId, int Cusid) throws RuntimeException  {
+	public String ShowXartofulakioPelath(int DXId, int Cusid) throws RuntimeException {
 		String eikonaXartofulakiou = null;
 		List<Xartofulakio> results = findXartofulakiaById(DXId);
 		for (int i = 0; i < results.size(); i++) {
@@ -210,8 +210,9 @@ public class XartofulakioService {
 	 * @param cusid
 	 * @return String
 	 */
-	public String ReturnCustomerImage(int xid, int cusid, String date) {
+	public String ReturnCustomerImage(int xid, int cusid, String date) throws java.lang.RuntimeException {
 		String CImage = null, xarakthrismos_xartofulakiou;
+		System.out.println("start");
 		Set<Transaction> t = ShowTransactionsPerPortofolio(xid, cusid);
 		if (CalculateBeta(xid, cusid, date) > 1) {
 			xarakthrismos_xartofulakiou = "EPI8ETIKO XARTOFULAKIO";
@@ -252,7 +253,7 @@ public class XartofulakioService {
 			Xartofulakio x) {
 		Transaction tran = new Transaction();
 		EntityTransaction tx = em.getTransaction();
-		
+
 		// an h transaction einai pwlhsh, vres an exeis na poylhsei
 		if (cmdType.equalsIgnoreCase("sell")) {
 			try {
@@ -260,7 +261,6 @@ public class XartofulakioService {
 			} catch (java.lang.RuntimeException w) {
 				throw new java.lang.RuntimeException();
 			}
-
 			// an nai poula kai update transaction. kane update balance
 			if (tran.getUnits() >= units) {
 				tx.begin();
@@ -327,10 +327,11 @@ public class XartofulakioService {
 	 */
 	public Transaction CheckForOpenTransaction(String Metoxh, Xartofulakio x) {
 		Transaction existing = null;
-		for (Transaction trans : x.getTransactions()) {
+		for (Transaction trans : x.getTransactions()) {		
 			if ((trans.getStock().equalsIgnoreCase(Metoxh)) & (trans.getState().equals("open")))
 				return trans;
 		}
+		
 		return existing;
 	}
 

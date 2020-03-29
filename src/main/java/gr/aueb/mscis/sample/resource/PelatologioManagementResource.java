@@ -141,7 +141,7 @@ public class PelatologioManagementResource {
 
 //public List<Customer> findCustomerByEmail(String Email)
 	@GET
-	@Path("findCustomerByEmail/{Email}")
+	@Path("findCustomersByEmail/{Email}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<CustomerInfo> findCustomerByEmail(@PathParam("Email") String email) {
 		List<CustomerInfo> ln = new ArrayList<CustomerInfo>();
@@ -160,7 +160,7 @@ public class PelatologioManagementResource {
 
 //public List<Customer> findCustomerByInvestAmount(double InvestAmount)
 	@GET
-	@Path("findCustomerByInvestAmount/{InvestAmount}")
+	@Path("findCustomersByInvestAmount/{InvestAmount}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<CustomerInfo> findCustomerByInvestAmount(@PathParam("InvestAmount") double InvestAmount) {
 		List<CustomerInfo> ln = new ArrayList<CustomerInfo>();
@@ -179,7 +179,7 @@ public class PelatologioManagementResource {
 
 //public List<Customer> findCustomerByBankAccountNo(String Bank)
 	@GET
-	@Path("findCustomerByBankAccountNo/{Bank}")
+	@Path("findCustomersByBankAccountNo/{Bank}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<CustomerInfo> findCustomerByBankAccountNo(@PathParam("Bank") String Bank) {
 		List<CustomerInfo> ln = new ArrayList<CustomerInfo>();
@@ -216,19 +216,19 @@ public class PelatologioManagementResource {
 		}
 	}
 	
-//	@POST
-//	@Path("UpdateCustomer")
-//	@Consumes(MediaType.APPLICATION_JSON)
-//	public Response updateCustomer(XartofulakioInfo xart, CustomerInfo cust) {
-//		EntityManager em = getEntityManager();
-//		PelatologioManagement p = new PelatologioManagement(em);
-//		Customer c = cust.getCustomer(em);
-//		Xartofulakio x = xart.getXartofulakio(em);
-//		boolean answer = p.saveOrUpdateCustomer(x, c);
-//		if (answer = true) {
-//			return Response.accepted().build();
-//		} else {
-//			return Response.notModified().build();
-//		}
-//	}
+	@POST
+	@Path("UpdateCustomer/{xid}")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response updateCustomer(@PathParam("xid") int xid, CustomerInfo cust) {
+		EntityManager em = getEntityManager();
+		PelatologioManagement p = new PelatologioManagement(em);
+		Customer c = cust.getCustomer(em);
+		Xartofulakio x = em.find(Xartofulakio.class, xid);
+		boolean answer = p.saveOrUpdateCustomer(x, c);
+		if (answer = true) {
+			return Response.accepted().build();
+		} else {
+			return Response.notModified().build();
+		}
+	}
 }

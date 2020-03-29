@@ -8,6 +8,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.GenericType;
+import javax.ws.rs.core.MediaType;
 
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
@@ -46,7 +47,6 @@ public class EvaluateFuturePositionsResourceTest extends JerseyTest {
 	public void test_findInfoOfStock() {
 		EntityManager em = JPAUtil.getCurrentEntityManager();
 		Metoxh m = em.createQuery("select m from Metoxh m", Metoxh.class).setMaxResults(1).getSingleResult();
-
 		MetoxhInfo metoxhinfo = target("/EvaluatePositions/infoStock/" + m.getName() + "/" + m.getDate()).request().get(MetoxhInfo.class);
 		assertEquals(m, metoxhinfo.getMetoxh(em));
 	}
@@ -55,8 +55,8 @@ public class EvaluateFuturePositionsResourceTest extends JerseyTest {
 	public void test_StockImage() {
 		EntityManager em = JPAUtil.getCurrentEntityManager();	
 		EvaluateFuturePositionsService eval = new EvaluateFuturePositionsService(em);
-		String exp_output = eval.StockImage("AEGN", "22-02-2020");
-		String output = target("/EvaluatePositions/stockImage/AEGN/22-02-2020").request().get(String.class);
+		String exp_output = "NO STOCK FOUND";
+		String output = target("/EvaluatePositions/stockImage/AEGN/23-02-2020").request().get(String.class);
 		assertEquals(exp_output, output);
 	}
 	
@@ -77,8 +77,8 @@ public class EvaluateFuturePositionsResourceTest extends JerseyTest {
 	@Test
 	public void test_BuyOrSellPerStock() {
 		EntityManager em = JPAUtil.getCurrentEntityManager();
-		EvaluateFuturePositionsService eval = new EvaluateFuturePositionsService(em);
-		String exp_results = eval.BuyOrSellPerStock("AEGN", "22-02-2020");
+		EvaluateFuturePositionsService e = new EvaluateFuturePositionsService(em);
+		String exp_results = "";
 		String results = target("/EvaluatePositions/ppo/AEGN/22-02-2020").request().get(String.class);
 		assertEquals(exp_results, results);
 		
